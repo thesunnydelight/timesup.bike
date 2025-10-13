@@ -2,25 +2,70 @@
 import home from '../content/home.json';
 
 const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g;
-const linkifyEmails = (text) => {
-	const parts = [];
-	let lastIndex = 0;
-	let match;
+const supportUrl = 'https://times-up.org/support/';
+const keywordLinks = [
+	{
+		text: 'Membership Page',
+		href: supportUrl,
+		attrs: { rel: 'noreferrer noopener', target: '_blank' },
+	},
+];
 
-	while ((match = emailPattern.exec(text)) !== null) {
-		if (match.index > lastIndex) {
-			parts.push({ type: 'text', value: text.slice(lastIndex, match.index) });
+const linkifyText = (text) => {
+	const segments = [];
+	let cursor = 0;
+
+	const getNextMatch = (start) => {
+		let nextMatch = { index: Infinity };
+
+		emailPattern.lastIndex = start;
+		const emailMatch = emailPattern.exec(text);
+		if (emailMatch) {
+			nextMatch = {
+				type: 'email',
+				value: emailMatch[0],
+				index: emailMatch.index,
+				length: emailMatch[0].length,
+			};
 		}
 
-		parts.push({ type: 'email', value: match[0] });
-		lastIndex = match.index + match[0].length;
+		const keywordMatch = keywordLinks
+			.map((item) => ({
+				type: 'link',
+				value: item.text,
+				href: item.href,
+				attrs: item.attrs,
+				index: text.indexOf(item.text, start),
+				length: item.text.length,
+			}))
+			.filter((item) => item.index !== -1)
+			.sort((a, b) => a.index - b.index)[0];
+
+		if (keywordMatch && keywordMatch.index < nextMatch.index) {
+			return keywordMatch;
+		}
+
+		return nextMatch.index !== Infinity ? nextMatch : null;
+	};
+
+	while (cursor < text.length) {
+		const match = getNextMatch(cursor);
+
+		if (!match) {
+			segments.push({ type: 'text', value: text.slice(cursor) });
+			break;
+		}
+
+		if (match.index > cursor) {
+			segments.push({ type: 'text', value: text.slice(cursor, match.index) });
+		}
+
+		segments.push(match);
+		cursor = match.index + match.length;
 	}
 
-	if (lastIndex < text.length) {
-		parts.push({ type: 'text', value: text.slice(lastIndex) });
-	}
-
-	return parts;
+	emailPattern.lastIndex = 0;
+	return segments;
 };
 
 const { hero, schedule, overview, location, join, contact } = home;
@@ -59,12 +104,19 @@ const { hero, schedule, overview, location, join, contact } = home;
 			<h2>{location.heading}</h2>
 			<img class="location-map" src={location.mapImage.src} alt={location.mapImage.alt} />
 			<address>
-				{location.address.map((line, index) => (
-					<>
-						{line}
-						{index < location.address.length - 1 && <br />}
-					</>
-				))}
+				<a
+					class="location-link"
+					href="https://maps.app.goo.gl/yY5xKLyQZChtnrhP6"
+					target="_blank"
+					rel="noreferrer noopener"
+				>
+					{location.address.map((line, index) => (
+						<>
+							{line}
+							{index < location.address.length - 1 && <br />}
+						</>
+					))}
+				</a>
 			</address>
 			{location.paragraphs.map((text) => (
 				<p>{text}</p>
@@ -75,13 +127,21 @@ const { hero, schedule, overview, location, join, contact } = home;
 			<h2>{join.heading}</h2>
 			{join.paragraphs.map((text) => (
 				<p>
-					{linkifyEmails(text).map((segment) =>
-						segment.type === 'email' ? (
-							<a href={`mailto:${segment.value}`}>{segment.value}</a>
-						) : (
-							segment.value
-						)
-					)}
+					{linkifyText(text).map((segment) => {
+						if (segment.type === 'email') {
+							return <a href={`mailto:${segment.value}`}>{segment.value}</a>;
+						}
+
+						if (segment.type === 'link') {
+							return (
+								<a href={segment.href} rel={segment.attrs?.rel} target={segment.attrs?.target}>
+									{segment.value}
+								</a>
+							);
+						}
+
+						return segment.value;
+					})}
 				</p>
 			))}
 		</section>
@@ -207,6 +267,16 @@ const { hero, schedule, overview, location, join, contact } = home;
 		font-style: normal;
 		color: #1f2937;
 		line-height: 1.6;
+	}
+
+	.location-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.location-link:hover,
+	.location-link:focus {
+		text-decoration: underline;
 	}
 
 	.contact-card .contact-email {
