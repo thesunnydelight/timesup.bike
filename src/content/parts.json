@@ -1,0 +1,19 @@
+{
+  "title": "Parts",
+  "intro": "Swing by the shop for everyday consumables and essentials. If you do not see what you need on the list, ask a head mechanic; there is always room for special requests.",
+  "items": [
+    { "name": "Brake Pads", "price": "$10 per pair" },
+    { "name": "Inner Tubes", "price": "$10" },
+    { "name": "Patch Kit", "price": "$5" },
+    { "name": "Rim Tape", "price": "$10" },
+    { "name": "Housing", "price": "$2/ft" },
+    { "name": "Wire Bead Tire", "price": "$25" },
+    { "name": "Folding Bead Tire", "price": "$35" },
+    { "name": "Bar Tape/Grips", "price": "$15" },
+    { "name": "Singlespeed Chain", "price": "$20" },
+    { "name": "6,7,8-Speed Chain", "price": "$25" },
+    { "name": "9-Speed Chain", "price": "$30" },
+    { "name": "10-Speed Chain", "price": "$40" },
+    { "name": "Advice", "price": "FREE! Come on in and ask a head mechanic!" }
+  ]
+}

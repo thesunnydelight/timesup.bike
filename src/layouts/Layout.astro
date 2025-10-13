@@ -28,7 +28,7 @@ const { pathname } = Astro.url;
 							height="60"
 						/>
 					</a>
-					<a class="brand" href="/">Times Up Bike Coop</a>
+					<a class="brand" href="/">Time's Up Bike Co-Op</a>
 				</div>
 				<nav aria-label="Primary">
 					<a href="/" aria-current={pathname === '/' ? 'page' : undefined}>Home</a>
@@ -72,17 +72,26 @@ const { pathname } = Astro.url;
 		box-sizing: inherit;
 	}
 
+	:root {
+		--site-gradient: linear-gradient(
+			135deg,
+			rgba(134, 239, 172, 0.4) 0%,
+			rgba(254, 240, 138, 0.55) 55%,
+			rgba(250, 204, 21, 0.6) 100%
+		);
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
-		background: #f9fafb;
+		background: var(--site-gradient);
 		color: #111827;
 	}
 
 	body {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-family: Helvetica, arial, sans-serif;
 	}
 
 	.site-header {

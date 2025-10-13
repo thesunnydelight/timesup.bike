@@ -1,3 +1,20 @@
+---
+import eventsData from '../content/events.json';
+
+const sourceEvents = Array.isArray(eventsData?.events) ? eventsData.events : [];
+const formattedEvents = sourceEvents.map((event) => {
+	const descriptionLines = event.description.trim().split('\n').map((line) => line.trim());
+	const lastLine = descriptionLines[descriptionLines.length - 1] ?? '';
+	const hasTerminalPunctuation = /[.!?]$/.test(lastLine);
+
+	return {
+		...event,
+		descriptionLines,
+		hasTerminalPunctuation,
+	};
+});
+---
+
 <section id="events" class="page-section">
 	<div class="wrapper">
 		<h2>Upcoming Events</h2>
@@ -6,183 +23,32 @@
 			bring friends and share widely! Join our community across the city and help spread the word.
 		</p>
 		<div class="event-grid">
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Sound Meditation</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 12</span>
-						<span class="event-time">4:00-7:00 pm</span>
+			{formattedEvents.map((event) => (
+				<article class="event-card">
+					<header class="event-header">
+						<h3>{event.title}</h3>
+						<p class="event-date">
+							<span class="event-day">{event.day}</span>
+							<span class="event-time">{event.time}</span>
+						</p>
+					</header>
+					<p class="event-meta">{event.location}</p>
+					<p class="event-description">
+						{event.descriptionLines.map((line, index) => (
+							<>
+								{line}
+								{index < event.descriptionLines.length - 1 && <br />}
+							</>
+						))}
+						{event.link && (
+							<>
+								{event.hasTerminalPunctuation ? '' : '.'}{' '}
+								<a href={event.link.url} target="_blank" rel="noreferrer">{event.link.label}</a>.
+							</>
+						)}
 					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					Facilitated by the Turtle Island Sound Meditation Collective. Experience an immersive
-					sound journey, small-group integration, and a community celebration featuring gongs,
-					crystal and Tibetan bowls, bamboo flutes, and drum circles.
-					<a href="https://linktr.ee/turtleislandsoundmeditation" target="_blank" rel="noreferrer">Learn more</a>.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Bike Repair Class</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 18</span>
-						<span class="event-time">1:00 pm</span>
-					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					Learn how to fix your bike and take care of basic maintenance and tune-ups. This is a
-					class, so no need to bring your bike - just come ready to learn.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>HONK! NYC</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 18</span>
-						<span class="event-time">1:00-6:00 pm</span>
-					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					Celebrate music and dance from around the globe featuring Rude Mechanical Orchestra, Trio
-					DomTake, Maracatú Baque, Vado Diomande + Kotchegna Dance Company, and Kenny Wollesen &
-					The Rose Thorne Memorial Marching Band, plus a craftivation station for instruments and
-					costumes.
-					<a href="https://www.honknyc.com/" target="_blank" rel="noreferrer">Event info</a>.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Free One-Hour Yoga Classes</h3>
-					<p class="event-date">
-						<span class="event-day">Thursdays & Sundays</span>
-						<span class="event-time">11:00 am</span>
-					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					A welcoming, multi-level outdoor class to move, breathe, and start your morning with
-					mindfulness. Bring your own mat and enjoy heart-opening practice under the trees.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Fix Your Own Bike Workshop</h3>
-					<p class="event-date">
-						<span class="event-day">Sundays & Wednesdays</span>
-						<span class="event-time">5:00-8:00 pm</span>
-					</p>
-				</header>
-					<p class="event-meta">Time's Up! - 626 E 14th St between Ave B & C, Manhattan</p>
-				<p class="event-description">
-					Open shop time: use our tools and stands to work on your bike with experienced volunteer
-					mechanics on hand to coach and answer questions.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Wednesday Night Skate NYC</h3>
-					<p class="event-date">
-						<span class="event-day">Wednesdays Apr-Oct</span>
-						<span class="event-time">8:00 pm</span>
-					</p>
-				</header>
-				<p class="event-meta">Meet at the south side of Union Square</p>
-				<p class="event-description">
-					Weekly social skate through NYC streets, rolling strong since 1996. All levels welcome; the
-					group keeps a supportive pace with bright lights and good energy.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Thursday Night Bike Ride</h3>
-					<p class="event-date">
-						<span class="event-day">Every Thursday</span>
-						<span class="event-time">7:00 pm</span>
-					</p>
-				</header>
-				<p class="event-meta">Meet at the Columbus Circle entrance to Central Park</p>
-				<p class="event-description">
-					Hosted by Social Cycling NYC, this weekly ride welcomes new riders and seasoned commuters
-					for a friendly spin through the city.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Bee Workshops</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 25</span>
-						<span class="event-time">1:00 pm</span>
-					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					Join Rutgers University entomology researchers to learn how to identify native bees and
-					support pollinators throughout the city.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Halloween Critical Mass - Manhattan</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 31</span>
-						<span class="event-time">7:00 pm</span>
-					</p>
-				</header>
-				<p class="event-meta">Union Square Park (North Plaza)</p>
-				<p class="event-description">
-					Celebrate renewable energy and people-powered transportation with a costumed Critical Mass
-					ride. Bring your best Halloween look and ride for a greener future.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Halloween Adventure Garden & Rat Race Maze</h3>
-					<p class="event-date">
-						<span class="event-day">Oct 31</span>
-						<span class="event-time">3:00-7:00 pm</span>
-					</p>
-				</header>
-					<p class="event-meta">La Plaza Community Garden - 9th St & Ave C, LES</p>
-				<p class="event-description">
-					A family-friendly Halloween celebration with fortune telling, face painting, thrilling
-					coffin rides, and a rat-themed maze. The Rude Mechanical Orchestra performs at 6:00 pm.
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Future Positive New Year's Eve Ride</h3>
-					<p class="event-date">
-						<span class="event-day">Dec 31</span>
-						<span class="event-time">9:45 pm onward</span>
-					</p>
-				</header>
-					<p class="event-meta">Time's Up! Annual Ride - Multiple meetups & Belvedere Castle finale</p>
-				<p class="event-description">
-					Bike or skate into the new year with Time's Up! Meet at 9:45 pm (Williamsburg Bridge,
-					Brooklyn side), 10:00 pm (Washington Square Park Arch), or 10:20 pm (Madison Square Park).
-					Ride to Belvedere Castle for a joyous outdoor after-party with fireworks and dancing.
-					Volunteers needed for ride leaders, so bring festive noisemakers!
-				</p>
-			</article>
-			<article class="event-card">
-				<header class="event-header">
-					<h3>Community Garden Volunteer Days</h3>
-					<p class="event-date">
-						<span class="event-day">Monthly</span>
-						<span class="event-time">See schedule</span>
-					</p>
-				</header>
-				<p class="event-meta">Help cultivate local community gardens across the East Village</p>
-				<p class="event-description">
-					Support neighborhood greenspaces:
-					<br />- Green Oasis Community Garden (8th St between Ave C & D) - 1st Sundays, next on Oct 5 at 12:00 pm.
-					<br />- La Plaza Community Garden (SW corner 9th St & Ave C) - 2nd Saturdays, next on Oct 11 at 12:00 pm.
-					<br />- Green Oasis Community Garden (117 Ave C between 7th & 8th St) - 3rd Saturdays, next on Oct 18 at 3:00 pm.
-				</p>
-			</article>
+				</article>
+			))}
 		</div>
 	</div>
 </section>
@@ -190,7 +56,7 @@
 <style>
 	#events {
 		padding: 96px 16px;
-		background: #f3f4f6;
+		background: var(--site-gradient);
 		display: flex;
 		justify-content: center;
 	}
@@ -198,37 +64,41 @@
 	.wrapper {
 		max-width: 960px;
 		width: 100%;
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-family: Helvetica, arial, sans-serif;
 	}
 
 	h2 {
 		margin: 0 0 16px;
-		font-size: 34px;
+		font-size: 36px;
 		color: #111827;
+		text-align: center;
 	}
 
 	.lead {
-		margin: 0 0 32px;
+		margin: 0 auto 32px;
+		max-width: 760px;
+		text-align: center;
 		color: #4b5563;
 		font-size: 18px;
-		line-height: 1.65;
+		line-height: 1.6;
 	}
 
 	.event-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(840px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
 		gap: 24px;
 	}
 
 	.event-card {
-		background: #ffffff;
-		border-radius: 18px;
-		border: 1px solid rgba(17, 24, 39, 0.08);
-		box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+		background: white;
+		border-radius: 16px;
 		padding: 24px;
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+		border: 1px solid rgba(15, 23, 42, 0.08);
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+		color: #1f2937;
 	}
 
 	.event-header {
@@ -238,29 +108,20 @@
 		gap: 16px;
 	}
 
-	.event-date {
-		margin: 0;
-		text-align: right;
-		color: #2563eb;
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 1.4;
-	}
-
-	.event-day {
-		display: block;
-		font-size: 18px;
-	}
-
-	.event-time {
-		font-size: 14px;
-		color: #1f2937;
-	}
-
-	h3 {
+	.event-header h3 {
 		margin: 0;
 		font-size: 22px;
-		color: #111827;
+		color: #0f172a;
+	}
+
+	.event-date {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		font-size: 15px;
+		color: #2563eb;
+		font-weight: 600;
 	}
 
 	.event-meta {
@@ -272,17 +133,36 @@
 	.event-description {
 		margin: 0;
 		font-size: 16px;
-		color: #1f2937;
 		line-height: 1.6;
+		color: #374151;
 	}
 
-	@media screen and (max-width: 640px) {
+	.event-description a {
+		color: #2563eb;
+		text-decoration: none;
+	}
+
+	.event-description a:hover,
+	.event-description a:focus {
+		text-decoration: underline;
+	}
+
+	@media screen and (max-width: 768px) {
 		#events {
-			padding: 72px 16px;
+			padding: 64px 16px;
 		}
 
 		.event-card {
 			padding: 20px;
+		}
+
+		.event-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.event-date {
+			align-items: flex-start;
 		}
 	}
 </style>

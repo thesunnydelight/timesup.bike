@@ -1,10 +1,13 @@
+---
+import parts from '../content/parts.json';
+
+const { title, intro, items } = parts;
+---
+
 <section id="parts" class="page-section">
 	<div class="wrapper">
-		<h2>Parts</h2>
-		<p>
-			Swing by the shop for everyday consumables and essentials. If you do not see what you need
-			on the list, ask a head mechanic; there is always room for special requests.
-		</p>
+		<h2>{title}</h2>
+		<p>{intro}</p>
 		<div class="parts-table-wrapper">
 			<table>
 				<thead>
@@ -14,58 +17,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Brake Pads</td>
-						<td>$10 per pair</td>
-					</tr>
-					<tr>
-						<td>Inner Tubes</td>
-						<td>$10</td>
-					</tr>
-					<tr>
-						<td>Patch Kit</td>
-						<td>$5</td>
-					</tr>
-					<tr>
-						<td>Rim Tape</td>
-						<td>$10</td>
-					</tr>
-					<tr>
-						<td>Housing</td>
-						<td>$2/ft</td>
-					</tr>
-					<tr>
-						<td>Wire Bead Tire</td>
-						<td>$25</td>
-					</tr>
-					<tr>
-						<td>Folding Bead Tire</td>
-						<td>$35</td>
-					</tr>
-					<tr>
-						<td>Bar Tape/Grips</td>
-						<td>$15</td>
-					</tr>
-					<tr>
-						<td>Singlespeed Chain</td>
-						<td>$20</td>
-					</tr>
-					<tr>
-						<td>6,7,8-Speed Chain</td>
-						<td>$25</td>
-					</tr>
-					<tr>
-						<td>9-Speed Chain</td>
-						<td>$30</td>
-					</tr>
-					<tr>
-						<td>10-Speed Chain</td>
-						<td>$40</td>
-					</tr>
-					<tr>
-						<td>Advice</td>
-						<td>FREE! Come on in and ask a head mechanic!</td>
-					</tr>
+					{items.map((item) => (
+						<tr>
+							<td>{item.name}</td>
+							<td>{item.price}</td>
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</div>
@@ -75,14 +32,14 @@
 <style>
 	#parts {
 		padding: 96px 16px;
-		background: white;
+		background: var(--site-gradient);
 		display: flex;
 		justify-content: center;
 	}
 
 	.wrapper {
 		max-width: 720px;
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-family: Helvetica, arial, sans-serif;
 	}
 
 	h2 {

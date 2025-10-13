@@ -1,57 +1,46 @@
 ---
-const schedule = [
-	{
-		label: 'Open Shop Hours',
-		detail: 'Wednesdays 5:00-8:00 pm. This is an open shop in which you may use our tools and bike stands to work on your bike. \
-		Experienced volunteer mechanics will be present to answer any questions you may have, but they will not do the work for you. \
-		If you have a big project, please be considerate of the time and plan ahead.',
-	},
-	{
-		label: 'Open Shop Hours',
-		detail: 'Sundays 5:00-8:00 pm. This is an open shop in which you may use our tools and bike stands to work on your bike. \
-		Experienced volunteer mechanics will be present to answer any questions you may have, but they will not do the work for you. \
-		If you have a big project, please be considerate of the time and plan ahead.',
-	},
-	{
-		label: 'Park Classes',
-		detail: 'Every other Sunday from March to November. \
-				Classes are free and open to all levels of experience and expertise. Most classes provide a general overview of bicycle diagnostics and repair, though advanced topics may be \
-				scheduled if requested. We cannot guarantee that attendees will have time to fix their own bikes during class \
-				(open workshops are the time for this), but attendees are encouraged to bring their own bikes to class if possible \
-				to support applied learning',
-	},
-];
+import home from '../content/home.json';
+
+const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g;
+const linkifyEmails = (text) => {
+	const parts = [];
+	let lastIndex = 0;
+	let match;
+
+	while ((match = emailPattern.exec(text)) !== null) {
+		if (match.index > lastIndex) {
+			parts.push({ type: 'text', value: text.slice(lastIndex, match.index) });
+		}
+
+		parts.push({ type: 'email', value: match[0] });
+		lastIndex = match.index + match[0].length;
+	}
+
+	if (lastIndex < text.length) {
+		parts.push({ type: 'text', value: text.slice(lastIndex) });
+	}
+
+	return parts;
+};
+
+const { hero, schedule, overview, location, join, contact } = home;
 ---
 
 <section id="home" class="home">
 	<div class="home-hero">
-		<h1>Community-powered Bike Repair in New York City</h1>
-		<p>
-		The Time's Up Bike Co-Op exists to faciliate safe and sustainable transportation and life long appreciation of the simple beauty of the bicycle by 
-		providing space, tools, and low-cost repair parts to empower cyclist of all backgrounds and experience levels as they learn all about their bikes.
-		</p>
-		<br>
-		<p>
-		The success of the this simple mission depends on volunteers who commit their time, talent and resources amid the other demands of modern life.
-		Our comumunity is grateful for whatever you can contribute.
-		</p>
+		<h1>{hero.title}</h1>
+		{hero.paragraphs.map((text) => (
+			<p>{text}</p>
+		))}
 	</div>
 
 	<div class="info-grid">
 		<section id="overview" class="info-card">
-			<h2>Overview</h2>
-
-			<p>
-				We provide tools, parts, and peer-to-peer education so everyone can maintain their ride. Our
-				shop operates on donations and mutual aid, which keeps the doors open and the wrenches turning
-				for the entire community.
-			</p>
-			<img
-				class="overview-hero"
-				src="/repair-class.png"
-				alt="Volunteers leading a bicycle repair class"
-			/>
-
+			<h2>{overview.heading}</h2>
+			{overview.paragraphs.map((text) => (
+				<p>{text}</p>
+			))}
+			<img class="overview-hero" src={overview.image.src} alt={overview.image.alt} />
 		</section>
 
 		<section id="schedule" class="info-card">
@@ -67,52 +56,41 @@ const schedule = [
 		</section>
 
 		<section id="location" class="info-card">
-			<h2>Location</h2>
-			<img
-				class="location-map"
-				src="/timesup-location.png"
-				alt="Map showing the Time's Up Bike Co-op location"
-			/>
+			<h2>{location.heading}</h2>
+			<img class="location-map" src={location.mapImage.src} alt={location.mapImage.alt} />
 			<address>
-				626 E 14th St<br />
-				New York, NY 10009
+				{location.address.map((line, index) => (
+					<>
+						{line}
+						{index < location.address.length - 1 && <br />}
+					</>
+				))}
 			</address>
-			<p>
-				Find us in the East Village between Avenue B and C. Bike parking is available out front.
-			</p>
+			{location.paragraphs.map((text) => (
+				<p>{text}</p>
+			))}
 		</section>
 
 		<section id="join" class="info-card">
-			<h2>How to Join</h2>
-			<p>
-			Time’s Up! is an all-volunteer environmental education and direct action non-profit group. Our Bike Co-op’s goal is to give everyone 
-			enough knowledge to maintain their bikes, and hopefully, teach others to do the same.
-			</p>
-			<br>
-			<p>
-				There are many ways that you can volunteer and help Time’s Up!’s Bike Co-op. First and foremost, Time’s Up! 
-				relies on a strong membership base, so if you have not joined already, please do so at our Membership Page. If you are 
-				interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail <a href="mailto:contact@timesup.bike">contact@timesup.bike</a> 
-				or drop by the Manhattan space (626 E 14th St.) on Wednesday or Sunday afternoons. We’ll pair you with a current mechanic 
-				so you can learn the ropes of the space and gain hands-on maintenance skills. If you cannot schedule a specific time 
-				for a committed volunteership, you can volunteer on an impromptu basis.
-			</p>
-			<br>
-			<p>
-				If you are interested in helping out at one of Time’s Up!’s group rides or other outdoor activities, e-mail 
-				<a href="mailto:timesup.events@gmail.com">timesup.events@gmail.com</a>. Otherwise, the best thing you can do to help out 
-				is show up to the workshops and events regularly. There’s always ample opportunity to contribute and make a difference!			
-			</p>
+			<h2>{join.heading}</h2>
+			{join.paragraphs.map((text) => (
+				<p>
+					{linkifyEmails(text).map((segment) =>
+						segment.type === 'email' ? (
+							<a href={`mailto:${segment.value}`}>{segment.value}</a>
+						) : (
+							segment.value
+						)
+					)}
+				</p>
+			))}
 		</section>
 
 		<section id="contact" class="info-card contact-card">
-			<h2>Email Us</h2>
-			<p>
-				Questions, collaboration ideas, or press inquiries? Drop us a line and we will get back to you
-				within a couple of days.
-			</p>
+			<h2>{contact.heading}</h2>
+			<p>{contact.intro}</p>
 			<p class="contact-email">
-				<a href="mailto:contact@timesup.bike">contact@timesup.bike</a>
+				<a href={`mailto:${contact.email}`}>{contact.email}</a>
 			</p>
 		</section>
 	</div>
@@ -121,7 +99,7 @@ const schedule = [
 <style>
 	.home {
 		padding: 96px 16px 120px;
-		background: linear-gradient(140deg, #f8fafc 0%, #e0f2fe 50%, #fef3c7 100%);
+		background: var(--site-gradient);
 	}
 
 	.home-hero {
@@ -143,6 +121,10 @@ const schedule = [
 		font-size: 18px;
 		line-height: 1.7;
 		color: #1f2937;
+	}
+
+	.home-hero p + p {
+		margin-top: 16px;
 	}
 
 	.info-grid {
@@ -176,6 +158,10 @@ const schedule = [
 		line-height: 1.65;
 	}
 
+	.info-card p + p {
+		margin-top: 12px;
+	}
+
 	.overview-hero {
 		width: 100%;
 		margin: 8px 0 16px;
@@ -198,72 +184,53 @@ const schedule = [
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: 12px;
 	}
 
 	.schedule-item {
-		background: rgba(224, 242, 254, 0.5);
-		border-radius: 12px;
-		padding: 14px 16px;
-		border: 1px solid rgba(37, 99, 235, 0.12);
+		display: grid;
+		gap: 4px;
 	}
 
 	.schedule-item dt {
-		margin: 0 0 4px;
 		font-weight: 600;
-		color: #1d4ed8;
+		color: #111827;
 	}
 
 	.schedule-item dd {
 		margin: 0;
-		color: #1f2937;
-		line-height: 1.55;
+		color: #4b5563;
+		line-height: 1.65;
 	}
 
 	address {
 		font-style: normal;
-		font-weight: 600;
-		color: #0f172a;
+		color: #1f2937;
 		line-height: 1.6;
 	}
 
-	ol {
-		margin: 0;
-		padding-left: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-
-	.contact-card {
-		background: linear-gradient(160deg, rgba(37, 99, 235, 0.12), rgba(236, 72, 153, 0.1));
-	}
-
-	.contact-email {
-		margin: 0;
-		font-size: 18px;
+	.contact-card .contact-email {
 		font-weight: 600;
+		font-size: 18px;
 	}
 
-	.contact-email a {
-		color: #1d4ed8;
+	.contact-card a {
+		color: #2563eb;
 		text-decoration: none;
-		transition: color 0.2s ease;
 	}
 
-	.contact-email a:hover,
-	.contact-email a:focus {
-		color: #1e3a8a;
+	.contact-card a:hover,
+	.contact-card a:focus {
 		text-decoration: underline;
 	}
 
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 768px) {
 		.home {
-			padding: 72px 16px 96px;
+			padding: 64px 16px 96px;
 		}
 
 		.home-hero h1 {
-			font-size: 34px;
+			font-size: 36px;
 		}
 
 		.info-card {

@@ -1,0 +1,182 @@
+backend:
+  name: git-gateway # Update if you are not using Netlify Identity / Git Gateway.
+  branch: main
+
+local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: home
+    label: Home
+    format: json
+    editor:
+      preview: false
+    files:
+      - label: Home Page Content
+        name: home_page
+        file: src/content/home.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+          - label: Schedule
+            name: schedule
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Detail, name: detail, widget: text }
+          - label: Overview Card
+            name: overview
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+              - label: Image
+                name: image
+                widget: object
+                fields:
+                  - label: Source Image
+                    name: src
+                    widget: image
+                    media_library:
+                      allow_multiple: false
+                  - { label: Alt Text, name: alt, widget: string }
+          - label: Location Card
+            name: location
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Map Image
+                name: mapImage
+                widget: object
+                fields:
+                  - label: Source Image
+                    name: src
+                    widget: image
+                    media_library:
+                      allow_multiple: false
+                  - { label: Alt Text, name: alt, widget: string }
+              - label: Address Lines
+                name: address
+                widget: list
+                field:
+                  { label: Line, name: line, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+          - label: Join Card
+            name: join
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+                  hint: Email addresses are automatically linked on the site.
+          - label: Contact Card
+            name: contact
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Email, name: email, widget: string }
+
+  - name: events
+    label: Events
+    format: json
+    editor:
+      preview: false
+    files:
+      - label: Events Listing
+        name: events_listing
+        file: src/content/events.json
+        fields:
+          - label: Events
+            name: events
+            widget: list
+            summary: '{{fields.title}} ({{fields.day}})'
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Day, name: day, widget: string }
+              - { label: Time, name: time, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Optional Link
+                name: link
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Link Label, name: label, widget: string }
+                  - { label: URL, name: url, widget: string }
+
+  - name: parts
+    label: Parts
+    format: json
+    editor:
+      preview: false
+    files:
+      - label: Parts Catalog
+        name: parts_catalog
+        file: src/content/parts.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: text }
+          - label: Items
+            name: items
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Part Name, name: name, widget: string }
+              - { label: Price, name: price, widget: string }
+
+  - name: about
+    label: About
+    format: json
+    editor:
+      preview: false
+    files:
+      - label: About Page
+        name: about_page
+        file: src/content/about.json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Paragraphs
+            name: paragraphs
+            widget: list
+            field:
+              label: Paragraph
+              name: paragraph
+              widget: text
+          - label: Instagram URL
+            name: instagramUrl
+            widget: string
+            pattern:
+              - https?://.*
+              - Must be a valid URL.

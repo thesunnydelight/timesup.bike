@@ -1,30 +1,84 @@
+---
+import about from '../content/about.json';
+
+const { title, paragraphs, instagramUrl } = about;
+const supportUrl = 'https://times-up.org/support/';
+
+const renderParagraph = (text) => {
+	const replacements = [
+		{
+			keyword: 'Instagram',
+			href: instagramUrl,
+			attrs: { rel: 'noreferrer noopener', target: '_blank' },
+		},
+		{
+			keyword: 'Support Page',
+			href: supportUrl,
+			attrs: { rel: 'noreferrer noopener', target: '_blank' },
+		},
+	].filter((item) => item.href && text.includes(item.keyword));
+
+	if (replacements.length === 0) {
+		return text;
+	}
+
+	const segments = [];
+	let cursor = 0;
+
+	while (cursor < text.length) {
+		const nextMatch = replacements
+			.map((item) => ({
+				...item,
+				index: text.indexOf(item.keyword, cursor),
+			}))
+			.filter((item) => item.index !== -1)
+			.sort((a, b) => a.index - b.index)[0];
+
+		if (!nextMatch) {
+			segments.push(text.slice(cursor));
+			break;
+		}
+
+		if (nextMatch.index > cursor) {
+			segments.push(text.slice(cursor, nextMatch.index));
+		}
+
+		segments.push({
+			type: 'link',
+			value: nextMatch.keyword,
+			href: nextMatch.href,
+			attrs: nextMatch.attrs,
+		});
+
+		cursor = nextMatch.index + nextMatch.keyword.length;
+	}
+
+	return segments;
+};
+---
+
 <section id="about" class="page-section">
 	<div class="content box">
-		<h2>About the Times Up Bike Coop</h2>
-		<p>
-			Every Wednesday and Sunday throughout the year, the Time’s Up Bike Co-Op holds open workshops from 5 to 8pm at our shop space at 626 E. 14th Street.
-			During these hours, you can bring your bike and work on it yourself with free tools, repair stands, and the aid of Time’s Up! mechanics. 
-			Low-cost repair parts are available.		
-		</p>
-		<br>
-		<p>
-			Additionally, on every first and third Saturday from April to November, we host outdoor bike repair classes at La Plaza Cultural 
-			Community Garden on the Lower East Side where you can learn about the basics of bicycle maintenance. These workshops typically 
-			take place at 1pm.
-		</p>
-		<br>
-		<p>
-		In case of inclement weather, you may want to check our 
-			<a href="https://www.instagram.com/times_up_nyc/" rel="noreferrer noopener" target="_blank">Instagram</a> 
-		page for special announcements about open shop hours or workshops. You can also use 
-		Instagram to contact Times Up co-op volunteers regarding workshop schedules, bike repairs, donations, or becoming a volunteer mechanic. 
-		</p>
-		<br>
-		<p>
-		All workshops and classes are free. Shop users are encouraged to make an optional donation of $2–5 per visit, or to become a contributing member of the bike 
-		co-op with a $20 annual donation in order to support our operations.
-		</p>
+		<h2>{title}</h2>
+		{paragraphs.map((text) => {
+			const content = renderParagraph(text);
 
+				return Array.isArray(content) ? (
+					<p>
+						{content.map((segment) =>
+							segment?.type === 'link' ? (
+								<a href={segment.href} rel={segment.attrs?.rel} target={segment.attrs?.target}>
+									{segment.value}
+								</a>
+							) : (
+								segment
+							)
+						)}
+					</p>
+				) : (
+					<p>{content}</p>
+				);
+		})}
 	</div>
 </section>
 
@@ -33,13 +87,13 @@
 		display: flex;
 		justify-content: center;
 		padding: 96px 16px;
-		background: rgba(17, 24, 39, 0.04);
+		background: var(--site-gradient);
 	}
 
 	.content {
 		max-width: 720px;
 		text-align: center;
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		font-family: Helvetica, arial, sans-serif;
 	}
 
 	.box {
@@ -47,10 +101,13 @@
 		background: white;
 		border-radius: 16px;
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 	}
 
 	h2 {
-		margin: 0 0 16px;
+		margin: 0;
 		font-size: 32px;
 		color: #111827;
 	}
