@@ -1,46 +1,30 @@
-# Astro Starter Kit: Basics
+# Times Up Bike
 
-```sh
-npm create astro@latest -- --template basics
-```
+Pedal-powered mutual aid > car-centric capitalism. This repo holds the Astro site that spreads the word.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Run the project
 
-## 🚀 Project Structure
+1. Node.js 18+ and npm ready? You're halfway there.
+2. Install dependencies: `npm install`
+3. Fire up the dev server with `npm run dev` and hit `http://localhost:4321`
 
-Inside of your Astro project, you'll see the following folders and files:
+Additional scripts for the collective:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm run build`   | Compile the production build into `dist/`  |
+| `npm run preview` | Preview the production build locally       |
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Contributing
 
-## 🧞 Commands
+No gatekeepers here—open a PR and let's ship.
 
-All commands are run from the root of the project, from a terminal:
+1. Fork, branch, and hack on the change you want to see.
+2. Run the project locally so the revolution actually loads.
+3. Open a PR against `main`, explain the strategy, and note any follow-ups.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Screens, repro steps, and focused diffs help everyone move faster.
 
-## 👀 Want to learn more?
+## Contact
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Questions, ideas, or righteous anger? Drop a line: [contact@timesup.bike](mailto:contact@timesup.bike).
