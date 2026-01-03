@@ -72,158 +72,231 @@ const { hero, gallery, schedule, overview, location, join, contact } = home;
 ---
 
 <section id="home" class="home">
-	<div class="home-hero">
-		<h1>{hero.title}</h1>
-		{hero.paragraphs.map((text) => (
-			<p>{text}</p>
-		))}
+	<div class="hero-side">
+		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
+		<h1>Time's Up! Bike Coop</h1>
+		<p class="tagline">A volunteer-driven community space in NYC's East Village dedicated to accessible bicycle repair.  Come fix your bike or just chit chat about it.</p>
+
+		<div class="hero-info">
+			<p><strong>How It Works?</strong><br />Bring your bike, sign in and a volunteer mechanic will provide the tools and guidance for your project.  Suggested $2 donation for use of shop supplies</p>
+			<div class="helpful-tips">
+				<strong>Helpful Tips</strong>
+				<ul>
+					<li>Come early</li>
+					<li>We are not equipped to service e-bikes</li>
+					<li>In inclement weather or for holiday hours, check our Instagram page</li>
+				</ul>
+			</div>
+			<p><strong>Open Shop Hours</strong><br />Wed & Sun, 5pm – 8pm</p>
+			<p><strong>East Village Location</strong><br /><a href="https://maps.app.goo.gl/ejnQJXa6CUUtb12R9" rel="noreferrer noopener" target="_blank">626 E 14th St, NYC</a></p>
+			<p><strong>Contact Us</strong><br /><a href="mailto:contact@timesup.bike">contact@timesup.bike</a></p>
+		</div>
+
+		<footer class="hero-footer">
+			<a href="https://www.instagram.com/times_up_nyc/" rel="noreferrer noopener" target="_blank" title="Instagram">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+			</a>
+			<a href="https://account.venmo.com/u/timesup" rel="noreferrer noopener" target="_blank" title="Venmo">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 3c.9 1.5 1.3 3 1.3 4.9 0 6.1-5.2 14-9.4 19.6H4.4L1.2 4.1l6.5-.6 1.8 14.5c1.7-2.8 3.8-7.1 3.8-10.1 0-1.8-.3-3-0.8-4L19.5 3z"/></svg>
+			</a>
+			<a href="https://cash.app/$TIMESUPNYC" rel="noreferrer noopener" target="_blank" title="Cash App">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09v1.27h-2.82v-1.21c-1.63-.24-3.04-1.05-3.5-2.29l1.79-.72c.36.89 1.28 1.5 2.5 1.5 1.17 0 1.87-.53 1.87-1.34 0-.79-.56-1.17-1.91-1.57l-.67-.21c-1.89-.57-3.06-1.44-3.06-3.15 0-1.62 1.22-2.78 3.02-3.06V6.64h2.82v1.15c1.27.23 2.3.89 2.77 1.89l-1.7.85c-.31-.6-.98-1.08-1.86-1.08-.97 0-1.56.47-1.56 1.15 0 .66.52 1.02 1.65 1.36l.67.21c2.1.63 3.32 1.54 3.32 3.38 0 1.76-1.34 2.95-3.33 3.17z"/></svg>
+			</a>
+			<a href="https://times-up.org/" rel="noreferrer noopener" target="_blank" title="Times-up.org">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+			</a>
+		</footer>
 	</div>
 
-	<section class="gallery-section">
-		<h2>{gallery.heading}</h2>
-		<div class="gallery-grid">
-			{gallery.images.map((image) => (
-				<div class="gallery-item">
-					<img src={image.src} alt={image.alt} loading="lazy" />
-				</div>
-			))}
-		</div>
-	</section>
-
-	<div class="info-grid">
-		<section id="overview" class="info-card">
-			<h2>{overview.heading}</h2>
-			{overview.paragraphs.map((text) => (
-				<p>{text}</p>
-			))}
-			<img class="overview-hero" src={overview.image.src} alt={overview.image.alt} />
-		</section>
-
-		<section id="schedule" class="info-card">
-			<h2>Schedule Overview</h2>
-			<dl class="schedule-list">
-				{schedule.map((item) => (
-					<div class="schedule-item">
-						<dt>{item.label}</dt>
-						<dd>{item.detail}</dd>
-					</div>
-				))}
-			</dl>
-		</section>
-
-		<section id="location" class="info-card">
-			<h2>{location.heading}</h2>
-			<img class="location-map" src={location.mapImage.src} alt={location.mapImage.alt} />
-			<address>
-				<a
-					class="location-link"
-					href="https://maps.app.goo.gl/yY5xKLyQZChtnrhP6"
-					target="_blank"
-					rel="noreferrer noopener"
-				>
-					{location.address.map((line, index) => (
-						<>
-							{line}
-							{index < location.address.length - 1 && <br />}
-						</>
+	<div class="gallery-side">
+		{(() => {
+			const allImages = [...gallery.images];
+			const cols = [[], [], []];
+			allImages.forEach((img, i) => cols[i % 3].push(img));
+			return cols.map((col) => (
+				<div class="gallery-col">
+					{col.map((image) => (
+						<div class="gallery-item">
+							<img src={image.src} alt={image.alt} loading="lazy" />
+							<div class="gallery-overlay">
+								<p>{image.alt}</p>
+							</div>
+						</div>
 					))}
-				</a>
-			</address>
-			{location.paragraphs.map((text) => (
-				<p>{text}</p>
-			))}
-		</section>
-
-		<section id="join" class="info-card">
-			<h2>{join.heading}</h2>
-			{join.paragraphs.map((text) => (
-				<p>
-					{linkifyText(text).map((segment) => {
-						if (segment.type === 'email') {
-							return <a href={`mailto:${segment.value}`}>{segment.value}</a>;
-						}
-
-						if (segment.type === 'link') {
-							return (
-								<a href={segment.href} rel={segment.attrs?.rel} target={segment.attrs?.target}>
-									{segment.value}
-								</a>
-							);
-						}
-
-						return segment.value;
-					})}
-				</p>
-			))}
-		</section>
-
-		<section id="contact" class="info-card contact-card">
-			<h2>{contact.heading}</h2>
-			<p>{contact.intro}</p>
-			<p class="contact-email">
-				<a href={`mailto:${contact.email}`}>{contact.email}</a>
-			</p>
-		</section>
+				</div>
+			));
+		})()}
 	</div>
 </section>
 
+
 <style>
 	.home {
-		padding: 80px 32px 120px;
+		display: flex;
+		min-height: 100vh;
+		overflow-x: hidden;
 	}
 
-	.home-hero {
-		max-width: 800px;
-		margin: 0 auto 64px;
-		text-align: center;
+	.hero-side {
+		width: 35vw;
+		padding: 80px 48px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		background: var(--site-bg);
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		overflow: hidden;
+		box-sizing: border-box;
 	}
 
-	.home-hero h1 {
-		font-size: 48px;
-		font-weight: 700;
-		margin: 0 0 20px;
-		line-height: 1.15;
-		letter-spacing: -0.02em;
+	.watermark {
+		position: absolute;
+		top: 50px;
+		left: 20px;
+		width: 700px;
+		opacity: 0.15;
+		pointer-events: none;
+		z-index: 0;
+		transform: rotate(-15deg);
+	}
+
+	.hero-side h1 {
+		font-size: 56px;
+		font-weight: 400;
+		line-height: 1.1;
+		margin: 0 0 16px;
+		color: var(--text-dark);
+		font-family: Georgia, 'Times New Roman', serif;
+		position: relative;
+		z-index: 1;
+	}
+
+	.tagline {
+		font-size: 18px;
+		color: var(--text-light);
+		margin: 0 0 48px;
+		letter-spacing: 0.02em;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 48px;
+	}
+
+	.hero-nav a {
+		font-size: 18px;
+		color: var(--text-dark);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.hero-nav a:hover {
+		color: var(--primary);
+	}
+
+	.hero-info {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-info p {
+		margin: 0;
+		font-size: 18px;
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.hero-info strong {
 		color: var(--text-dark);
 	}
 
-	.home-hero p {
-		margin: 0 auto;
-		max-width: 640px;
+	.hero-info a {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.hero-info a:hover {
+		color: var(--primary-dark);
+		text-decoration: underline;
+	}
+
+	.helpful-tips {
 		font-size: 18px;
-		line-height: 1.7;
 		color: var(--text-gray);
 	}
 
-	.home-hero p + p {
-		margin-top: 16px;
+	.helpful-tips ul {
+		margin: 8px 0 0;
+		padding-left: 20px;
+		line-height: 1.6;
 	}
 
-	.gallery-section {
-		max-width: 1100px;
-		margin: 0 auto 72px;
+	.helpful-tips li {
+		margin-bottom: 4px;
 	}
 
-	.gallery-section h2 {
-		font-size: 28px;
-		font-weight: 600;
-		color: var(--text-dark);
-		text-align: center;
-		margin: 0 0 32px;
+	.hero-footer {
+		position: absolute;
+		bottom: 48px;
+		left: 48px;
+		right: 48px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px 24px;
+		z-index: 1;
 	}
 
-	.gallery-grid {
+	.hero-footer a {
+		color: var(--text-gray);
+		text-decoration: none;
+		transition: color 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-footer a:hover {
+		color: var(--primary);
+	}
+
+	.hero-footer svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	.gallery-side {
+		width: 65vw;
+		margin-left: 35vw;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-		gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 12px;
+		padding: 16px;
+		box-sizing: border-box;
+	}
+
+	.gallery-col {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
 	}
 
 	.gallery-item {
-		overflow: hidden;
 		border-radius: 12px;
-		aspect-ratio: 4 / 3;
-		background: var(--surface);
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+		overflow: hidden;
+		aspect-ratio: 16 / 10;
+		position: relative;
+		cursor: pointer;
 	}
 
 	.gallery-item img {
@@ -231,168 +304,91 @@ const { hero, gallery, schedule, overview, location, join, contact } = home;
 		height: 100%;
 		object-fit: cover;
 		display: block;
+		transition: transform 0.3s ease;
 	}
 
-	.info-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
-		gap: 24px;
-		max-width: 1100px;
-		margin: 0 auto;
-	}
-
-	.info-card {
-		background: var(--surface);
-		border-radius: 16px;
-		padding: 32px;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+	.gallery-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.6);
 		display: flex;
-		flex-direction: column;
-		gap: 16px;
-		color: var(--text-gray);
-	}
-
-	.info-card h2 {
-		margin: 0;
-		font-size: 22px;
-		font-weight: 600;
-		color: var(--text-dark);
-	}
-
-	.info-card p {
-		margin: 0;
-		line-height: 1.7;
-		font-size: 15px;
-	}
-
-	.info-card p + p {
-		margin-top: 12px;
-	}
-
-	.info-card a {
-		color: var(--primary);
-		font-weight: 500;
-		text-decoration: underline;
-		text-decoration-color: rgba(184, 111, 80, 0.3);
-		text-underline-offset: 2px;
-		transition: text-decoration-color 0.2s ease;
-	}
-
-	.info-card a:hover,
-	.info-card a:focus {
-		text-decoration-color: var(--primary);
-	}
-
-	.overview-hero {
-		width: 100%;
-		margin: 8px 0 12px;
-		border-radius: 10px;
-		object-fit: cover;
-		max-height: 400px;
-	}
-
-	.location-map {
-		width: 100%;
-		margin: 8px 0 12px;
-		border-radius: 10px;
-	}
-
-	.schedule-list {
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-
-	.schedule-item {
-		display: grid;
-		gap: 4px;
+		align-items: center;
+		justify-content: center;
 		padding: 16px;
-		background: var(--surface-warm);
-		border-radius: 10px;
-		border-left: 3px solid var(--accent);
+		opacity: 0;
+		transition: opacity 0.3s ease;
 	}
 
-	.schedule-item dt {
-		font-weight: 600;
-		font-size: 15px;
-		color: var(--text-dark);
-	}
-
-	.schedule-item dd {
+	.gallery-overlay p {
+		color: #fff;
+		font-size: 20px;
+		text-align: center;
 		margin: 0;
-		color: var(--text-gray);
-		line-height: 1.6;
-		font-size: 14px;
+		line-height: 1.4;
 	}
 
-	address {
-		font-style: normal;
-		color: var(--text-gray);
-		line-height: 1.7;
-		font-size: 15px;
+	.gallery-item:hover .gallery-overlay {
+		opacity: 1;
 	}
 
-	.location-link {
-		color: var(--primary);
-		text-decoration: underline;
-		text-decoration-color: rgba(184, 111, 80, 0.3);
-		text-underline-offset: 2px;
-		font-weight: 500;
-		transition: text-decoration-color 0.2s ease;
+	.gallery-item:hover img {
+		transform: scale(1.05);
 	}
 
-	.location-link:hover,
-	.location-link:focus {
-		text-decoration-color: var(--primary);
-	}
 
-	.contact-card .contact-email {
-		font-weight: 600;
-		font-size: 18px;
-	}
-
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1024px) {
 		.home {
-			padding: 56px 20px 80px;
+			flex-direction: column;
 		}
 
-		.home-hero {
-			margin-bottom: 48px;
+		.hero-side {
+			position: relative;
+			width: 100%;
+			height: auto;
+			padding: 60px 32px;
 		}
 
-		.home-hero h1 {
-			font-size: 32px;
+		.hero-side h1 {
+			font-size: 44px;
 		}
 
-		.home-hero p {
-			font-size: 16px;
+		.gallery-side {
+			width: 100%;
+			margin-left: 0;
 		}
 
-		.gallery-section {
-			margin-bottom: 48px;
+		.hero-footer {
+			position: relative;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			margin-top: 32px;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		.hero-side {
+			padding: 48px 24px 80px;
 		}
 
-		.gallery-section h2 {
-			font-size: 22px;
-			margin-bottom: 24px;
+		.hero-footer {
+			margin-top: 24px;
 		}
 
-		.gallery-grid {
-			grid-template-columns: 1fr;
-			gap: 16px;
+		.hero-side h1 {
+			font-size: 36px;
 		}
 
-		.info-card {
-			padding: 24px 20px;
+		.tagline {
+			margin-bottom: 32px;
 		}
 
-		.info-card h2 {
-			font-size: 20px;
+		.hero-nav {
+			margin-bottom: 32px;
 		}
 
-		.schedule-item {
-			padding: 14px;
+		.gallery-side {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 </style>

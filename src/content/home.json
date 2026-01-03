@@ -1,31 +1,10 @@
 {
-  "hero": {
-    "title": "Community-powered Bike Repair in New York City",
-    "paragraphs": [
-      "The Time's Up Bike Co-Op exists to faciliate safe and sustainable transportation and lifelong appreciation of the simple beauty of the bicycle by providing space, tools, and low-cost repair parts to empower cyclists of all backgrounds and experience levels as they learn all about their bikes.",
-      "The success of this simple mission depends on volunteers who commit their time, talent, and resources amid the other demands of modern life. Our community is grateful for whatever you can contribute."
-    ]
-  },
-  "schedule": [
-    {
-      "label": "Open Shop Hours",
-      "detail": "Wednesdays 5:00-8:00 pm. This is an open shop in which you may use our tools and bike stands to work on your bike. Experienced volunteer mechanics will be present to answer any questions you may have, but they will not do the work for you. If you have a big project, please be considerate of the time and plan ahead."
-    },
-    {
-      "label": "Open Shop Hours",
-      "detail": "Sundays 5:00-8:00 pm. This is an open shop in which you may use our tools and bike stands to work on your bike. Experienced volunteer mechanics will be present to answer any questions you may have, but they will not do the work for you. If you have a big project, please be considerate of the time and plan ahead."
-    },
-    {
-      "label": "Park Classes",
-      "detail": "Every other Saturday from March to November at 1pm at La Plaza Garden on 9th and Avenue C. Classes are free and open to all levels of experience and expertise. Most classes provide a general overview of bicycle diagnostics and repair, though advanced topics may be scheduled if requested. We cannot guarantee that attendees will have time to fix their own bikes during class (open workshops are the time for this), but attendees are encouraged to bring their own bikes to class if possible to support applied learning."
-    }
-  ],
   "gallery": {
     "heading": "Our Community in Action",
     "images": [
       {
         "src": "/IMG-20250517-WA0077.jpg",
-        "alt": "Times Up bike co-op storefront with community members and bikes"
+        "alt": "Street repairs outside when it's nice out"
       },
       {
         "src": "/IMG-20250409-WA0001.jpg",
@@ -33,54 +12,92 @@
       },
       {
         "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
-        "alt": "Hands-on wheel building and repair workshop"
+        "alt": "Hands-on wheel building workshop"
       },
       {
         "src": "/IMG-20250418-WA0015.jpg",
-        "alt": "Indoor bike repair workshop with volunteers and participants"
+        "alt": "We don't store personal bikes on-site so repairs occassionally last late into the evening"
       },
       {
-        "src": "/PXL_20250316_230424435.jpg",
-        "alt": "Group workshop session with bike repair stands"
+        "src": "/PXL_20250316_230359937.jpg",
+        "alt": "All participants sign in"
       },
       {
         "src": "/IMG-20250921-WA0081.jpg",
-        "alt": "Street-side bike repair demonstration"
+        "alt": "Street repairs when it's nice out"
+      },
+      {
+        "src": "/IMG-20250928-WA0047.jpg",
+        "alt": "Volunteers helping with bike repairs"
+      },
+      {
+        "src": "/IMG-20250607-WA0009.jpg",
+        "alt": "Outdoor bike repair class at La Plaza Community Garden during the summer and early fall"
+      },
+      {
+        "src": "/IMG-20250430-WA0002.jpg",
+        "alt": "Spring workshop session"
+      },
+      {
+        "src": "/IMG-20250312-WA0000.jpg",
+        "alt": "Bike maintenance workshop"
+      },
+      {
+        "src": "/IMG-20250216-WA0005.jpg",
+        "alt": "Volunteers welcome regardless of mechanical skill.  We have plenty to do from sales, web design to general organizing"
+      },
+      {
+        "src": "/IMG-20250130-WA0003.jpg",
+        "alt": "Some of our volunteer mechanics"
+      },
+      {
+        "src": "/IMG-20241117-WA0004.jpg",
+        "alt": "Fall bike repair session"
+      },
+      {
+        "src": "/IMG-20241110-WA0007.jpg",
+        "alt": "Late night at the coop"
+      },
+      {
+        "src": "/IMG-20250419-WA0019.jpg",
+        "alt": "Flat fix class at La Plaza Community Garden"
+      },
+      {
+        "src": "/IMG-20250419-WA0015.jpg",
+        "alt": "Flat fix class at La Plaza Community Garden"
+      },
+      {
+        "src": "/IMG-20250428-WA0008.jpg",
+        "alt": "We also do used bike sales, ~$160 gets you a commuter bike"
+      },
+      {
+        "src": "/IMG-20250517-WA0040.jpg",
+        "alt": "Fall fundraising"
+      },
+      {
+        "src": "/IMG-20250629-WA0000.jpg",
+        "alt": "Come browse our used parts bins"
+      },
+      {
+        "src": "/IMG-20250409-WA0002.jpg",
+        "alt": "Mechanic helping with repairs"
+      },
+      {
+        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM.jpeg",
+        "alt": "Learn to fix your bike with our volunteer mechanics"
+      },
+      {
+        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (2).jpeg",
+        "alt": "Learn to fix your bike with our volunteer mechanics"
+      },
+      {
+        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
+        "alt": "Learn to fix your bike with our volunteer mechanics"
+      },
+      {
+        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (4).jpeg",
+        "alt": "Spring into Action group ride"
       }
     ]
-  },
-  "overview": {
-    "heading": "Overview",
-    "paragraphs": [
-      "We provide tools, parts, and peer-to-peer education so everyone can maintain their ride. Our shop operates on donations and mutual aid, which keeps the doors open and the wrenches turning for the entire community."
-    ],
-    "image": {
-      "src": "/repair-class.png",
-      "alt": "Volunteers leading a bicycle repair class"
-    }
-  },
-  "location": {
-    "heading": "Location",
-    "mapImage": {
-      "src": "/timesup-location.png",
-      "alt": "Map showing the Time's Up Bike Co-op location"
-    },
-    "address": ["626 E 14th St", "New York, NY 10009"],
-    "paragraphs": [
-      "Find us in the East Village between Avenue B and C. Bike parking is available out front."
-    ]
-  },
-  "join": {
-    "heading": "Get Involved",
-    "paragraphs": [
-      "Time's Up! is an all-volunteer environmental education and direct action non-profit group. Our Bike Co-op's goal is to give everyone enough knowledge to maintain their bikes, and hopefully, teach others to do the same.",
-      "If you are interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail contact@timesup.bike or drop by the Manhattan space (626 E 14th St.) on Wednesday or Sunday afternoons. We'll pair you with a current mechanic so you can learn the ropes of the space and gain hands-on maintenance skills.",
-      "The best thing you can do to help out is show up to the workshops and events regularly. There's always ample opportunity to contribute and make a difference!"
-    ]
-  },
-  "contact": {
-    "heading": "Email Us",
-    "intro": "Questions, collaboration ideas, or press inquiries? Drop us a line and we will get back to you within a couple of days.",
-    "email": "contact@timesup.bike"
   }
 }

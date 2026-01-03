@@ -1,5 +1,4 @@
 ---
-const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -9,58 +8,12 @@ const { pathname } = Astro.url;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>TimesUpBike</title>
+		<title>Times Up Bike Coop</title>
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="header-inner">
-				<div class="header-left">
-					<a
-						class="timesup-logo"
-						href="https://times-up.org/"
-						rel="noreferrer noopener"
-						target="_blank"
-					>
-						<img
-							src="/main-timesup-header-logo_5-2022.png"
-							alt="TIME'S UP! logo"
-							width="60"
-							height="60"
-						/>
-					</a>
-					<a class="brand" href="/">Time's Up Bike Co-Op</a>
-				</div>
-				<nav aria-label="Primary">
-					<a href="/" aria-current={pathname === '/' ? 'page' : undefined}>Home</a>
-					<a href="/about" aria-current={pathname === '/about/' ? 'page' : undefined}>About</a>
-					<a href="/events" aria-current={pathname === '/events/' ? 'page' : undefined}>Events</a>
-					<a href="/parts" aria-current={pathname === '/parts/' ? 'page' : undefined}>Parts</a>
-				</nav>
-			</div>
-		</header>
 		<main class="page-main">
 			<slot />
 		</main>
-		<footer class="site-footer">
-			<div class="footer-inner">
-				<div class="footer-links">
-					<span>Follow us for updates!</span>
-					<a href="https://www.instagram.com/times_up_nyc/" rel="noreferrer noopener" target="_blank"
-						>Instagram</a
-					>
-					<a href="https://times-up.org/" rel="noreferrer noopener" target="_blank">Times-up.org</a>
-					<a href="https://times-up.org/support/" rel="noreferrer noopener" target="_blank">Memberships</a>
-					<a href="https://account.venmo.com/u/timesup" rel="noreferrer noopener" target="_blank">Venmo</a>
-					<a href="https://cash.app/$TIMESUPNYC" rel="noreferrer noopener" target="_blank">Cash App</a>
-				</div>
-				<p class="footer-description">
-					TIME’S UP! is a grassroots environmental group that uses educational outreach and direct action
-					to promote a more sustainable, less toxic city. For 35 years, TIME’S UP! has worked to educate
-					people about the environmental impacts of everyday decisions, from the food we buy to the means
-					of transportation we use.
-				</p>
-			</div>
-		</footer>
 	</body>
 	</html>
 
@@ -104,172 +57,89 @@ const { pathname } = Astro.url;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.site-header {
-		position: sticky;
-		top: 0;
-		width: 100%;
-		background: var(--surface);
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-		z-index: 50;
-	}
-
-	.header-inner {
-		margin: 0 auto;
-		max-width: 1200px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 20px 32px;
-	}
-
-	.brand {
-		font-size: 22px;
-		font-weight: 700;
-		text-decoration: none;
-		color: var(--text-dark);
-		letter-spacing: -0.02em;
-	}
-
-	.header-left {
-		display: flex;
-		align-items: center;
-		gap: 24px;
-	}
-
-	nav {
-		display: flex;
-		gap: 32px;
-	}
-
-	nav a {
-		color: var(--text-gray);
-		text-decoration: none;
-		font-weight: 500;
-		font-size: 15px;
-		transition: color 0.2s ease;
-		position: relative;
-	}
-
-	nav a::after {
-		content: '';
-		position: absolute;
-		bottom: -8px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: var(--primary);
-		transition: width 0.3s ease;
-	}
-
-	nav a:hover,
-	nav a:focus {
-		color: var(--primary);
-	}
-
-	nav a:hover::after {
-		width: 100%;
-	}
-
-	nav a[aria-current='page'] {
-		color: var(--primary);
-		font-weight: 600;
-	}
-
-	nav a[aria-current='page']::after {
-		width: 100%;
-	}
-
-	.timesup-logo {
-		display: inline-flex;
-		align-items: center;
-		border-radius: 50%;
-		padding: 4px;
-		opacity: 0.9;
-		transition: opacity 0.2s ease;
-	}
-
-	.timesup-logo:hover,
-	.timesup-logo:focus {
-		opacity: 1;
-	}
-
-	.timesup-logo img {
-		display: block;
-		width: 56px;
-		height: 56px;
-		object-fit: contain;
-	}
-
 	.page-main {
-		min-height: calc(100vh - 96px);
+		min-height: 100vh;
+		padding-bottom: 80px;
 	}
 
 	.site-footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		background: #3d3225;
 		color: #f5f2ed;
-		padding: 48px 32px;
+		padding: 16px 24px;
+		z-index: 100;
 	}
 
 	.footer-inner {
-		max-width: 1200px;
+		max-width: 100%;
 		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
 	}
 
-	.footer-links {
+	.footer-row {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
+		justify-content: space-between;
 		align-items: center;
-		font-size: 15px;
+		gap: 32px;
 	}
 
-	.footer-links span {
+	.footer-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.footer-label {
+		font-size: 11px;
 		font-weight: 600;
 		color: var(--accent-light);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
-	.footer-links a {
+	.footer-item a {
 		color: #d4c4b0;
 		text-decoration: none;
+		font-size: 14px;
 		transition: color 0.2s ease;
-		font-weight: 500;
 	}
 
-	.footer-links a:hover,
-	.footer-links a:focus {
+	.footer-item a:hover {
 		color: #fff;
 	}
 
-	.footer-description {
-		margin: 0;
-		line-height: 1.7;
-		max-width: 800px;
-		color: #b5a898;
-		font-size: 14px;
+	@media screen and (max-width: 900px) {
+		.footer-row {
+			flex-wrap: wrap;
+			gap: 16px;
+		}
 	}
 
 	@media screen and (max-width: 640px) {
-		.header-inner {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 16px;
-			padding: 16px 24px;
-		}
-
-		nav {
-			gap: 24px;
-		}
-
-		.timesup-logo img {
-			width: 48px;
-			height: 48px;
+		.page-main {
+			padding-bottom: 100px;
 		}
 
 		.site-footer {
-			padding: 40px 24px;
+			padding: 12px 16px;
+		}
+
+		.footer-row {
+			gap: 12px;
+		}
+
+		.footer-label {
+			display: none;
+		}
+
+		.footer-item {
+			gap: 6px;
+		}
+
+		.footer-item a {
+			font-size: 13px;
 		}
 	}
 </style>
