@@ -161,6 +161,7 @@ const getImage = (src: string) => {
 		gap: 16px;
 		position: relative;
 		z-index: 1;
+		padding-bottom: 80px;
 	}
 
 	.hero-info p {
@@ -201,14 +202,16 @@ const getImage = (src: string) => {
 	}
 
 	.hero-footer {
-		position: absolute;
-		bottom: 48px;
-		left: 48px;
-		right: 48px;
+		position: fixed;
+		bottom: clamp(24px, 4vh, 48px);
+		left: clamp(24px, 3vw, 48px);
+		width: calc(35vw - 2 * clamp(24px, 3vw, 48px));
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px 24px;
-		z-index: 1;
+		z-index: 10;
+		background: var(--site-bg);
+		padding-top: 16px;
 	}
 
 	.hero-footer a {
@@ -315,8 +318,9 @@ const getImage = (src: string) => {
 			position: relative;
 			bottom: auto;
 			left: auto;
-			right: auto;
+			width: auto;
 			margin-top: 32px;
+			padding-top: 0;
 		}
 	}
 
