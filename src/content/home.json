@@ -1,15 +1,15 @@
 {
   "hero": {
     "title": "Time's Up! Bike Co-op",
-    "tagline": "A volunteer-run space in the East Village for accessible bicycle repair.  Learn how to fix your bike or just chit chat about it.  Beginner friendly, no experience needed.\nThis co-op is an environmental initiative under [Time's Up org](https://times-up.org/)"
+    "tagline": "Volunteer-run bike repair workshop in the East Village.  Learn how to fix your bike.  Beginner friendly, no experience needed.\nThis co-op is an environmental initiative under [Time's Up org](https://times-up.org/)"
   },
   "howItWorks": {
-    "heading": "How It Works?",
-    "text": "Bring your bike and describe the issue to a volunteer mechanic. They will provide the tools and guidance but you will be hands on for the repair. Suggested $2 donation covers tool use and supplies. We also sell used parts onsite ([parts pricing)](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243)"
+    "heading": "How It Works",
+    "text": "Bring your bike and describe the issue to a volunteer mechanic. We provide the tools and guidance but you will be hands on for the repair. Suggested $2 donation covers tool use and supplies. We also sell used parts onsite ([parts pricing)](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243)"
   },
   "helpfulTips": {
     "heading": "Helpful Tips",
-    "tips": "- Come early. Fixing one problem sometimes reveals another\n- No new projects 30 minutes before closing\n- No e-bike servicing\n- Check our [Instagram](https://www.instagram.com/times_up_nyc/) for holiday hours, inclement weather closings and special events"
+    "tips": "- Come early. Fixing one problem may reveal another\n- No new projects 30 minutes before closing\n- No e-bike servicing\n- Check our [Instagram](https://www.instagram.com/times_up_nyc/) for holiday hours, inclement weather closings and special events"
   },
   "hours": {
     "heading": "Open Hours",
@@ -35,7 +35,7 @@
     "images": [
       {
         "src": "/IMG-20250216-WA0005.jpg",
-        "alt": "Volunteers welcome regardless of mechanical skill. We have plenty to do from sales, web design to general organizing"
+        "alt": "Volunteers welcome regardless of mechanical skill. We have plenty to do from sales, web design, fundraising, social media, partner development, organizing, etc..."
       },
       {
         "src": "/IMG-20250517-WA0040.jpg",
@@ -91,7 +91,7 @@
       },
       {
         "src": "/IMG-20250409-WA0002.jpg",
-        "alt": "Sometimes you come in with one problem and it uncovers another"
+        "alt": "Sometimes you fix one problem and it uncovers another"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (2).jpeg",
