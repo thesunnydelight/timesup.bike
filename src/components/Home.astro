@@ -128,8 +128,11 @@ const getImage = (src: string) => {
 		});
 	}
 
-	// Scroll to middle on page load for maximum stagger
+	// Scroll to middle on page load for maximum stagger (skip on mobile portrait)
 	window.addEventListener('load', () => {
+		const isMobilePortrait = window.matchMedia('(max-width: 480px) and (orientation: portrait)').matches;
+		if (isMobilePortrait) return;
+
 		requestAnimationFrame(() => {
 			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 			window.scrollTo({ top: maxScroll / 2, behavior: 'instant' });
@@ -202,13 +205,13 @@ const getImage = (src: string) => {
 	}
 
 	.tagline :global(a) {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.tagline :global(a:hover) {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
@@ -261,24 +264,24 @@ const getImage = (src: string) => {
 	}
 
 	.how-it-works :global(a) {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.how-it-works :global(a:hover) {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
 	.hero-info a {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.hero-info a:hover {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
@@ -302,13 +305,13 @@ const getImage = (src: string) => {
 	}
 
 	.helpful-tips :global(a) {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.helpful-tips :global(a:hover) {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
@@ -323,13 +326,13 @@ const getImage = (src: string) => {
 	}
 
 	.hours :global(a) {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.hours :global(a:hover) {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
@@ -344,27 +347,27 @@ const getImage = (src: string) => {
 	}
 
 	.location :global(a) {
-		color: var(--primary);
+		color: var(--link);
 		text-decoration: none;
 		transition: color 0.2s ease;
 	}
 
 	.location :global(a:hover) {
-		color: var(--primary-dark);
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
 	.hero-footer {
 		position: fixed;
-		bottom: clamp(24px, 4vh, 48px);
-		left: clamp(24px, 3vw, 48px);
-		width: calc(35vw - 2 * clamp(24px, 3vw, 48px));
+		bottom: clamp(12px, 4vh, 48px);
+		left: clamp(12px, 3vw, 48px);
+		width: calc(35vw - 2 * clamp(12px, 3vw, 48px));
 		display: flex;
 		flex-wrap: wrap;
-		gap: 16px 24px;
+		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
 		z-index: 10;
 		background: var(--site-bg);
-		padding-top: 16px;
+		padding-top: clamp(8px, 2vh, 16px);
 	}
 
 	.hero-footer a {
@@ -475,11 +478,15 @@ const getImage = (src: string) => {
 			margin-top: 32px;
 			padding-top: 0;
 		}
+
+		.hero-info {
+			padding-bottom: 0;
+		}
 	}
 
 	@media screen and (max-width: 640px) {
 		.hero-side {
-			padding: 48px 24px 80px;
+			padding: 48px 24px 24px;
 		}
 
 		.hero-footer {
@@ -504,6 +511,11 @@ const getImage = (src: string) => {
 	}
 
 	@media screen and (max-width: 480px) and (orientation: portrait) {
+		.hero-side h1 {
+			font-size: clamp(20px, 10vw, 28px);
+			white-space: nowrap;
+		}
+
 		.gallery-side {
 			grid-template-columns: 1fr;
 		}
