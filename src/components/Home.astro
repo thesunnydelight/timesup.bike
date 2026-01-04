@@ -60,14 +60,15 @@ const getImage = (src: string) => {
 			allImages.forEach((img, i) => cols[i % 3].push(img));
 			return cols.map((col) => (
 				<div class="gallery-col">
-					{col.map((image) => {
+					{col.map((image, idx) => {
 						const imgSrc = getImage(image.src);
+						const loading = idx < 4 ? "eager" : "lazy";
 						return (
 							<div class="gallery-item">
 								{imgSrc ? (
-									<Image src={imgSrc} alt={image.alt} loading="lazy" width={600} height={375} />
+									<Image src={imgSrc} alt={image.alt} loading={loading} width={600} height={375} />
 								) : (
-									<img src={image.src} alt={image.alt} loading="lazy" />
+									<img src={image.src} alt={image.alt} loading={loading} />
 								)}
 								<div class="gallery-overlay">
 									<p>{image.alt}</p>
