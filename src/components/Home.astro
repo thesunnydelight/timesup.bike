@@ -110,11 +110,13 @@ const getImage = (src: string) => {
 		});
 	}
 
-	// Scroll to middle on page load
+	// Scroll to middle on page load for maximum stagger
 	window.addEventListener('load', () => {
-		const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-		window.scrollTo(0, maxScroll / 2);
-		updateStagger();
+		requestAnimationFrame(() => {
+			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+			window.scrollTo({ top: maxScroll / 2, behavior: 'instant' });
+			requestAnimationFrame(updateStagger);
+		});
 	});
 
 	window.addEventListener('scroll', updateStagger);
