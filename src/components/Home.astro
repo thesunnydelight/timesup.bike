@@ -1,7 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import home from '../content/home.json';
 
 const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
+
+// Import all gallery images dynamically
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true });
+
+// Helper to get image by filename
+const getImage = (src: string) => {
+	const filename = src.split('/').pop();
+	const key = Object.keys(images).find(k => k.includes(filename || ''));
+	return key ? images[key].default : null;
+};
 ---
 
 <section id="home" class="home">
@@ -49,14 +60,21 @@ const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, ga
 			allImages.forEach((img, i) => cols[i % 3].push(img));
 			return cols.map((col) => (
 				<div class="gallery-col">
-					{col.map((image) => (
-						<div class="gallery-item">
-							<img src={image.src} alt={image.alt} loading="lazy" />
-							<div class="gallery-overlay">
-								<p>{image.alt}</p>
+					{col.map((image) => {
+						const imgSrc = getImage(image.src);
+						return (
+							<div class="gallery-item">
+								{imgSrc ? (
+									<Image src={imgSrc} alt={image.alt} loading="lazy" width={600} height={375} />
+								) : (
+									<img src={image.src} alt={image.alt} loading="lazy" />
+								)}
+								<div class="gallery-overlay">
+									<p>{image.alt}</p>
+								</div>
 							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			));
 		})()}
