@@ -43,8 +43,9 @@ const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, ga
 
 	<div class="gallery-side">
 		{(() => {
-			const allImages = [...gallery.images];
-			const cols = [[], [], []];
+			type GalleryImage = { src: string; alt: string };
+			const allImages: GalleryImage[] = [...gallery.images];
+			const cols: GalleryImage[][] = [[], [], []];
 			allImages.forEach((img, i) => cols[i % 3].push(img));
 			return cols.map((col) => (
 				<div class="gallery-col">
