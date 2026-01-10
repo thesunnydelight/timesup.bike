@@ -38,13 +38,41 @@ const getImage = (src: string) => {
 				<strong>{helpfulTips.heading}</strong>
 				<div set:html={helpfulTipsHtml} />
 			</div>
+			<div class="location">
+				<strong>{location.heading}</strong>
+				<div set:html={locationHtml} />
+			</div>
 			<div class="hours">
 				<strong>{hours.heading}</strong>
 				<div set:html={hoursHtml} />
 			</div>
-			<div class="location">
-				<strong>{location.heading}</strong>
-				<div set:html={locationHtml} />
+			<div class="popular-hours-row">
+				<div class="popular-hours-container">
+					<iframe
+						class="popular-hours"
+						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=1545457890&single=true&widget=false&headers=false&chrome=false&rm=demo"
+						title="Previous Shift"
+					></iframe>
+					<div class="timeline">
+						<span>5pm</span>
+						<span>6pm</span>
+						<span>7pm</span>
+						<span>8pm</span>
+					</div>
+				</div>
+				<div class="popular-hours-container">
+					<iframe
+						class="popular-hours"
+						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
+						title="Popular Hours"
+					></iframe>
+					<div class="timeline">
+						<span>5pm</span>
+						<span>6pm</span>
+						<span>7pm</span>
+						<span>8pm</span>
+					</div>
+				</div>
 			</div>
 			<p><strong>{contact.heading}</strong><br /><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
 		</div>
@@ -66,19 +94,6 @@ const getImage = (src: string) => {
 			<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 			</a>
-			</div>
-			<div class="popular-hours-container">
-				<iframe
-					class="popular-hours"
-					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
-					title="Popular Hours"
-				></iframe>
-				<div class="timeline">
-					<span>5pm</span>
-					<span>6</span>
-					<span>7</span>
-					<span>8pm</span>
-				</div>
 			</div>
 		</footer>
 	</div>
@@ -254,7 +269,7 @@ const getImage = (src: string) => {
 		gap: clamp(12px, 1.5vh, 24px);
 		position: relative;
 		z-index: 1;
-		padding-bottom: clamp(60px, 8vh, 120px);
+		padding-bottom: clamp(50px, 6vh, 80px);
 	}
 
 	.hero-info p {
@@ -378,9 +393,8 @@ const getImage = (src: string) => {
 		left: clamp(12px, 3vw, 48px);
 		width: calc(35vw - 2 * clamp(12px, 3vw, 48px));
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		gap: clamp(8px, 2vw, 16px);
+		flex-wrap: wrap;
+		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
 		z-index: 10;
 		background: var(--site-bg);
 		padding-top: clamp(8px, 2vh, 16px);
@@ -392,10 +406,14 @@ const getImage = (src: string) => {
 		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
 	}
 
+	.popular-hours-row {
+		display: flex;
+		gap: 8px;
+	}
+
 	.popular-hours-container {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
 	}
 
 	.popular-hours {
@@ -409,12 +427,23 @@ const getImage = (src: string) => {
 	.timeline {
 		display: flex;
 		justify-content: space-between;
-		width: 250px;
-		padding: 8px 10px 0;
+		width: 230px;
+		margin: 0 auto;
+		padding: 8px 0 0;
 		font-size: 11px;
 		color: var(--text-gray);
 		box-sizing: border-box;
-		border-top: 1px solid #4285f4;
+		position: relative;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: 10px;
+		right: 10px;
+		height: 1px;
+		background: #4285f4;
 	}
 
 	.timeline span {
