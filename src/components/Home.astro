@@ -50,7 +50,8 @@ const getImage = (src: string) => {
 		</div>
 
 		<footer class="hero-footer">
-			<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram" aria-label="Instagram">
+			<div class="social-links">
+				<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram" aria-label="Instagram">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 			</a>
 			<a href={socialLinks.venmo} rel="noreferrer noopener" target="_blank" title="Venmo" aria-label="Venmo">
@@ -65,6 +66,20 @@ const getImage = (src: string) => {
 			<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 			</a>
+			</div>
+			<div class="popular-hours-container">
+				<iframe
+					class="popular-hours"
+					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
+					title="Popular Hours"
+				></iframe>
+				<div class="timeline">
+					<span>5pm</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8pm</span>
+				</div>
+			</div>
 		</footer>
 	</div>
 
@@ -363,11 +378,61 @@ const getImage = (src: string) => {
 		left: clamp(12px, 3vw, 48px);
 		width: calc(35vw - 2 * clamp(12px, 3vw, 48px));
 		display: flex;
-		flex-wrap: wrap;
-		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: clamp(8px, 2vw, 16px);
 		z-index: 10;
 		background: var(--site-bg);
 		padding-top: clamp(8px, 2vh, 16px);
+	}
+
+	.social-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
+	}
+
+	.popular-hours-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	.popular-hours {
+		border: none;
+		width: 250px;
+		height: 100px;
+		background: transparent;
+
+	}
+
+	.timeline {
+		display: flex;
+		justify-content: space-between;
+		width: 250px;
+		padding: 8px 10px 0;
+		font-size: 11px;
+		color: var(--text-gray);
+		box-sizing: border-box;
+		border-top: 1px solid #4285f4;
+	}
+
+	.timeline span {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.timeline span::before {
+		content: '';
+		position: absolute;
+		top: -12px;
+		width: 5px;
+		height: 5px;
+		border: 1px solid #4285f4;
+		border-radius: 50%;
+		background: var(--site-bg);
 	}
 
 	.hero-footer a {
