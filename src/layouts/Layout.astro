@@ -1,5 +1,4 @@
 ---
-const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -7,60 +6,37 @@ const { pathname } = Astro.url;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>TimesUpBike</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<title>Time's Up! Bike Co-op</title>
+		{import.meta.env.PROD && (
+			<Fragment>
+				{/* Google Tag Manager */}
+				<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-MJT9TFKD');</script>
+			</Fragment>
+		)}
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="header-inner">
-				<div class="header-left">
-					<a
-						class="timesup-logo"
-						href="https://times-up.org/"
-						rel="noreferrer noopener"
-						target="_blank"
-					>
-						<img
-							src="/main-timesup-header-logo_5-2022.png"
-							alt="TIME'S UP! logo"
-							width="60"
-							height="60"
-						/>
-					</a>
-					<a class="brand" href="/">Time's Up Bike Co-Op</a>
-				</div>
-				<nav aria-label="Primary">
-					<a href="/" aria-current={pathname === '/' ? 'page' : undefined}>Home</a>
-					<a href="/about" aria-current={pathname === '/about/' ? 'page' : undefined}>About</a>
-					<a href="/events" aria-current={pathname === '/events/' ? 'page' : undefined}>Events</a>
-					<a href="/parts" aria-current={pathname === '/parts/' ? 'page' : undefined}>Parts</a>
-				</nav>
-			</div>
-		</header>
+		{import.meta.env.PROD && (
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJT9TFKD"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		)}
 		<main class="page-main">
 			<slot />
 		</main>
-		<footer class="site-footer">
-			<div class="footer-inner">
-				<div class="footer-links">
-					<span>Follow us for updates!</span>
-					<a href="https://www.instagram.com/times_up_nyc/" rel="noreferrer noopener" target="_blank"
-						>Instagram</a
-					>
-					<a href="https://times-up.org/" rel="noreferrer noopener" target="_blank">Times-up.org</a>
-					<a href="https://times-up.org/support/" rel="noreferrer noopener" target="_blank">Memberships</a>
-					<a href="https://account.venmo.com/u/timesup" rel="noreferrer noopener" target="_blank">Venmo</a>
-					<a href="https://cash.app/$TIMESUPNYC" rel="noreferrer noopener" target="_blank">Cash App</a>
-				</div>
-				<p class="footer-description">
-					TIME’S UP! is a grassroots environmental group that uses educational outreach and direct action
-					to promote a more sustainable, less toxic city. For 35 years, TIME’S UP! has worked to educate
-					people about the environmental impacts of everyday decisions, from the food we buy to the means
-					of transportation we use.
-				</p>
-			</div>
-		</footer>
+		<script>
+			document.querySelectorAll('a[href^="http"]').forEach(link => {
+				link.setAttribute('target', '_blank');
+				link.setAttribute('rel', 'noopener noreferrer');
+			});
+		</script>
 	</body>
 	</html>
 
@@ -76,12 +52,19 @@ const { pathname } = Astro.url;
 	}
 
 	:root {
-		--site-gradient: linear-gradient(
-			135deg,
-			rgba(134, 239, 172, 0.4) 0%,
-			rgba(254, 240, 138, 0.55) 55%,
-			rgba(250, 204, 21, 0.6) 100%
-		);
+		--site-bg: #ffffff;
+		--primary: #b86f50;
+		--primary-dark: #9a5a3e;
+		--primary-light: #d4915e;
+		--accent: #7c9a5e;
+		--accent-light: #a3bf84;
+		--text-dark: #2f2f2f;
+		--text-gray: #5c5c5c;
+		--text-light: #7a7a7a;
+		--surface: #ffffff;
+		--surface-warm: #fdfcfa;
+		--link: #639eda;
+		--link-dark: #bd702d;
 	}
 
 	html,
@@ -89,158 +72,100 @@ const { pathname } = Astro.url;
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
-		background: var(--site-gradient);
-		color: #111827;
+		background: var(--site-bg);
+		color: var(--text-dark);
 	}
 
 	body {
-		font-family: Helvetica, arial, sans-serif;
-	}
-
-	.site-header {
-		position: sticky;
-		top: 0;
-		width: 100%;
-		background: rgba(249, 250, 251, 0.92);
-		backdrop-filter: blur(12px);
-		border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-		z-index: 10;
-	}
-
-	.header-inner {
-		margin: 0 auto;
-		max-width: 1100px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 16px 24px;
-	}
-
-	.brand {
-		font-size: 20px;
-		font-weight: 600;
-		text-decoration: none;
-		color: #111827;
-	}
-
-	.header-left {
-		display: flex;
-		align-items: center;
-		gap: 20px;
-	}
-
-	nav {
-		display: flex;
-		gap: 20px;
-	}
-
-	nav a {
-		color: #374151;
-		text-decoration: none;
+		font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 		font-weight: 500;
-		transition: color 0.2s ease;
-	}
-
-	nav a:hover,
-	nav a:focus {
-		color: #111827;
-	}
-
-	nav a[aria-current='page'] {
-		color: #111827;
-		font-weight: 600;
-	}
-
-	.timesup-logo {
-		display: inline-flex;
-		align-items: center;
-		border-radius: 50%;
-		padding: 4px;
-		transition: transform 0.2s ease;
-	}
-
-	.timesup-logo:hover,
-	.timesup-logo:focus {
-		transform: scale(1.05);
-	}
-
-	.timesup-logo img {
-		display: block;
-		width: 60px;
-		height: 60px;
-		object-fit: contain;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.page-main {
-		min-height: calc(100vh - 72px);
+		min-height: 100vh;
+		padding-bottom: 80px;
 	}
 
 	.site-footer {
-		background: #111827;
-		color: #f9fafb;
-		padding: 32px 24px 48px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #3d3225;
+		color: #f5f2ed;
+		padding: 16px 24px;
+		z-index: 100;
 	}
 
 	.footer-inner {
-		max-width: 1100px;
+		max-width: 100%;
 		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
 	}
 
-	.footer-links {
+	.footer-row {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 16px;
+		justify-content: space-between;
 		align-items: center;
-		font-size: 16px;
+		gap: 32px;
 	}
 
-	.footer-links span {
+	.footer-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.footer-label {
+		font-size: 11px;
 		font-weight: 600;
+		color: var(--accent-light);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
-	.footer-links a {
-		color: #60a5fa;
+	.footer-item a {
+		color: #d4c4b0;
 		text-decoration: none;
+		font-size: 14px;
 		transition: color 0.2s ease;
 	}
 
-	.footer-links a:hover,
-	.footer-links a:focus {
-		color: #bfdbfe;
+	.footer-item a:hover {
+		color: #fff;
 	}
 
-	.footer-description {
-		margin: 0;
-		line-height: 1.6;
-		max-width: 780px;
-		color: #d1d5db;
+	@media screen and (max-width: 900px) {
+		.footer-row {
+			flex-wrap: wrap;
+			gap: 16px;
+		}
 	}
 
 	@media screen and (max-width: 640px) {
-		.header-inner {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 12px;
-		}
-
-		nav {
-			gap: 16px;
-		}
-
-		.timesup-logo img {
-			width: 48px;
-			height: 48px;
+		.page-main {
+			padding-bottom: 100px;
 		}
 
 		.site-footer {
-			padding: 24px 20px 40px;
+			padding: 12px 16px;
 		}
 
-		.footer-inner {
-			gap: 20px;
+		.footer-row {
+			gap: 12px;
+		}
+
+		.footer-label {
+			display: none;
+		}
+
+		.footer-item {
+			gap: 6px;
+		}
+
+		.footer-item a {
+			font-size: 13px;
 		}
 	}
 </style>

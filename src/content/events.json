@@ -1,40 +1,11 @@
 {
   "events": [
     {
-      "title": "Sound Meditation",
-      "day": "Oct 12",
-      "time": "4:00-7:00 pm",
-      "location": "La Plaza Community Garden - 9th St & Ave C, LES",
-      "description": "Facilitated by the Turtle Island Sound Meditation Collective. Experience an immersive sound journey, small-group integration, and a community celebration featuring gongs, crystal and Tibetan bowls, bamboo flutes, and drum circles.",
-      "link": {
-        "label": "Learn more",
-        "url": "https://linktr.ee/turtleislandsoundmeditation"
-      }
-    },
-    {
       "title": "Bike Repair Class",
       "day": "Oct 18",
       "time": "1:00 pm",
       "location": "La Plaza Community Garden - 9th St & Ave C, LES",
       "description": "Learn how to fix your bike and take care of basic maintenance and tune-ups. This is a class, so no need to bring your bike - just come ready to learn."
-    },
-    {
-      "title": "HONK! NYC",
-      "day": "Oct 18",
-      "time": "1:00-6:00 pm",
-      "location": "La Plaza Community Garden - 9th St & Ave C, LES",
-      "description": "Celebrate music and dance from around the globe featuring Rude Mechanical Orchestra, Trio DomTake, Maracat\u00fa Baque, Vado Diomande + Kotchegna Dance Company, and Kenny Wollesen & The Rose Thorne Memorial Marching Band, plus a craftivation station for instruments and costumes.",
-      "link": {
-        "label": "Event info",
-        "url": "https://www.honknyc.com/"
-      }
-    },
-    {
-      "title": "Free One-Hour Yoga Classes",
-      "day": "Thursdays & Sundays",
-      "time": "11:00 am",
-      "location": "La Plaza Community Garden - 9th St & Ave C, LES",
-      "description": "A welcoming, multi-level outdoor class to move, breathe, and start your morning with mindfulness. Bring your own mat and enjoy heart-opening practice under the trees."
     },
     {
       "title": "Fix Your Own Bike Workshop",
@@ -44,25 +15,11 @@
       "description": "Open shop time: use our tools and stands to work on your bike with experienced volunteer mechanics on hand to coach and answer questions."
     },
     {
-      "title": "Wednesday Night Skate NYC",
-      "day": "Wednesdays Apr-Oct",
-      "time": "8:00 pm",
-      "location": "Meet at the south side of Union Square",
-      "description": "Weekly social skate through NYC streets, rolling strong since 1996. All levels welcome; the group keeps a supportive pace with bright lights and good energy."
-    },
-    {
       "title": "Thursday Night Bike Ride",
       "day": "Every Thursday",
       "time": "7:00 pm",
       "location": "Meet at the Columbus Circle entrance to Central Park",
       "description": "Hosted by Social Cycling NYC, this weekly ride welcomes new riders and seasoned commuters for a friendly spin through the city."
-    },
-    {
-      "title": "Bee Workshops",
-      "day": "Oct 25",
-      "time": "1:00 pm",
-      "location": "La Plaza Community Garden - 9th St & Ave C, LES",
-      "description": "Join Rutgers University entomology researchers to learn how to identify native bees and support pollinators throughout the city."
     },
     {
       "title": "Halloween Critical Mass - Manhattan",
@@ -72,25 +29,11 @@
       "description": "Celebrate renewable energy and people-powered transportation with a costumed Critical Mass ride. Bring your best Halloween look and ride for a greener future."
     },
     {
-      "title": "Halloween Adventure Garden & Rat Race Maze",
-      "day": "Oct 31",
-      "time": "3:00-7:00 pm",
-      "location": "La Plaza Community Garden - 9th St & Ave C, LES",
-      "description": "A family-friendly Halloween celebration with fortune telling, face painting, thrilling coffin rides, and a rat-themed maze. The Rude Mechanical Orchestra performs at 6:00 pm."
-    },
-    {
       "title": "Future Positive New Year's Eve Ride",
       "day": "Dec 31",
       "time": "9:45 pm onward",
       "location": "Time's Up! Annual Ride - Multiple meetups & Belvedere Castle finale",
       "description": "Bike or skate into the new year with Time's Up! Meet at 9:45 pm (Williamsburg Bridge, Brooklyn side), 10:00 pm (Washington Square Park Arch), or 10:20 pm (Madison Square Park). Ride to Belvedere Castle for a joyous outdoor after-party with fireworks and dancing. Volunteers needed for ride leaders, so bring festive noisemakers!"
-    },
-    {
-      "title": "Community Garden Volunteer Days",
-      "day": "Monthly",
-      "time": "See schedule",
-      "location": "Help cultivate local community gardens across the East Village",
-      "description": "Support neighborhood greenspaces:\n- Green Oasis Community Garden (8th St between Ave C & D) - 1st Sundays, next on Oct 5 at 12:00 pm.\n- La Plaza Community Garden (SW corner 9th St & Ave C) - 2nd Saturdays, next on Oct 11 at 12:00 pm.\n- Green Oasis Community Garden (117 Ave C between 7th & 8th St) - 3rd Saturdays, next on Oct 18 at 3:00 pm."
     }
   ]
 }

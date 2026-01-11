@@ -1,310 +1,737 @@
 ---
+import { Image } from 'astro:assets';
+import { marked } from 'marked';
 import home from '../content/home.json';
 
-const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g;
-const supportUrl = 'https://times-up.org/support/';
-const keywordLinks = [
-	{
-		text: 'Membership Page',
-		href: supportUrl,
-		attrs: { rel: 'noreferrer noopener', target: '_blank' },
-	},
-];
+const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
 
-const linkifyText = (text) => {
-	const segments = [];
-	let cursor = 0;
+// Parse markdown to HTML
+const taglineHtml = await marked.parse(hero.tagline);
+const howItWorksHtml = await marked.parse(howItWorks.text);
+const helpfulTipsHtml = await marked.parse(helpfulTips.tips);
+const hoursHtml = await marked.parse(hours.text);
+const locationHtml = await marked.parse(location.text);
 
-	const getNextMatch = (start) => {
-		let nextMatch = { index: Infinity };
+// Import all gallery images dynamically
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true });
 
-		emailPattern.lastIndex = start;
-		const emailMatch = emailPattern.exec(text);
-		if (emailMatch) {
-			nextMatch = {
-				type: 'email',
-				value: emailMatch[0],
-				index: emailMatch.index,
-				length: emailMatch[0].length,
-			};
-		}
-
-		const keywordMatch = keywordLinks
-			.map((item) => ({
-				type: 'link',
-				value: item.text,
-				href: item.href,
-				attrs: item.attrs,
-				index: text.indexOf(item.text, start),
-				length: item.text.length,
-			}))
-			.filter((item) => item.index !== -1)
-			.sort((a, b) => a.index - b.index)[0];
-
-		if (keywordMatch && keywordMatch.index < nextMatch.index) {
-			return keywordMatch;
-		}
-
-		return nextMatch.index !== Infinity ? nextMatch : null;
-	};
-
-	while (cursor < text.length) {
-		const match = getNextMatch(cursor);
-
-		if (!match) {
-			segments.push({ type: 'text', value: text.slice(cursor) });
-			break;
-		}
-
-		if (match.index > cursor) {
-			segments.push({ type: 'text', value: text.slice(cursor, match.index) });
-		}
-
-		segments.push(match);
-		cursor = match.index + match.length;
-	}
-
-	emailPattern.lastIndex = 0;
-	return segments;
+// Helper to get image by filename
+const getImage = (src: string) => {
+	const filename = src.split('/').pop();
+	const key = Object.keys(images).find(k => k.includes(filename || ''));
+	return key ? images[key].default : null;
 };
-
-const { hero, schedule, overview, location, join, contact } = home;
 ---
 
 <section id="home" class="home">
-	<div class="home-hero">
+	<div class="hero-side">
+		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 		<h1>{hero.title}</h1>
-		{hero.paragraphs.map((text) => (
-			<p>{text}</p>
-		))}
+		<div class="tagline" set:html={taglineHtml} />
+
+		<div class="hero-info">
+			<div class="how-it-works">
+				<strong>{howItWorks.heading}</strong>
+				<div set:html={howItWorksHtml} />
+			</div>
+			<div class="helpful-tips">
+				<strong>{helpfulTips.heading}</strong>
+				<div set:html={helpfulTipsHtml} />
+			</div>
+			<div class="location">
+				<strong>{location.heading}</strong>
+				<div set:html={locationHtml} />
+			</div>
+			<div class="hours">
+				<strong>{hours.heading}</strong>
+				<div set:html={hoursHtml} />
+			</div>
+			<div class="popular-hours-row">
+				<div class="popular-hours-container">
+					<iframe
+						class="popular-hours"
+						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=1545457890&single=true&widget=false&headers=false&chrome=false&rm=demo"
+						title="Previous Shift"
+					></iframe>
+					<div class="timeline">
+						<span>5pm</span>
+						<span>6pm</span>
+						<span>7pm</span>
+						<span>8pm</span>
+					</div>
+				</div>
+				<div class="popular-hours-container">
+					<iframe
+						class="popular-hours"
+						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
+						title="Popular Hours"
+					></iframe>
+					<div class="timeline">
+						<span>5pm</span>
+						<span>6pm</span>
+						<span>7pm</span>
+						<span>8pm</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="hero-footer">
+			<div class="social-links">
+				<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram" aria-label="Instagram">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+			</a>
+			<a href={socialLinks.venmo} rel="noreferrer noopener" target="_blank" title="Venmo" aria-label="Venmo">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 3c.9 1.5 1.3 3 1.3 4.9 0 6.1-5.2 14-9.4 19.6H4.4L1.2 4.1l6.5-.6 1.8 14.5c1.7-2.8 3.8-7.1 3.8-10.1 0-1.8-.3-3-0.8-4L19.5 3z"/></svg>
+			</a>
+			<a href={socialLinks.cashApp} rel="noreferrer noopener" target="_blank" title="Cash App" aria-label="Cash App">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09v1.27h-2.82v-1.21c-1.63-.24-3.04-1.05-3.5-2.29l1.79-.72c.36.89 1.28 1.5 2.5 1.5 1.17 0 1.87-.53 1.87-1.34 0-.79-.56-1.17-1.91-1.57l-.67-.21c-1.89-.57-3.06-1.44-3.06-3.15 0-1.62 1.22-2.78 3.02-3.06V6.64h2.82v1.15c1.27.23 2.3.89 2.77 1.89l-1.7.85c-.31-.6-.98-1.08-1.86-1.08-.97 0-1.56.47-1.56 1.15 0 .66.52 1.02 1.65 1.36l.67.21c2.1.63 3.32 1.54 3.32 3.38 0 1.76-1.34 2.95-3.33 3.17z"/></svg>
+			</a>
+			<a href={socialLinks.mapUrl} rel="noreferrer noopener" target="_blank" title="Location" aria-label="Location">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+			</a>
+			<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+			</a>
+			</div>
+			<span class="footer-tagline"><span>An environmental initiative</span><span>under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
+		</footer>
 	</div>
 
-	<div class="info-grid">
-		<section id="overview" class="info-card">
-			<h2>{overview.heading}</h2>
-			{overview.paragraphs.map((text) => (
-				<p>{text}</p>
-			))}
-			<img class="overview-hero" src={overview.image.src} alt={overview.image.alt} />
-		</section>
-
-		<section id="schedule" class="info-card">
-			<h2>Schedule Overview</h2>
-			<dl class="schedule-list">
-				{schedule.map((item) => (
-					<div class="schedule-item">
-						<dt>{item.label}</dt>
-						<dd>{item.detail}</dd>
-					</div>
-				))}
-			</dl>
-		</section>
-
-		<section id="location" class="info-card">
-			<h2>{location.heading}</h2>
-			<img class="location-map" src={location.mapImage.src} alt={location.mapImage.alt} />
-			<address>
-				<a
-					class="location-link"
-					href="https://maps.app.goo.gl/yY5xKLyQZChtnrhP6"
-					target="_blank"
-					rel="noreferrer noopener"
-				>
-					{location.address.map((line, index) => (
-						<>
-							{line}
-							{index < location.address.length - 1 && <br />}
-						</>
-					))}
-				</a>
-			</address>
-			{location.paragraphs.map((text) => (
-				<p>{text}</p>
-			))}
-		</section>
-
-		<section id="join" class="info-card">
-			<h2>{join.heading}</h2>
-			{join.paragraphs.map((text) => (
-				<p>
-					{linkifyText(text).map((segment) => {
-						if (segment.type === 'email') {
-							return <a href={`mailto:${segment.value}`}>{segment.value}</a>;
-						}
-
-						if (segment.type === 'link') {
-							return (
-								<a href={segment.href} rel={segment.attrs?.rel} target={segment.attrs?.target}>
-									{segment.value}
-								</a>
-							);
-						}
-
-						return segment.value;
+	<div class="gallery-side">
+		{(() => {
+			type GalleryImage = { src: string; alt: string };
+			const allImages: GalleryImage[] = [...gallery.images];
+			const cols: GalleryImage[][] = [[], [], []];
+			allImages.forEach((img, i) => cols[i % 3].push(img));
+			return cols.map((col, colIdx) => {
+				const midIndex = Math.floor(col.length / 2);
+				return (
+				<div class="gallery-col" data-col={colIdx}>
+					{col.map((image, idx) => {
+						const imgSrc = getImage(image.src);
+						// Eagerly load images near the middle (visible on initial load)
+						const isMiddle = idx >= midIndex - 2 && idx < midIndex + 2;
+						const loading = isMiddle ? "eager" : "lazy";
+						return (
+							<div class="gallery-item">
+								{imgSrc ? (
+									<Image src={imgSrc} alt={image.alt} loading={loading} width={600} height={375} />
+								) : (
+									<img src={image.src} alt={image.alt} loading={loading} />
+								)}
+								<div class="gallery-overlay">
+									<p>{image.alt}</p>
+								</div>
+							</div>
+						);
 					})}
-				</p>
-			))}
-		</section>
-
-		<section id="contact" class="info-card contact-card">
-			<h2>{contact.heading}</h2>
-			<p>{contact.intro}</p>
-			<p class="contact-email">
-				<a href={`mailto:${contact.email}`}>{contact.email}</a>
-			</p>
-		</section>
+				</div>
+			)});
+		})()}
 	</div>
 </section>
 
+<script>
+	const columns = document.querySelectorAll('.gallery-col');
+
+	// Stagger offsets as proportion of viewport height (scales with resolution)
+	// ~100px and ~200px at 1080p, proportionally larger at 4K
+	const offsetRatios = [0, -0.09, -0.18];
+
+	function updateStagger() {
+		// Disable stagger when gallery is stacked below hero
+		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
+		if (isStackedLayout) {
+			columns.forEach((col) => {
+				(col as HTMLElement).style.transform = '';
+			});
+			return;
+		}
+
+		const scrollTop = window.scrollY;
+		const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+		const vh = window.innerHeight;
+
+		// Progress from 0 (top) to 1 (bottom)
+		const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+
+		// Stagger peaks at middle (0.5), disappears at edges (0 and 1)
+		// Using sine curve for smooth easing
+		const staggerAmount = Math.sin(progress * Math.PI);
+
+		columns.forEach((col, i) => {
+			const element = col as HTMLElement;
+			const offset = offsetRatios[i] * vh * staggerAmount;
+			element.style.transform = `translateY(${offset}px)`;
+		});
+	}
+
+	// Redistribute images for 2-column layout
+	let originalColumns: HTMLElement[][] = [];
+	let isRedistributed = false;
+
+	function storeOriginalLayout() {
+		if (originalColumns.length === 0) {
+			columns.forEach((col) => {
+				originalColumns.push(Array.from(col.children) as HTMLElement[]);
+			});
+		}
+	}
+
+	function redistributeFor2Columns() {
+		if (isRedistributed) return;
+		storeOriginalLayout();
+
+		const allItems = originalColumns.flat();
+		const half = Math.ceil(allItems.length / 2);
+
+		columns.forEach((col) => col.innerHTML = '');
+		allItems.slice(0, half).forEach((item) => columns[0].appendChild(item));
+		allItems.slice(half).forEach((item) => columns[1].appendChild(item));
+
+		isRedistributed = true;
+	}
+
+	function restoreOriginalLayout() {
+		if (!isRedistributed || originalColumns.length === 0) return;
+
+		columns.forEach((col, i) => {
+			col.innerHTML = '';
+			originalColumns[i].forEach((item) => col.appendChild(item));
+		});
+
+		isRedistributed = false;
+	}
+
+	function handleColumnLayout() {
+		const isTwoColumn = window.matchMedia('(max-width: 640px)').matches;
+		if (isTwoColumn) {
+			redistributeFor2Columns();
+		} else {
+			restoreOriginalLayout();
+		}
+	}
+
+	// Scroll to middle on page load for maximum stagger (skip on stacked/tablet layouts)
+	window.addEventListener('load', () => {
+		handleColumnLayout();
+
+		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
+		if (isStackedLayout) return;
+
+		requestAnimationFrame(() => {
+			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+			window.scrollTo({ top: maxScroll / 2, behavior: 'instant' });
+			requestAnimationFrame(updateStagger);
+		});
+	});
+
+	window.addEventListener('scroll', updateStagger);
+	window.addEventListener('resize', () => {
+		updateStagger();
+		handleColumnLayout();
+	});
+</script>
+
+
 <style>
 	.home {
-		padding: 96px 16px 120px;
-		background: var(--site-gradient);
+		display: flex;
+		min-height: 100vh;
+		overflow-x: hidden;
 	}
 
-	.home-hero {
-		max-width: 900px;
-		margin: 0 auto 56px;
-		text-align: center;
-		color: #0f172a;
+	.hero-side {
+		width: 35vw;
+		padding: clamp(20px, 6vh, 40px) clamp(24px, 3vw, 48px);
+		padding-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		background: var(--site-bg);
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: calc(100vh - clamp(70px, 13vh, 110px));
+		overflow-x: hidden;
+		overflow-y: auto;
+		box-sizing: border-box;
 	}
 
-	.home-hero h1 {
-		font-size: 44px;
-		margin: 0 0 16px;
+	.watermark {
+		position: absolute;
+		top: clamp(30px, 4vh, 80px);
+		left: -5%;
+		width: 120%;
+		opacity: 0.11;
+		pointer-events: none;
+		z-index: 0;
+		transform: rotate(-15deg);
+	}
+
+	.hero-side h1 {
+		font-size: clamp(16px, 2.5vw, 50px);
+		font-weight: 700;
 		line-height: 1.1;
+		margin: 0 0 clamp(12px, 1.5vh, 24px);
+		color: var(--text-dark);
+		font-family: 'Inter', sans-serif;
+		position: relative;
+		z-index: 1;
 	}
 
-	.home-hero p {
-		margin: 0 auto;
-		max-width: 640px;
-		font-size: 18px;
-		line-height: 1.7;
-		color: #1f2937;
+	.tagline {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-light);
+		margin: 0 0 clamp(16px, 2vh, 48px);
+		letter-spacing: 0.02em;
+		line-height: 1.5;
+		position: relative;
+		z-index: 1;
 	}
 
-	.home-hero p + p {
-		margin-top: 16px;
+	.tagline :global(p) {
+		margin: 0;
 	}
 
-	.info-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr));
-		gap: 28px;
-		max-width: 1100px;
-		margin: 0 auto;
+	.tagline :global(a) {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
 	}
 
-	.info-card {
-		background: rgba(255, 255, 255, 0.95);
-		border-radius: 18px;
-		padding: 28px 32px;
-		box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
-		border: 1px solid rgba(15, 23, 42, 0.08);
+	.tagline :global(a:hover) {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.hero-nav {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
-		color: #1f2937;
+		gap: clamp(8px, 1vh, 16px);
+		margin-bottom: clamp(32px, 4vh, 64px);
 	}
 
-	.info-card h2 {
-		margin: 0;
-		font-size: 24px;
-		color: #0f172a;
+	.hero-nav a {
+		font-size: clamp(16px, 1.5vw, 18px);
+		color: var(--text-dark);
+		text-decoration: none;
+		transition: color 0.2s;
 	}
 
-	.info-card p {
-		margin: 0;
-		line-height: 1.65;
+	.hero-nav a:hover {
+		color: var(--primary);
 	}
 
-	.info-card p + p {
-		margin-top: 12px;
-	}
-
-	.overview-hero {
-		width: 100%;
-		margin: 8px 0 16px;
-		border-radius: 12px;
-		border: 1px solid rgba(15, 23, 42, 0.08);
-		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-		object-fit: cover;
-		max-height: 540px;
-	}
-
-	.location-map {
-		width: 100%;
-		margin: 8px 0 12px;
-		border-radius: 12px;
-		border: 1px solid rgba(15, 23, 42, 0.08);
-		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-	}
-
-	.schedule-list {
-		margin: 0;
+	.hero-info {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: clamp(12px, 1.5vh, 24px);
+		position: relative;
+		z-index: 1;
+		padding-bottom: 30px;
 	}
 
-	.schedule-item {
-		display: grid;
-		gap: 4px;
-	}
-
-	.schedule-item dt {
-		font-weight: 600;
-		color: #111827;
-	}
-
-	.schedule-item dd {
+	.hero-info p {
 		margin: 0;
-		color: #4b5563;
-		line-height: 1.65;
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
 	}
 
-	address {
-		font-style: normal;
-		color: #1f2937;
+	.hero-info strong {
+		color: var(--text-dark);
+	}
+
+	.how-it-works {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.how-it-works :global(p) {
+		margin: 0;
+	}
+
+	.how-it-works :global(a) {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.how-it-works :global(a:hover) {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.hero-info a {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.hero-info a:hover {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.helpful-tips {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+	}
+
+	.helpful-tips :global(p) {
+		margin: 0;
+	}
+
+	.helpful-tips :global(ul) {
+		margin: clamp(6px, 0.8vh, 12px) 0 0;
+		padding-left: clamp(16px, 1.5vw, 28px);
 		line-height: 1.6;
 	}
 
-	.location-link {
-		color: inherit;
-		text-decoration: none;
+	.helpful-tips :global(li) {
+		margin-bottom: clamp(3px, 0.4vh, 6px);
 	}
 
-	.location-link:hover,
-	.location-link:focus {
+	.helpful-tips :global(a) {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.helpful-tips :global(a:hover) {
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
-	.contact-card .contact-email {
-		font-weight: 600;
-		font-size: 18px;
+	.hours {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
 	}
 
-	.contact-card a {
-		color: #2563eb;
+	.hours :global(p) {
+		margin: 0;
+	}
+
+	.hours :global(a) {
+		color: var(--link);
 		text-decoration: none;
+		transition: color 0.2s ease;
 	}
 
-	.contact-card a:hover,
-	.contact-card a:focus {
+	.hours :global(a:hover) {
+		color: var(--link-dark);
 		text-decoration: underline;
 	}
 
-	@media screen and (max-width: 768px) {
+	.location {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.location :global(p) {
+		margin: 0;
+	}
+
+	.location :global(a) {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.location :global(a:hover) {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.hero-footer {
+		position: fixed;
+		bottom: clamp(12px, 4vh, 48px);
+		left: clamp(12px, 3vw, 48px);
+		width: calc(35vw - 2 * clamp(12px, 3vw, 48px));
+		display: flex;
+		align-items: center;
+		gap: clamp(8px, 2vw, 16px);
+		z-index: 10;
+		background: var(--site-bg);
+		padding-top: clamp(8px, 2vh, 16px);
+	}
+
+	.social-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
+	}
+
+	.popular-hours-row {
+		display: flex;
+		gap: 8px;
+	}
+
+	.popular-hours-container {
+		display: flex;
+		flex-direction: column;
+		width: 250px;
+	}
+
+	.popular-hours {
+		border: none;
+		width: 100%;
+		height: 100px;
+		background: transparent;
+	}
+
+	.timeline {
+		display: flex;
+		justify-content: space-between;
+		width: 96%;
+		margin: 0 auto;
+		padding: 8px 0 0;
+		font-size: 11px;
+		color: var(--text-gray);
+		box-sizing: border-box;
+		position: relative;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		top: -1px;
+		left: 10px;
+		right: 10px;
+		height: 1px;
+		background: #4285f4;
+	}
+
+	.timeline span {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.timeline span::before {
+		content: '';
+		position: absolute;
+		top: -12px;
+		width: 5px;
+		height: 5px;
+		border: 1px solid #4285f4;
+		border-radius: 50%;
+		background: var(--site-bg);
+	}
+
+	.hero-footer a {
+		color: var(--text-gray);
+		text-decoration: none;
+		transition: color 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-footer a:hover {
+		color: var(--primary);
+	}
+
+	.hero-footer svg {
+		width: clamp(24px, 2vw, 40px);
+		height: clamp(24px, 2vw, 40px);
+	}
+
+	.footer-tagline {
+		font-size: clamp(11px, 1vw, 14px);
+		color: var(--text-gray);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-left: auto;
+		text-align: right;
+	}
+
+	.footer-tagline > span {
+		display: inline;
+	}
+
+	.footer-tagline a {
+		color: var(--link);
+		text-decoration: none;
+		display: inline;
+	}
+
+	.footer-tagline a:hover {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.gallery-side {
+		width: 65vw;
+		margin-left: 35vw;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: clamp(8px, 0.6vw, 16px);
+		padding: clamp(12px, 0.8vw, 24px);
+		box-sizing: border-box;
+	}
+
+	.gallery-col {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(8px, 0.6vw, 16px);
+	}
+
+	.gallery-item {
+		border-radius: 12px;
+		overflow: hidden;
+		aspect-ratio: 16 / 10;
+		position: relative;
+		cursor: pointer;
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.6);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.gallery-overlay p {
+		color: #fff;
+		font-size: clamp(14px, 1.5vw, 20px);
+		text-align: center;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.gallery-item:hover .gallery-overlay {
+		opacity: 1;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.05);
+	}
+
+
+	@media screen and (max-width: 1024px) {
 		.home {
-			padding: 64px 16px 96px;
+			flex-direction: column;
 		}
 
-		.home-hero h1 {
+		.hero-side {
+			position: relative;
+			width: 100%;
+			height: auto;
+			padding: 60px 32px 24px;
+		}
+
+		.hero-side h1 {
+			font-size: 44px;
+		}
+
+		.gallery-side {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		.hero-footer {
+			position: relative;
+			bottom: auto;
+			left: auto;
+			width: auto;
+			margin-top: 32px;
+			padding-top: 0;
+		}
+
+		.hero-info {
+			padding-bottom: 0px;
+		}
+
+	}
+
+	@media screen and (max-height: 800px) {
+		.popular-hours-row {
+			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 1800px) {
+		.popular-hours-row {
+			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 1595px) {
+		.hero-footer {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.footer-tagline {
+			align-items: flex-start;
+			text-align: left;
+			margin-left: 0;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		.hero-side {
+			padding: 48px 24px 24px;
+		}
+
+		.hero-footer {
+			margin-top: 24px;
+		}
+
+		.hero-side h1 {
 			font-size: 36px;
 		}
 
-		.info-card {
-			padding: 24px;
+		.tagline {
+			margin-bottom: 32px;
+		}
+
+		.hero-nav {
+			margin-bottom: 32px;
+		}
+
+		.gallery-side {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 480px) and (orientation: portrait) {
+		.hero-side h1 {
+			font-size: clamp(20px, 10vw, 28px);
+			white-space: nowrap;
+		}
+
+		.gallery-side {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-col {
+			transform: none !important;
+		}
+
+		.popular-hours-row {
+			flex-direction: column;
 		}
 	}
 </style>

@@ -1,10 +1,14 @@
 {
   "title": "About the Time's Up Bike Co-Op",
+  "storefrontImage": {
+    "src": "/IMG-20250517-WA0077.jpg",
+    "alt": "Times Up bike co-op storefront with community members"
+  },
   "paragraphs": [
     "Every Wednesday and Sunday throughout the year, the Time's Up Bike Co-Op holds open workshops from 5 to 8pm at our shop space at 626 E. 14th Street. During these hours, you can bring your bike and work on it yourself with free tools, repair stands, and the aid of Time's Up! mechanics. Low-cost repair parts are available.",
     "Additionally, on every first and third Saturday from April to November, we host outdoor bike repair classes at La Plaza Cultural Community Garden on the Lower East Side where you can learn about the basics of bicycle maintenance. These workshops typically take place at 1pm.",
-    "In case of inclement weather, you may want to check our Instagram page for special announcements about open shop hours or workshops. You can also use Instagram to contact Timess Up Co-Op volunteers regarding workshop schedules, bike repairs, donations, or becoming a volunteer mechanic.",
-    "All workshops and classes are free. Shop users are encouraged to make an optional donation of $2\u20135 per visit, or to become a contributing member of the bike co-op with a $20 annual donation via our Support Page in order to support our operations."
+    "In case of inclement weather, you may want to check our Instagram page for special announcements about open shop hours or workshops. You can also use Instagram to contact Times Up Co-Op volunteers regarding workshop schedules, bike repairs, donations, or becoming a volunteer mechanic.",
+    "All workshops and classes are free. Shop users are encouraged to make an optional donation of $2–5 per visit to support our operations."
   ],
   "instagramUrl": "https://www.instagram.com/times_up_nyc/"
 }
