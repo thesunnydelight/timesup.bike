@@ -1,4 +1,4 @@
-# Times Up Bike
+# Time's Up Bike Website (timesup.bike)
 
 Pedal-powered mutual aid > car-centric capitalism. This repo holds the Astro site that spreads the word.
 
