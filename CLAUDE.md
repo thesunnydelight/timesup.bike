@@ -12,6 +12,9 @@ Static site for Times Up Bike Co-Op, built with Astro 5. The site promotes pedal
 # Development server (http://localhost:4321)
 npm run dev
 
+# Development server but allow access for other devices on network
+npm run dev -- --host
+
 # Production build (outputs to dist/)
 npm run build
 
