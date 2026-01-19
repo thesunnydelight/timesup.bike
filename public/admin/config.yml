@@ -65,8 +65,6 @@ collections:
             widget: object
             fields:
               - { label: Instagram URL, name: instagram, widget: string }
-              - { label: Venmo URL, name: venmo, widget: string }
-              - { label: Cash App URL, name: cashApp, widget: string }
               - { label: Map URL, name: mapUrl, widget: string }
 
           - label: Gallery

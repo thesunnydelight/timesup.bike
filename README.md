@@ -15,6 +15,8 @@ Additional scripts for the collective:
 | `npm run build`   | Compile the production build into `dist/`  |
 | `npm run preview` | Preview the production build locally       |
 
+4. If using Decap CMS, run `npx decap-server` and go to `http://localhost:4321/admin/index.html`.  If it is asking for a username and password, the decap-server is probably not running
+
 ## Contributing
 
 No gatekeepers here. Open a PR and let's ship.
