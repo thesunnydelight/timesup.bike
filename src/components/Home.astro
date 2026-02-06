@@ -79,18 +79,25 @@ const getImage = (src: string) => {
 		</div>
 
 		<footer class="hero-footer">
-			<div class="social-links">
-				<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram" aria-label="Instagram">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-			</a>
-			<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-			</a>
-			<a href={socialLinks.mapUrl} rel="noreferrer noopener" target="_blank" title="Location" aria-label="Location">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-			</a>
+			<div class="footer-column footer-left">
+				<div class="social-links">
+					<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+				</a>
+				<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+				</a>
+				<a href={socialLinks.mapUrl} rel="noreferrer noopener" target="_blank" title="Location" aria-label="Location">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+				</a>
+				</div>
 			</div>
-			<span class="footer-tagline"><span>An environmental initiative</span><span>under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
+			<div class="footer-column footer-center">
+				<span id="footer-slogan"></span>
+			</div>
+			<div class="footer-column footer-right">
+				<span class="footer-tagline"><span>An environmental initiative</span><span>under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
+			</div>
 		</footer>
 	</div>
 
@@ -230,6 +237,40 @@ const getImage = (src: string) => {
 	});
 </script>
 
+<script>
+	// Fetch and display the slogan from Google Apps Script
+	async function fetchSlogan() {
+		try {
+			const response = await fetch('https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec');
+			const data = await response.json();
+			const galleryCaption = document.querySelector('.dynamic-slogan');
+			const footerSlogan = document.getElementById('footer-slogan');
+
+			// The API returns an array of objects with Param and Value keys
+			// Find the object where Param === "complete_str"
+			const sloganData = data.find(item => item.Param === 'complete_str');
+			const numBikesFixed = data.find(item => item.Param === 'customers');
+			const numCustomerVisits = data.find(item => item.Param === 'visits');
+
+			if (sloganData && sloganData.Value) {
+				// Update the gallery image caption
+				if (galleryCaption) {
+					galleryCaption.textContent = sloganData.Value;
+				}
+				// Update the footer slogan
+				if (footerSlogan) {
+					footerSlogan.textContent = "  " + numBikesFixed.Value + "+ bikes fixed";
+					// footerSlogan.textContent = "  " + numBikesFixed.Value + "+ repairs in " + numCustomerVisits.Value + " visits";
+				}
+			}
+		} catch (error) {
+			console.error('Error fetching slogan:', error);
+		}
+	}
+
+	// Fetch slogan on page load
+	document.addEventListener('DOMContentLoaded', fetchSlogan);
+</script>
 
 <style>
 	.home {
@@ -448,13 +489,36 @@ const getImage = (src: string) => {
 		position: fixed;
 		bottom: clamp(12px, 4vh, 48px);
 		left: clamp(12px, 3vw, 48px);
-		width: calc(35vw - 2 * clamp(12px, 3vw, 48px));
+		right: 65vw;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		gap: clamp(8px, 2vw, 16px);
 		z-index: 10;
 		background: var(--site-bg);
 		padding-top: clamp(8px, 2vh, 16px);
+	}
+
+	.footer-column {
+		display: flex;
+		align-items: center;
+	}
+
+	.footer-left {
+		justify-content: flex-start;
+	}
+
+	.footer-center {
+		justify-content: flex-start;
+		flex: 1;
+		text-align: left;
+		font-size: clamp(12px, 1.1vw, 26px);  //28px
+		font-weight: 600;
+		color: var(--text-gray);
+	}
+
+	.footer-right {
+		justify-content: flex-end;
 	}
 
 	.social-links {
