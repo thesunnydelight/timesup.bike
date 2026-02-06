@@ -93,7 +93,7 @@ const getImage = (src: string) => {
 				</div>
 			</div>
 			<div class="footer-column footer-center">
-				<span id="footer-slogan"></span>
+				<span id="footer-slogan">Loading...</span>
 			</div>
 			<div class="footer-column footer-right">
 				<span class="footer-tagline"><span>An environmental initiative</span><span>under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
@@ -512,7 +512,7 @@ const getImage = (src: string) => {
 		justify-content: flex-start;
 		flex: 1;
 		text-align: left;
-		font-size: clamp(12px, 1.1vw, 26px);  //28px
+		font-size: clamp(14px, 1.1vw, 26px);  //28px
 		font-weight: 600;
 		color: var(--text-gray);
 	}
@@ -607,7 +607,7 @@ const getImage = (src: string) => {
 	}
 
 	.footer-tagline {
-		font-size: clamp(11px, 1vw, 14px);
+		font-size: clamp(12px, 1vw, 14px);
 		color: var(--text-gray);
 		display: flex;
 		flex-direction: column;
@@ -717,6 +717,7 @@ const getImage = (src: string) => {
 			position: relative;
 			bottom: auto;
 			left: auto;
+			right: auto;
 			width: auto;
 			margin-top: 32px;
 			padding-top: 0;
