@@ -48,6 +48,7 @@ const getImage = (src: string) => {
 			</div>
 			<div class="popular-hours-row">
 				<div class="popular-hours-container">
+					<div class="iframe-loading">Loading...</div>
 					<iframe
 						class="popular-hours"
 						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=1545457890&single=true&widget=false&headers=false&chrome=false&rm=demo"
@@ -62,6 +63,7 @@ const getImage = (src: string) => {
 					</div>
 				</div>
 				<div class="popular-hours-container">
+					<div class="iframe-loading">Loading...</div>
 					<iframe
 						class="popular-hours"
 						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
@@ -257,6 +259,19 @@ const getImage = (src: string) => {
 
 	// Fetch slogan on page load
 	document.addEventListener('DOMContentLoaded', fetchSlogan);
+
+	// Hide loading indicators when iframes load
+	document.addEventListener('DOMContentLoaded', () => {
+		const iframes = document.querySelectorAll('.popular-hours');
+		iframes.forEach((iframe) => {
+			iframe.addEventListener('load', () => {
+				const loadingIndicator = iframe.previousElementSibling;
+				if (loadingIndicator && loadingIndicator.classList.contains('iframe-loading')) {
+					loadingIndicator.classList.add('hidden');
+				}
+			});
+		});
+	});
 </script>
 
 <style>
@@ -518,6 +533,28 @@ const getImage = (src: string) => {
 		flex: 1;
 		min-width: 0;
 		max-width: 270px;
+		position: relative;
+	}
+
+	.iframe-loading {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--site-bg);
+		color: var(--text-gray);
+		font-size: 12px;
+		z-index: 1;
+		transition: opacity 0.3s ease;
+	}
+
+	.iframe-loading.hidden {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.popular-hours {
@@ -586,7 +623,7 @@ const getImage = (src: string) => {
 	}
 
 	.footer-tagline {
-		font-size: clamp(12px, 1vw, 14px);
+		font-size: clamp(12px, 2vw, 16px);
 		color: var(--text-gray);
 		display: flex;
 		flex-direction: column;
@@ -720,7 +757,7 @@ const getImage = (src: string) => {
 		}
 	}
 
-	@media screen and (max-width: 1100px) {
+	@media screen and (max-width: 1180px) {
 		.hero-footer {
 			flex-direction: column;
 			align-items: flex-start;
