@@ -899,8 +899,8 @@ const getImage = (src: string) => {
 	}
 
 	.hero-footer svg {
-		width: clamp(24px, 2vw, 40px);
-		height: clamp(24px, 2vw, 40px);
+		width: clamp(40px, 2vw, 40px);
+		height: clamp(40px, 2vw, 40px);
 	}
 
 	.footer-tagline {
@@ -952,7 +952,7 @@ const getImage = (src: string) => {
 		font-weight: 600;
 		letter-spacing: 0.05em;
 		white-space: nowrap;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		/* transition: transform 0.2s ease, box-shadow 0.2s ease; */
 	}
 
 	.footer-pills-container :global(.stat-pill:hover) {
@@ -962,6 +962,7 @@ const getImage = (src: string) => {
 
 	.footer-pills-container :global(.stat-pill strong) {
 		font-weight: 800;
+		font-size: 1.2em;
 	}
 
 	.footer-pills-container :global(.stat-pill-red) {
