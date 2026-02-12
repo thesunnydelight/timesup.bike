@@ -101,7 +101,12 @@ const getImage = (src: string) => {
 				</div>
 			</div>
 			<div class="footer-column footer-right">
-				<span class="footer-tagline"><span id="footer-slogan">Loading...</span><span>an initiative under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
+				<span class="footer-tagline">
+					<span id="footer-slogan" class="footer-pills-container">
+						<span class="loading-text">Loading...</span>
+					</span>
+					<span class="footer-initiative-text">an initiative under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span>
+				</span>
 			</div>
 		</footer>
 	</div>
@@ -475,8 +480,12 @@ const getImage = (src: string) => {
 		const numVolunteers = Number(dataMap.volunteers);
 		const numVisits = Number(dataMap.visits);
 
-		if (footerSlogan && numBikesFixed && numVolunteers) {
-			footerSlogan.textContent = "  " + (numBikesFixed + numVolunteers) + "+ bikes repaired in " + numVisits + " visits,";
+		if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
+			const totalBikes = numBikesFixed + numVolunteers;
+			footerSlogan.innerHTML = `
+				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>
+				<span class="stat-pill stat-pill-blue"><strong>${numVisits}</strong>&nbsp;visits</span>
+			`;
 		}
 	}
 
@@ -919,6 +928,58 @@ const getImage = (src: string) => {
 		text-decoration: underline;
 	}
 
+	/* Footer Pills Styling */
+	.footer-pills-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: clamp(6px, 1vw, 10px);
+		align-items: center;
+		justify-content: flex-end;
+		margin-bottom: clamp(4px, 0.5vh, 8px);
+	}
+
+	.footer-pills-container .loading-text {
+		font-size: clamp(12px, 2vw, 16px);
+		color: var(--text-gray);
+	}
+
+	.footer-pills-container :global(.stat-pill) {
+		display: inline-flex;
+		align-items: center;
+		padding: clamp(4px, 0.6vw, 8px) clamp(8px, 1.2vw, 14px);
+		border-radius: 6px;
+		font-size: clamp(10px, 1.5vw, 13px);
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		white-space: nowrap;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.footer-pills-container :global(.stat-pill:hover) {
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	}
+
+	.footer-pills-container :global(.stat-pill strong) {
+		font-weight: 800;
+	}
+
+	.footer-pills-container :global(.stat-pill-red) {
+		background: #ff0000;
+		color: #ffffff;
+	}
+
+	.footer-pills-container :global(.stat-pill-blue) {
+		background: #4285f4;
+		color: #ffffff;
+	}
+
+	.footer-initiative-text {
+		font-size: clamp(11px, 1.8vw, 15px);
+		color: var(--text-gray);
+		display: block;
+	}
+
 	.gallery-side {
 		width: 65vw;
 		margin-left: 35vw;
@@ -1040,6 +1101,10 @@ const getImage = (src: string) => {
 			text-align: left;
 			margin-left: 0;
 		}
+
+		.footer-pills-container {
+			justify-content: flex-start;
+		}
 	}
 
 	@media screen and (max-width: 640px) {
@@ -1066,6 +1131,20 @@ const getImage = (src: string) => {
 		.gallery-side {
 			grid-template-columns: repeat(2, 1fr);
 		}
+
+		.footer-pills-container :global(.stat-pill) {
+			font-size: 10px;
+			padding: 4px 10px;
+		}
+
+		.footer-pills-container {
+			gap: 6px;
+			margin-bottom: 6px;
+		}
+
+		.footer-initiative-text {
+			font-size: 11px;
+		}
 	}
 
 	@media screen and (max-width: 480px) and (orientation: portrait) {
@@ -1084,6 +1163,16 @@ const getImage = (src: string) => {
 
 		.popular-hours-row {
 			flex-direction: column;
+		}
+
+		.footer-pills-container :global(.stat-pill) {
+			font-size: 9px;
+			padding: 3px 8px;
+			border-radius: 12px;
+		}
+
+		.footer-pills-container {
+			gap: 4px;
 		}
 	}
 </style>
