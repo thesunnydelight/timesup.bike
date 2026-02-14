@@ -634,6 +634,9 @@ const getImage = (src: string) => {
 		}
 	}
 
+	// Expose for console testing/debugging
+	window.fetchAndRenderCharts = fetchAndRenderCharts;
+
 	// Fetch and render on page load
 	document.addEventListener('DOMContentLoaded', () => fetchAndRenderCharts());
 
