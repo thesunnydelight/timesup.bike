@@ -601,6 +601,18 @@ const getImage = (src: string) => {
 		if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 			const totalBikes = numBikesFixed + numVolunteers;
 
+			// Get last updated timestamp for tooltip
+			const timestamp = localStorage.getItem('timesup_chart_data_timestamp');
+			let lastUpdated = 'Unknown';
+			if (timestamp) {
+				const date = new Date(parseInt(timestamp));
+				const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+				const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
+				const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+				lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
+			}
+			const tooltipText = `Last updated: ${lastUpdated}`;
+
 			// Check if pills already exist
 			let repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 			let visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
@@ -610,7 +622,7 @@ const getImage = (src: string) => {
 			if (isFirstLoad) {
 				footerSlogan.innerHTML = `
 					<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>&nbsp;
-					<span class="stat-pill stat-pill-blue"><strong>${numVisits}</strong>&nbsp;visits</span>
+					<span class="stat-pill stat-pill-blue" title="${tooltipText}"><strong>${numVisits}</strong>&nbsp;visits</span>
 				`;
 				repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 				visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
@@ -618,6 +630,10 @@ const getImage = (src: string) => {
 
 			// Only animate if this is not the first load
 			if (!isFirstLoad) {
+				// Update tooltip with latest timestamp
+				const visitsPillParent = visitsPill.parentElement;
+				visitsPillParent.setAttribute('title', tooltipText);
+
 				// Get current values
 				const currentRepairs = parseInt(repairsPill.textContent) || 0;
 				const currentVisits = parseInt(visitsPill.textContent) || 0;
