@@ -615,7 +615,7 @@ const getImage = (src: string) => {
 				const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
 				lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 			}
-			const tooltipText = `Last updated: ${lastUpdated}\n${mvpVolStr}`;
+			const tooltipText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
 
 			// Check if pills already exist
 			let repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
