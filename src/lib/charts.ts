@@ -189,6 +189,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const toastText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
 	const toastDuration = 5000;
 	const tooltipText = `Last updated: ${lastUpdated}`;
+	const toastRefreshText = "Data manually refreshed";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 		const totalBikes = numBikesFixed + numVolunteers;
@@ -219,7 +220,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const bluePill = footerSlogan.querySelector('.stat-pill-blue');
 			if (bluePill) {
 				createMultiClickHandler(bluePill as HTMLElement, 3, () => {
-					showToast('Data manually refreshed', 3000);
+					showToast(toastRefreshText, toastDuration);
 					fetchAndRenderCharts(true);
 				});
 			}
@@ -243,7 +244,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 				// Add new handler for force refresh
 				const blueCleanup = createMultiClickHandler(visitsPillParent, 3, () => {
-					showToast('Data refreshed', 2000);
+					showToast(toastRefreshText, toastDuration);
 					fetchAndRenderCharts(true);
 				});
 				(visitsPillParent as any).__tripleClickCleanup = blueCleanup;
