@@ -186,9 +186,10 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 	}
 
-	const toastText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
-	const toastDuration = 5000;
+	const toastVolText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
 	const tooltipText = `Last updated: ${lastUpdated}`;
+	const toastDuration = 5000;
+	const toastLongDuration = toastDuration * 2;
 	const toastRefreshText = "Data manually refreshed";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
@@ -212,7 +213,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const redPill = footerSlogan.querySelector('.stat-pill-red');
 			if (redPill) {
 				createMultiClickHandler(redPill as HTMLElement, 3, () => {
-					showToast(toastText, toastDuration);
+					showToast(toastVolText, toastLongDuration);
 				});
 			}
 
@@ -260,7 +261,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 				// Add new handler with updated text
 				const cleanup = createMultiClickHandler(repairsPillParent, 3, () => {
-					showToast(toastText, toastDuration);
+					showToast(toastVolText, toastLongDuration);
 				});
 				(repairsPillParent as any).__tripleClickCleanup = cleanup;
 			}
