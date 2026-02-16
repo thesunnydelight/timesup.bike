@@ -214,6 +214,15 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 					showToast(toastText, toastDuration);
 				});
 			}
+
+			// Add triple-click handler to blue pill to force refresh data
+			const bluePill = footerSlogan.querySelector('.stat-pill-blue');
+			if (bluePill) {
+				createMultiClickHandler(bluePill as HTMLElement, 3, () => {
+					showToast('Data manually refreshed', 3000);
+					fetchAndRenderCharts(true);
+				});
+			}
 		}
 
 		// Only animate if this is not the first load
@@ -224,6 +233,20 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 			if (visitsPillParent) {
 				visitsPillParent.setAttribute('title', tooltipText);
+
+				// Update the triple-click handler on blue pill for force refresh
+				// Remove old handler if exists
+				const oldBlueHandler = (visitsPillParent as any).__tripleClickCleanup;
+				if (oldBlueHandler) {
+					oldBlueHandler();
+				}
+
+				// Add new handler for force refresh
+				const blueCleanup = createMultiClickHandler(visitsPillParent, 3, () => {
+					showToast('Data refreshed', 2000);
+					fetchAndRenderCharts(true);
+				});
+				(visitsPillParent as any).__tripleClickCleanup = blueCleanup;
 			}
 
 			// Update the triple-click handler on red pill with new tooltip text

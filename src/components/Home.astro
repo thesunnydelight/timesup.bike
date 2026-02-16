@@ -982,9 +982,10 @@ const getImage = (src: string) => {
 		opacity: 1;
 	}
 
-	/* Make red pill tappable on mobile */
-	.footer-pills-container :global(.stat-pill-red) {
-		cursor: pointer;
+	/* Make pills tappable on mobile */
+	.footer-pills-container :global(.stat-pill-red),
+	.footer-pills-container :global(.stat-pill-blue) {
+		/* cursor: pointer; */
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
 	}
