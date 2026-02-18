@@ -190,7 +190,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const tooltipText = `Last updated: ${lastUpdated}`;
 	const toastDuration = 5000;
 	const toastLongDuration = toastDuration * 3;
-	const toastRefreshText = "Requesting data refresh";
+	const toastRefreshText = "📡 Refreshing data";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 		const totalBikes = numBikesFixed + numVolunteers;
