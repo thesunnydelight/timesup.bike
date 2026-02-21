@@ -173,7 +173,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const numBikesFixed = Number(dataMap.customers);
 	const numVolunteers = Number(dataMap.volunteers);
 	const numVisits = Number(dataMap.visits);
-	const numDayOfData = Number(dataMap.days_of_data);
+	const daysOfData = dataMap.days_of_data;
 	const mvpVolStr = dataMap.mvp_vol_str;
 
 	// Get last updated timestamp for tooltip
@@ -187,7 +187,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 	}
 
-	const tooltipText = `Last updated: ${lastUpdated}\nDays of data: ${numDayOfData}`;
+	const tooltipText = `Last updated: ${lastUpdated}\nData from: ${daysOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
 	
 	const toastDuration = 5000;
