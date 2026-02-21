@@ -184,10 +184,10 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
 		const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
 		const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
+		lastUpdated = `${dayOfWeek} ${shortDate} at ${time}`;
 	}
 
-	const tooltipText = `Last updated: ${lastUpdated}\nData from ${daysOfData}`;
+	const tooltipText = `Last updated on ${lastUpdated}.\nData from ${daysOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
 	
 	const toastDuration = 5000;
