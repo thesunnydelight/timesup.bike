@@ -187,7 +187,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 	}
 
-	const tooltipText = `Last updated: ${lastUpdated}\nDays of Data: ${numDayOfData}`;
+	const tooltipText = `Last updated: ${lastUpdated}\nDays of data: ${numDayOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
 	
 	const toastDuration = 5000;
