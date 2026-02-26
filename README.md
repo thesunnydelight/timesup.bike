@@ -7,6 +7,10 @@ Pedal-powered mutual aid > car-centric capitalism. This repo holds the Astro sit
 1. Node.js 18+ and npm ready? You're halfway there.
 2. Install dependencies: `npm install`
 3. Fire up the dev server with `npm run dev` and hit `http://localhost:4321`
+4. To run the project locally with the edge functions working, you should use the Netlify CLI instead of "npm run dev"
+   1. Install Netlify CLI: `npm install -g netlify-cli`
+   2. Run with Netlify: `netlify dev`
+
 
 Additional scripts for the collective:
 
