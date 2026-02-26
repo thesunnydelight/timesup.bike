@@ -10,8 +10,8 @@ const RETRY_DELAYS = [1000, 3000, 10000]; // 1s, 3s, 10s exponential backoff
 // Track if background refresh is in progress
 let isBackgroundRefreshing = false;
 
-// API endpoint
-const API_URL = 'https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec';
+// API endpoint - use edge function for caching and rate limiting
+const API_URL = '/api/chart-data';
 
 // Extract shift_1 through shift_20 values
 function getShiftData(dataMap: Record<string, any>, prefix: string): number[] {
