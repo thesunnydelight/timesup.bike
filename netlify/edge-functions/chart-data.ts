@@ -1,9 +1,18 @@
 import type { Context } from "https://edge.netlify.com/";
+import {
+  OPERATING_DAYS,
+  OPERATING_HOUR_START,
+  OPERATING_HOUR_END,
+  TIMEZONE,
+  CACHE_TTL_OPERATING,
+  CACHE_TTL_MAX,
+  CACHE_TTL_STALE_MAX_AGE,
+} from '../../src/lib/config.ts';
 
 // Google Apps Script API endpoint
 const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec';
 
-// Cache key for storing the response
+// Cache key for storing the response (edge function in-memory cache)
 const CACHE_KEY = 'chart-data-cache';
 
 // In-memory cache with TTL
@@ -15,14 +24,14 @@ let cache: {
 // Helper to check if we're in operating hours (Sun/Wed 5pm-8pm ET)
 function isOperatingHours(): boolean {
   const now = new Date();
-  const nyTimeString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
   const nyTime = new Date(nyTimeString);
 
-  const day = nyTime.getDay(); // 0 = Sunday, 3 = Wednesday
+  const day = nyTime.getDay();
   const hour = nyTime.getHours();
 
-  const isOperatingDay = day === 0 || day === 3;
-  const isOperatingTime = hour >= 17 && hour < 20;
+  const isOperatingDay = OPERATING_DAYS.includes(day);
+  const isOperatingTime = hour >= OPERATING_HOUR_START && hour < OPERATING_HOUR_END;
 
   return isOperatingDay && isOperatingTime;
 }
@@ -30,23 +39,26 @@ function isOperatingHours(): boolean {
 // Calculate next shift start time
 function getNextShiftStart(): number {
   const now = new Date();
-  const nyTimeString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
   const nyTime = new Date(nyTimeString);
 
   const currentDay = nyTime.getDay();
   const currentHour = nyTime.getHours();
-  const shiftStartHour = 17;
 
   let daysToAdd = 0;
 
-  if (currentDay === 0) {
-    daysToAdd = currentHour < shiftStartHour ? 0 : 3;
-  } else if (currentDay < 3) {
-    daysToAdd = 3 - currentDay;
-  } else if (currentDay === 3) {
-    daysToAdd = currentHour < shiftStartHour ? 0 : 4;
+  if (currentDay === OPERATING_DAYS[0]) {
+    // First operating day: shift is today if before start, otherwise jump to second operating day
+    daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : OPERATING_DAYS[1] - OPERATING_DAYS[0];
+  } else if (currentDay < OPERATING_DAYS[1]) {
+    // Between first and second operating day: next shift is the second operating day
+    daysToAdd = OPERATING_DAYS[1] - currentDay;
+  } else if (currentDay === OPERATING_DAYS[1]) {
+    // Second operating day: shift is today if before start, otherwise jump to first operating day next week
+    daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : 7 - OPERATING_DAYS[1] + OPERATING_DAYS[0];
   } else {
-    daysToAdd = 7 - currentDay;
+    // After second operating day: next shift is first operating day next week
+    daysToAdd = 7 + OPERATING_DAYS[0] - currentDay;
   }
 
   const nextShift = new Date(now);
@@ -54,7 +66,7 @@ function getNextShiftStart(): number {
 
   const targetDateNY = new Date(nextShift);
   const targetDateString = targetDateNY.toLocaleString('en-US', {
-    timeZone: 'America/New_York',
+    timeZone: TIMEZONE,
     year: 'numeric',
     month: '2-digit',
     day: '2-digit'
@@ -72,27 +84,26 @@ function getNextShiftStart(): number {
     ));
 
     const testNYTime = testDate.toLocaleString('en-US', {
-      timeZone: 'America/New_York',
+      timeZone: TIMEZONE,
       hour: '2-digit',
       hour12: false
     });
 
-    if (testNYTime.includes('17')) {
+    if (testNYTime.includes(String(OPERATING_HOUR_START))) {
       return testDate.getTime();
     }
   }
 
-  return now.getTime() + (24 * 60 * 60 * 1000);
+  return now.getTime() + CACHE_TTL_MAX;
 }
 
 // Calculate cache expiration
 function calculateExpiration(): number {
   if (isOperatingHours()) {
-    // During operating hours: 1 minute expiration
-    return Date.now() + (1 * 60 * 1000);
+    return Date.now() + CACHE_TTL_OPERATING;
   } else {
     // Non-operating hours: minimum of 24 hours or time until next shift
-    const twentyFourHours = Date.now() + (24 * 60 * 60 * 1000);
+    const twentyFourHours = Date.now() + CACHE_TTL_MAX;
     const nextShiftStart = getNextShiftStart();
     return Math.min(twentyFourHours, nextShiftStart);
   }
@@ -163,7 +174,7 @@ export default async (request: Request, context: Context) => {
         status: 200,
         headers: {
           'Content-Type': 'application/json',
-          'Cache-Control': 'public, max-age=300', // 5 minutes for stale data
+          'Cache-Control': `public, max-age=${CACHE_TTL_STALE_MAX_AGE}`,
           'X-Cache': 'STALE',
           'Access-Control-Allow-Origin': '*',
         },

@@ -1,11 +1,17 @@
 import { getCachedData, setCachedData, isCacheValid, CACHE_TIMESTAMP_KEY } from './cache';
 import { isOperatingHours } from './cache';
 import { showToast, createMultiClickHandler } from './toast';
+import {
+	MAX_RETRIES,
+	RETRY_DELAYS,
+	POLLING_INTERVAL,
+	COUNTER_ANIMATION_DURATION,
+	TOAST_DURATION,
+	TOAST_LONG_DURATION,
+} from './config';
 
 // Retry configuration for API failures
 let retryCount = 0;
-const MAX_RETRIES = 3;
-const RETRY_DELAYS = [1000, 3000, 10000]; // 1s, 3s, 10s exponential backoff
 
 // Track if background refresh is in progress
 let isBackgroundRefreshing = false;
@@ -190,8 +196,6 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const tooltipText = `Last updated on ${lastUpdated}.\nData from ${daysOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
 	
-	const toastDuration = 5000;
-	const toastLongDuration = toastDuration * 3;
 	const toastRefreshText = "📡  Refreshing data";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
@@ -215,7 +219,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const redPill = footerSlogan.querySelector('.stat-pill-red');
 			if (redPill) {
 				createMultiClickHandler(redPill as HTMLElement, 3, () => {
-					showToast(toastVolText, toastLongDuration);
+					showToast(toastVolText, TOAST_LONG_DURATION);
 				});
 			}
 
@@ -223,7 +227,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const bluePill = footerSlogan.querySelector('.stat-pill-blue');
 			if (bluePill) {
 				createMultiClickHandler(bluePill as HTMLElement, 3, () => {
-					showToast(toastRefreshText, toastDuration);
+					showToast(toastRefreshText, TOAST_DURATION);
 					fetchAndRenderCharts(true);
 				});
 			}
@@ -247,7 +251,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 				// Add new handler for force refresh
 				const blueCleanup = createMultiClickHandler(visitsPillParent, 3, () => {
-					showToast(toastRefreshText, toastDuration);
+					showToast(toastRefreshText, TOAST_DURATION);
 					fetchAndRenderCharts(true);
 				});
 				(visitsPillParent as any).__tripleClickCleanup = blueCleanup;
@@ -263,7 +267,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 				// Add new handler with updated text
 				const cleanup = createMultiClickHandler(repairsPillParent, 3, () => {
-					showToast(toastVolText, toastLongDuration);
+					showToast(toastVolText, TOAST_LONG_DURATION);
 				});
 				(repairsPillParent as any).__tripleClickCleanup = cleanup;
 			}
@@ -275,13 +279,13 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			// Animate to new values if they changed
 			if (currentRepairs !== totalBikes) {
 				repairsPill.parentElement?.classList.add('updating');
-				animateCounter(repairsPill, currentRepairs, totalBikes, 600, '+');
+				animateCounter(repairsPill, currentRepairs, totalBikes, COUNTER_ANIMATION_DURATION, '+');
 				setTimeout(() => repairsPill?.parentElement?.classList.remove('updating'), 650);
 			}
 
 			if (currentVisits !== numVisits) {
 				visitsPill.parentElement?.classList.add('updating');
-				animateCounter(visitsPill, currentVisits, numVisits, 600, '');
+				animateCounter(visitsPill, currentVisits, numVisits, COUNTER_ANIMATION_DURATION, '');
 				setTimeout(() => visitsPill?.parentElement?.classList.remove('updating'), 650);
 			}
 		}
@@ -397,7 +401,7 @@ export function startPolling(testOperatingHours: boolean = false): void {
 		if (!isCacheValid()) {
 			await fetchAndRenderCharts(false, testOperatingHours);
 		}
-	}, 10000); // Check 10 seconds
+	}, POLLING_INTERVAL);
 
 	// Also check when page becomes visible (tab switching)
 	document.addEventListener('visibilitychange', async () => {

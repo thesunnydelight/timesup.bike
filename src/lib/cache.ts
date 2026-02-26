@@ -1,23 +1,31 @@
+import {
+	OPERATING_DAYS,
+	OPERATING_HOUR_START,
+	OPERATING_HOUR_END,
+	TIMEZONE,
+	CACHE_TTL_OPERATING,
+	CACHE_TTL_MAX,
+	TEST_MODE_TTL,
+} from './config';
+
 // Cache configuration
 export const CACHE_KEY = 'timesup_chart_data';
 export const CACHE_TIMESTAMP_KEY = 'timesup_chart_data_timestamp';
 export const CACHE_EXPIRATION_KEY = 'timesup_chart_data_expiration';
-export const TEST_MODE_TTL = 60 * 1000; // 1 minute (for testing)
+export { TEST_MODE_TTL };
 
 // Check if current time is during operating hours (Sun/Wed 5pm-8pm Eastern Time)
 export function isOperatingHours(): boolean {
 	// Get current time in New York timezone
 	const now = new Date();
-	const nyTimeString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+	const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
 	const nyTime = new Date(nyTimeString);
 
-	const day = nyTime.getDay(); // 0 = Sunday, 3 = Wednesday
+	const day = nyTime.getDay();
 	const hour = nyTime.getHours();
 
-	// Check if it's Sunday (0) or Wednesday (3)
-	const isOperatingDay = day === 0 || day === 3;
-	// Check if time is between 5pm (17) and 8pm (20)
-	const isOperatingTime = hour >= 17 && hour < 20;
+	const isOperatingDay = OPERATING_DAYS.includes(day);
+	const isOperatingTime = hour >= OPERATING_HOUR_START && hour < OPERATING_HOUR_END;
 
 	return isOperatingDay && isOperatingTime;
 }
@@ -26,28 +34,27 @@ export function isOperatingHours(): boolean {
 export function getNextShiftStart(): number {
 	// Get current time in New York timezone (using same pattern as isOperatingHours)
 	const now = new Date();
-	const nyTimeString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+	const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
 	const nyTime = new Date(nyTimeString);
 
-	const currentDay = nyTime.getDay(); // 0 = Sunday, 3 = Wednesday
+	const currentDay = nyTime.getDay();
 	const currentHour = nyTime.getHours();
-	const shiftStartHour = 17; // 5pm
 
 	// Calculate days to add to get to next shift
 	let daysToAdd = 0;
 
-	if (currentDay === 0) {
-		// Sunday: if before 5pm, shift is today; otherwise Wednesday (3 days)
-		daysToAdd = currentHour < shiftStartHour ? 0 : 3;
-	} else if (currentDay < 3) {
-		// Monday or Tuesday: next shift is this Wednesday
-		daysToAdd = 3 - currentDay;
-	} else if (currentDay === 3) {
-		// Wednesday: if before 5pm, shift is today; otherwise Sunday (4 days)
-		daysToAdd = currentHour < shiftStartHour ? 0 : 4;
+	if (currentDay === OPERATING_DAYS[0]) {
+		// First operating day: shift is today if before start, otherwise jump to second operating day
+		daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : OPERATING_DAYS[1] - OPERATING_DAYS[0];
+	} else if (currentDay < OPERATING_DAYS[1]) {
+		// Between first and second operating day: next shift is the second operating day
+		daysToAdd = OPERATING_DAYS[1] - currentDay;
+	} else if (currentDay === OPERATING_DAYS[1]) {
+		// Second operating day: shift is today if before start, otherwise jump to first operating day next week
+		daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : 7 - (OPERATING_DAYS[1] + OPERATING_DAYS[0]);
 	} else {
-		// Thursday, Friday, Saturday: next shift is Sunday
-		daysToAdd = 7 - currentDay;
+		// After second operating day: next shift is first operating day next week
+		daysToAdd = 7 + OPERATING_DAYS[0] - currentDay;
 	}
 
 	// Create next shift date by adding days to the actual current time
@@ -62,7 +69,7 @@ export function getNextShiftStart(): number {
 
 	// Get midnight of target day in NY timezone
 	const targetDateString = targetDateNY.toLocaleString('en-US', {
-		timeZone: 'America/New_York',
+		timeZone: TIMEZONE,
 		year: 'numeric',
 		month: '2-digit',
 		day: '2-digit'
@@ -81,18 +88,18 @@ export function getNextShiftStart(): number {
 		));
 
 		const testNYTime = testDate.toLocaleString('en-US', {
-			timeZone: 'America/New_York',
+			timeZone: TIMEZONE,
 			hour: '2-digit',
 			hour12: false
 		});
 
-		if (testNYTime.includes('17')) {
+		if (testNYTime.includes(String(OPERATING_HOUR_START))) {
 			return testDate.getTime();
 		}
 	}
 
 	// Fallback (shouldn't reach here, but just in case)
-	return now.getTime() + (24 * 60 * 60 * 1000);
+	return now.getTime() + CACHE_TTL_MAX;
 }
 
 // Calculate cache expiration datetime
@@ -102,11 +109,10 @@ export function calculateExpiration(testOperatingHours: boolean = false): number
 	}
 
 	if (isOperatingHours()) {
-		// During operating hours: 1 minute expiration
-		return Date.now() + (1 * 60 * 1000);
+		return Date.now() + CACHE_TTL_OPERATING;
 	} else {
 		// Non-operating hours: minimum of 24 hours or time until next shift
-		const twentyFourHours = Date.now() + (24 * 60 * 60 * 1000);
+		const twentyFourHours = Date.now() + CACHE_TTL_MAX;
 		const nextShiftStart = getNextShiftStart();
 		return Math.min(twentyFourHours, nextShiftStart);
 	}
