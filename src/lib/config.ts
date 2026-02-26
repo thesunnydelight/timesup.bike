@@ -4,6 +4,16 @@ export const OPERATING_HOUR_START = 17; // 5pm ET
 export const OPERATING_HOUR_END = 20;   // 8pm ET
 export const TIMEZONE = 'America/New_York';
 
+// Check if current time is during operating hours (Sun/Wed 5pm-8pm Eastern Time)
+export function isOperatingHours(): boolean {
+	const now = new Date();
+	const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
+	const nyTime = new Date(nyTimeString);
+	const day = nyTime.getDay();
+	const hour = nyTime.getHours();
+	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START && hour < OPERATING_HOUR_END;
+}
+
 // Cache TTLs (in milliseconds unless noted)
 export const CACHE_TTL_OPERATING = 1 * 60 * 1000;    // 1 minute during shifts
 export const CACHE_TTL_MAX = 24 * 60 * 60 * 1000;    // 24 hours outside shifts

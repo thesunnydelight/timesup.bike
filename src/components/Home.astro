@@ -258,7 +258,6 @@ const getImage = (src: string) => {
 
 <script>
 	import { fetchAndRenderCharts, startPolling } from '../lib/charts';
-	import { clearCache, CACHE_DEPLOY_KEY } from '../lib/cache';
 
 	// TEST MODE: Set to true to always show blue bars (for testing)
 	const TEST_OPERATING_HOURS = false;
@@ -273,11 +272,11 @@ const getImage = (src: string) => {
 		delete window.__DEPLOY_ID__;
 	}
 
-	// Bust cache if this is a new deploy
-	const storedDeployId = localStorage.getItem(CACHE_DEPLOY_KEY);
+	// Track deploys to detect when a new version is loaded
+	const DEPLOY_KEY = 'timesup_deploy_id';
+	const storedDeployId = localStorage.getItem(DEPLOY_KEY);
 	if (storedDeployId !== deployId) {
-		clearCache();
-		localStorage.setItem(CACHE_DEPLOY_KEY, deployId);
+		localStorage.setItem(DEPLOY_KEY, deployId);
 	}
 
 	// Expose for console testing/debugging
