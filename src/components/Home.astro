@@ -72,7 +72,7 @@ const getImage = (src: string) => {
 						<span>8pm</span>
 					</div>
 				</div>
-
+				&nbsp;&nbsp;&nbsp;&nbsp;
 				<!-- Current Shift Chart -->
 				<div class="popular-hours-container">
 					<div class="chart-loading">Loading...</div>
@@ -836,9 +836,35 @@ const getImage = (src: string) => {
 	}
 
 
+	@media screen and (max-width: 1720px) {
+		.popular-hours-row {
+			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 1180px) {
+		.hero-footer {
+			/* flex-direction: column; */
+			align-items: flex-end;
+		}
+
+		.footer-tagline {
+			align-items: flex-end;
+			text-align: left;
+			margin-left: 0;
+		}
+		.popular-hours-row {
+			flex-direction: column;
+		}
+	}
+
 	@media screen and (max-width: 1024px) {
 		.home {
 			flex-direction: column;
+		}
+
+		.popular-hours-row {
+			flex-direction: row;
 		}
 
 		.hero-side {
@@ -871,31 +897,6 @@ const getImage = (src: string) => {
 			padding-bottom: 0px;
 		}
 
-	}
-
-	@media screen and (max-height: 800px) {
-		.popular-hours-row {
-			flex-direction: column;
-		}
-	}
-
-	@media screen and (max-width: 1720px) {
-		.popular-hours-row {
-			flex-direction: column;
-		}
-	}
-
-	@media screen and (max-width: 1180px) {
-		.hero-footer {
-			/* flex-direction: column; */
-			align-items: flex-end;
-		}
-
-		.footer-tagline {
-			align-items: flex-end;
-			text-align: left;
-			margin-left: 0;
-		}
 	}
 
 	@media screen and (max-width: 640px) {
@@ -939,6 +940,7 @@ const getImage = (src: string) => {
 	}
 
 	@media screen and (max-width: 480px) and (orientation: portrait) {
+
 		.hero-side h1 {
 			font-size: clamp(20px, 10vw, 28px);
 			white-space: nowrap;
