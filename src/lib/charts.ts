@@ -298,11 +298,8 @@ function updateAnnouncementBanner(dataMap: Record<string, any>): void {
 	if (!banner) return;
 
 	const announcement = dataMap.announcement;
-	const raw = dataMap.announcement_date;
-	const announceDate = raw ? String(raw).split('T')[0] : null;
-	const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
 
-	if (announcement && announceDate === today) {
+	if (announcement) {
 		document.getElementById('announcement-message')!.textContent = announcement.toUpperCase();
 		const d = new Date();
 		const tz = { timeZone: 'America/New_York' };

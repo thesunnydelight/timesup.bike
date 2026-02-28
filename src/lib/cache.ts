@@ -122,16 +122,10 @@ export function isOperatingDayBeforeClose(): boolean {
 	return OPERATING_DAYS.includes(nyTime.getDay()) && nyTime.getHours() < OPERATING_HOUR_END;
 }
 
-// Check if there is an announcement active today
+// Check if there is an active announcement
 function hasActiveAnnouncement(data: any): boolean {
 	if (!Array.isArray(data)) return false;
-	const announcement = data.find((r: any) => r.Param === 'announcement')?.Value;
-	if (!announcement) return false;
-	const raw = data.find((r: any) => r.Param === 'announcement_date')?.Value;
-	if (!raw) return false;
-	const announceDate = String(raw).split('T')[0];
-	const today = new Date().toLocaleDateString('en-CA', { timeZone: TIMEZONE });
-	return announceDate === today;
+	return !!data.find((r: any) => r.Param === 'announcement')?.Value;
 }
 
 // Calculate cache expiration datetime
