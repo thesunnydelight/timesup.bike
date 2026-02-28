@@ -322,7 +322,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 		if (buildTimeData && !getCachedData()) {
 			data = buildTimeData;
 			// Use setCachedData to ensure all cache keys are set (including expiration)
-			setCachedData(data, testOperatingHours);
+			setCachedData(data);
 		}
 		// Check cache - use if valid and not forcing refresh
 		else if (isCacheValid() && !forceRefresh) {
@@ -352,7 +352,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 				}
 
 				data = await response.json();
-				setCachedData(data, testOperatingHours);
+				setCachedData(data);
 				retryCount = 0; // Reset retry count on success
 			} catch (fetchError) {
 				console.error('Error fetching fresh data:', fetchError);
