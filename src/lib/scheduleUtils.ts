@@ -5,7 +5,7 @@ import {
 	TIMEZONE,
 	CACHE_TTL_OPERATING,
 	CACHE_TTL_MAX,
-} from './config';
+} from './config.ts';
 
 // Check if current time is during operating hours (Sun/Wed 5pm-8pm ET)
 export function isOperatingHours(): boolean {
