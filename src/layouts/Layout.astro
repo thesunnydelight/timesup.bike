@@ -1,4 +1,21 @@
 ---
+interface Props {
+	title?: string;
+	description?: string;
+	canonicalPath?: string;
+	ogImage?: string;
+}
+
+const {
+	title = "Time's Up! Bike Co-op - DIY Bike Repair",
+	description = "DIY bike repair workshop in NYC's East Village.  Volunteer mechanics provide guidance and tools to assist your bike repair. Find our schedule, location, pricing and learn how to maintain your bike.",
+	canonicalPath = "/",
+	ogImage = "/og-image.jpg",
+} = Astro.props;
+
+const siteUrl = "https://timesup.bike";
+const canonicalUrl = `${siteUrl}${canonicalPath}`;
+const ogImageUrl = `${siteUrl}${ogImage}`;
 ---
 
 <!doctype html>
@@ -6,13 +23,30 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content="DIY bike repair workshop in NYC's East Village.  Volunteer mechanics provide guidance and tools to assist your bike repair. Find our schedule, location, pricing and learn how to maintain your bike." />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/svg" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalUrl} />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-		<title>Time's Up! Bike Co-op - DIY Bike Repair</title>
+		<title>{title}</title>
+
+		{/* Open Graph */}
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:site_name" content="Time's Up! Bike Co-op" />
+
+		{/* Twitter Card */}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+
+		<slot name="head" />
 		{import.meta.env.PROD && (
 			<Fragment>
 				{/* Google Tag Manager */}

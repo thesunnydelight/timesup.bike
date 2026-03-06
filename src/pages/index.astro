@@ -1,11 +1,50 @@
 ---
 import Home from '../components/Home.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
+<Layout canonicalPath="/">
+	<script slot="head" type="application/ld+json" is:inline>
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Time's Up! Bike Co-op",
+		"description": "DIY bike repair workshop in NYC's East Village. Volunteer mechanics provide guidance and tools to assist your bike repair.",
+		"url": "https://timesup.bike",
+		"email": "contact@timesup.bike",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "626 East 14th St",
+			"addressLocality": "New York",
+			"addressRegion": "NY",
+			"postalCode": "10009",
+			"addressCountry": "US"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 40.7295,
+			"longitude": -73.9765
+		},
+		"openingHoursSpecification": [
+			{
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": "Sunday",
+				"opens": "17:00",
+				"closes": "20:00"
+			},
+			{
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": "Wednesday",
+				"opens": "17:00",
+				"closes": "20:00"
+			}
+		],
+		"priceRange": "$",
+		"sameAs": [
+			"https://www.instagram.com/times_up_nyc/",
+			"https://times-up.org/"
+		]
+	}
+	</script>
 	<Home />
 </Layout>

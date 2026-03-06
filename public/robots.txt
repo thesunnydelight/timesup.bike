@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://timesup.bike/sitemap-index.xml
