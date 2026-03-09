@@ -18,10 +18,13 @@ let cache: {
 
 export default async (request: Request, context: Context) => {
   try {
+    const url = new URL(request.url);
+    const forceRefresh = url.searchParams.get('fresh') === 'true';
+
     // Check if we have valid cached data
     const now = Date.now();
 
-    if (cache && cache.expiration > now) {
+    if (!forceRefresh && cache && cache.expiration > now) {
       console.log('Serving from edge cache');
 
       // Calculate Cache-Control max-age based on remaining TTL

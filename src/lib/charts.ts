@@ -352,7 +352,8 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 		// Fetch fresh data if needed (cache miss, invalid, or force refresh)
 		if (!data || forceRefresh) {
 			try {
-				const response = await fetch(API_URL);
+				const url = forceRefresh ? `${API_URL}?fresh=true` : API_URL;
+				const response = await fetch(url);
 
 				if (!response.ok) {
 					throw new Error(`API returned ${response.status}`);
