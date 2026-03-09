@@ -227,8 +227,8 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const bluePill = footerSlogan.querySelector('.stat-pill-blue');
 			if (bluePill) {
 				createMultiClickHandler(bluePill as HTMLElement, 3, () => {
-					showToast(toastRefreshText, TOAST_DURATION);
 					fetchAndRenderCharts(true);
+					showToast(toastRefreshText, TOAST_DURATION);
 				});
 			}
 		}
