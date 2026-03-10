@@ -12,6 +12,7 @@
     "packageJson": {
       "dependencies": [
         "npm:@astrojs/mdx@^4.3.13",
+        "npm:@astrojs/sitemap@^3.7.0",
         "npm:@tailwindcss/vite@^4.1.14",
         "npm:astro@^5.16.6",
         "npm:decap-cms-app@^3.9.0",

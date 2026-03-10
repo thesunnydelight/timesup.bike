@@ -5,8 +5,8 @@ export const OPERATING_HOUR_END = 20;   // 8pm ET
 export const TIMEZONE = 'America/New_York';
 
 // Cache TTLs (in milliseconds unless noted)
-export const CACHE_TTL_OPERATING = 1 * 60 * 1000;    // 1 minute during shifts
-export const CACHE_TTL_MAX = 24 * 60 * 60 * 1000;    // 24 hours outside shifts
+export const CACHE_TTL_OPERATING = 1 * 60 * 1000;    // 1 minute during active shifts
+export const CACHE_TTL_MAX = 30 * 60 * 1000;    // 30 minutes outside shift
 export const CACHE_TTL_STALE_MAX_AGE = 300;           // 5 minutes (seconds) for stale data headers
 // Polling & retry
 export const POLLING_INTERVAL = 10000;                // 10 seconds
