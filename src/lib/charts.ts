@@ -1,4 +1,4 @@
-import { getCachedData, setCachedData, isCacheValid, CACHE_TIMESTAMP_KEY } from './cache';
+import { getCachedData, setCachedData, isCacheValid, clearCache, CACHE_TIMESTAMP_KEY } from './cache';
 import { isOperatingHours } from './cache';
 import { showToast, createMultiClickHandler } from './toast';
 import {
@@ -326,7 +326,8 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			// Build-time data may be stale — revalidate in background
 			if (!isBackgroundRefreshing) {
 				isBackgroundRefreshing = true;
-				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+				clearCache();
+				fetchAndRenderCharts(false, testOperatingHours).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
@@ -343,7 +344,8 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 				data = staleData;
 				// Fetch fresh data in background
 				isBackgroundRefreshing = true;
-				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+				clearCache();
+				fetchAndRenderCharts(false, testOperatingHours).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
