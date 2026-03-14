@@ -36,7 +36,7 @@ items.forEach((item, i) => cols[i % 4].push(item));
 					return (
 						<div class="gallery-item" data-index={colIdx * col.length + idx}>
 							{imgSrc ? (
-								<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={1200} />
+								<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
 							) : (
 								<img src={item.src} alt={item.alt} loading={loading} />
 							)}
@@ -123,7 +123,7 @@ items.forEach((item, i) => cols[i % 4].push(item));
 	.gallery-item {
 		border-radius: 12px;
 		overflow: hidden;
-		aspect-ratio: 3 / 4;
+		aspect-ratio: 1 / 1;
 		position: relative;
 	}
 

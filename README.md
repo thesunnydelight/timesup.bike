@@ -6,19 +6,16 @@ Pedal-powered mutual aid > car-centric capitalism. This repo holds the Astro sit
 
 1. Node.js 18+ and npm ready? You're halfway there.
 2. Install dependencies: `npm install`
-3. Install Netlify CLI: `npm install -g netlify-cli`
-4. Run `netlify dev`
-4. Go to `http://localhost:8888`.  The astro server starts on port 4321 but a proxy layer on port 8888 sits in front of astro and adds the netlify edge function(s)
+3. Run `npm run dev`
+4. Go to `http://localhost:8888`. The Astro server starts on port 4321, TinaCMS runs its GraphQL server on port 4001, and Netlify Dev proxies everything on port 8888 (adding edge functions).
+5. To edit content, go to `http://localhost:8888/admin/index.html`. Changes save directly to JSON files in `src/content/`.
 
-
-Additional scripts for the collective:
+Additional scripts:
 
 | Command           | Description                                |
 | ----------------- | ------------------------------------------ |
 | `npm run build`   | Compile the production build into `dist/`  |
 | `npm run preview` | Preview the production build locally       |
-
-4. If using Decap CMS, run `npx decap-server` and go to `http://localhost:4321/admin/index.html`.  If it is asking for a username and password, the decap-server is probably not running
 
 ## Contributing
 
