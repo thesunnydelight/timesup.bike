@@ -16,8 +16,8 @@ const getImage = (src: string) => {
 
 // Distribute into 3 columns
 type Portrait = typeof items[number];
-const cols: Portrait[][] = [[], [], []];
-items.forEach((item, i) => cols[i % 3].push(item));
+const cols: Portrait[][] = [[], [], [], []];
+items.forEach((item, i) => cols[i % 4].push(item));
 ---
 
 <section class="portraits">
@@ -110,7 +110,7 @@ items.forEach((item, i) => cols[i % 3].push(item));
 
 	.portraits-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: clamp(8px, 0.8vw, 16px);
 	}
 
@@ -191,14 +191,14 @@ items.forEach((item, i) => cols[i % 3].push(item));
 	/* Responsive */
 	@media screen and (max-width: 768px) {
 		.portraits-grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 		}
 
 	}
 
 	@media screen and (max-width: 480px) {
 		.portraits-grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 </style>
