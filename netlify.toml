@@ -1,8 +1,12 @@
 # Netlify configuration
 
 [build]
-  command = "npm run build"
+  command = "npx tinacms build --local --skip-cloud-checks && astro build"
   publish = "dist"
+
+[dev]
+  command = "npm run dev:tina"
+  targetPort = 4321
 
 # Edge Functions configuration
 [[edge_functions]]

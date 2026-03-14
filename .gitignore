@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# TinaCMS generated files
+tina/__generated__/
+public/admin/

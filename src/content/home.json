@@ -32,99 +32,99 @@
     "heading": "Our Community in Action",
     "images": [
       {
-        "src": "/IMG-20250216-WA0005.jpg",
+        "src": "src/assets/gallery/IMG-20250216-WA0005.jpg",
         "alt": "Volunteers welcome regardless of mechanical skill. We have plenty to do that don't require any wrenching."
       },
       {
-        "src": "/IMG-20250517-WA0040.jpg",
+        "src": "src/assets/gallery/IMG-20250517-WA0040.jpg",
         "alt": "Donations and fundraisers allow us to offer some of the lowest prices in the city"
       },
       {
-        "src": "/IMG-20241117-WA0004.jpg",
+        "src": "src/assets/gallery/IMG-20241117-WA0004.jpg",
         "alt": "Saturday class at La Plaza Community Garden in the summer and early fall"
       },
       {
-        "src": "/IMG-20250607-WA0009.jpg",
+        "src": "src/assets/gallery/IMG-20250607-WA0009.jpg",
         "alt": "Saturday class at La Plaza Community Garden in the summer and early fall"
       },
       {
-        "src": "/IMG-20250419-WA0019.jpg",
+        "src": "src/assets/gallery/IMG-20250419-WA0019.jpg",
         "alt": "Flat fix class at La Plaza Community Garden"
       },
       {
-        "src": "/IMG-20241110-WA0007.jpg",
+        "src": "src/assets/gallery/IMG-20241110-WA0007.jpg",
         "alt": "Late night at the coop"
       },
       {
-        "src": "/IMG-20250430-WA0002.jpg",
+        "src": "src/assets/gallery/IMG-20250430-WA0002.jpg",
         "alt": "Spring workshop for repair, tuneup, parts installation, volunteering and general chit chat"
       },
       {
-        "src": "/IMG-20250418-WA0015.jpg",
+        "src": "src/assets/gallery/IMG-20250418-WA0015.jpg",
         "alt": "We do not store personal bikes overnight, repairs occasionally last late into the evening so you can ride home"
       },
       {
-        "src": "/IMG-20250928-WA0047.jpg",
+        "src": "src/assets/gallery/IMG-20250928-WA0047.jpg",
         "alt": "Repairs overflow onto the sidewalk when it is too crowded inside"
       },
       {
-        "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
+        "src": "src/assets/gallery/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
         "alt": "Wheel building workshop"
       },
       {
-        "src": "/IMG-20250409-WA0001.jpg",
+        "src": "src/assets/gallery/IMG-20250409-WA0001.jpg",
         "alt": "Repair workshops held on Sunday and Wednesday evenings"
       },
       {
-        "src": "/IMG-20250312-WA0000.jpg",
+        "src": "src/assets/gallery/IMG-20250312-WA0000.jpg",
         "alt": "Get your hands dirty.  No need to wear your Sunday best."
       },
       {
-        "src": "/IMG-20250517-WA0077.jpg",
+        "src": "src/assets/gallery/IMG-20250517-WA0077.jpg",
         "alt": "It is a hands-on tutorial rather than the fastest service so give yourself a bit more time.  Some repairs may be split over multiple visits."
       },
       {
-        "src": "/IMG-20250419-WA0015.jpg",
+        "src": "src/assets/gallery/IMG-20250419-WA0015.jpg",
         "alt": "Flat fix class at La Plaza Community Garden"
       },
       {
-        "src": "/IMG-20250409-WA0002.jpg",
+        "src": "src/assets/gallery/IMG-20250409-WA0002.jpg",
         "alt": "Sometimes you fix one problem and it reveals another so come early"
       },
       {
-        "src": "/pxl_20260118_231524198.jpg",
+        "src": "src/assets/gallery/pxl_20260118_231524198.jpg",
         "alt": "Gloves provided.  We might even have that one-off tool you need"
       },
       {
-        "src": "/PXL_20250316_230359937.jpg",
+        "src": "src/assets/gallery/PXL_20250316_230359937.jpg",
         "alt": "Sign in when you arrive.  No appointment needed."
       },
       {
-        "src": "/IMG-20250921-WA0081.jpg",
+        "src": "src/assets/gallery/IMG-20250921-WA0081.jpg",
         "alt": "We can handle most repairs except for cutting carbon fiber and diagnosing electronic shifting"
       },
       {
-        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
+        "src": "src/assets/gallery/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
         "alt": "Learn to fix your bike surrounded by artwork"
       },
       {
-        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (4).jpeg",
+        "src": "src/assets/gallery/WhatsApp Image 2025-12-28 at 2.03.15 PM (4).jpeg",
         "alt": "Spring into Action group ride"
       },
       {
-        "src": "/IMG-20250130-WA0003.jpg",
+        "src": "src/assets/gallery/IMG-20250130-WA0003.jpg",
         "alt": "Some of our volunteer mechanics"
       },
       {
-        "src": "/IMG-20250428-WA0008.jpg",
+        "src": "src/assets/gallery/IMG-20250428-WA0008.jpg",
         "alt": "We fix up and sell used commuter bikes for ~$160"
       },
       {
-        "src": "/pxl_20260119_011303334-1-.jpg",
+        "src": "src/assets/gallery/pxl_20260119_011303334-1-.jpg",
         "alt": "Come browse our used parts bins, most secondhand parts are $5-$10.  We carry a limited stock of new parts."
       },
       {
-        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM.jpeg",
+        "src": "src/assets/gallery/WhatsApp Image 2025-12-28 at 2.03.15 PM.jpeg",
         "alt": "Learn to fix your bike.  No experience needed"
       }
     ]

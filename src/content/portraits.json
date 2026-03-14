@@ -1,0 +1,25 @@
+{
+  "title": "Coop Magic & Lore",
+  "description": "we voided the warranty a long time ago",
+  "portraits": [
+    {
+      "src": "/src/assets/gallery/PXL_20260302_013123734.jpg",
+      "alt": "crank puller yielded during the feat of strength",
+      "yearsBiking": "",
+      "favoriteCustomization": "",
+      "typeOfRiding": ""
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20260313_044723839.jpg",
+      "alt": "fixing the ceiling light circuit"
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20260313_030954931.jpg",
+      "alt": "a vise for wheels"
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20260309_015509828.jpg",
+      "alt": "quick release paper towel"
+    }
+  ]
+}

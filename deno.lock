@@ -14,10 +14,12 @@
         "npm:@astrojs/mdx@^4.3.13",
         "npm:@astrojs/sitemap@^3.7.0",
         "npm:@tailwindcss/vite@^4.1.14",
+        "npm:@tinacms/cli@^2.1.9",
         "npm:astro@^5.16.6",
-        "npm:decap-cms-app@^3.9.0",
         "npm:marked@^17.0.1",
-        "npm:tailwindcss@^4.1.14"
+        "npm:netlify-cli@^24.2.0",
+        "npm:tailwindcss@^4.1.14",
+        "npm:tinacms@^3.6.1"
       ]
     }
   }
