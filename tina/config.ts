@@ -21,7 +21,7 @@ export default defineConfig({
     collections: [
       {
         name: "home",
-        label: "Home Page",
+        label: "Home",
         path: "src/content",
         match: {
           include: "home",
