@@ -2,7 +2,14 @@
 import { Image } from 'astro:assets';
 import spokeCards from '../content/spoke_cards.json';
 
-const { title, description, pics: items } = spokeCards;
+interface SpokeCardItem {
+	src: string;
+	alt: string;
+	embiggen?: boolean;
+}
+
+const { title, description, pics } = spokeCards;
+const items = pics as SpokeCardItem[];
 
 // Import all gallery images dynamically
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/**/*.{jpg,jpeg,png,gif,JPG}', { eager: true });
@@ -18,9 +25,8 @@ const getImage = (src: string) => {
 const validItems = items.filter(i => i.src);
 
 // Simulate CSS grid dense placement to find gaps
-function simulateGrid(ordered: typeof validItems, cols: number) {
+function simulateGrid(ordered: SpokeCardItem[], cols: number) {
 	const grid: boolean[][] = [];
-	const rows = () => grid.length;
 	const ensure = (r: number) => { while (grid.length <= r) grid.push(new Array(cols).fill(false)); };
 	const canPlace = (r: number, c: number, s: number) => {
 		ensure(r + s - 1);
@@ -52,9 +58,7 @@ function simulateGrid(ordered: typeof validItems, cols: number) {
 		}
 	}
 
-	// Trim trailing empty rows
 	while (grid.length && grid[grid.length - 1].every(c => !c)) grid.pop();
-	// Count internal gaps
 	let gaps = 0;
 	for (const row of grid) gaps += row.filter(c => !c).length;
 	const has2x2Row0 = ordered.some((item, i) => !!item.embiggen && itemRows[i] === 0);
@@ -64,12 +68,11 @@ function simulateGrid(ordered: typeof validItems, cols: number) {
 // Distribute 1x1 items evenly around 2x2 items for a balanced grid
 const featured = validItems.filter(i => i.embiggen);
 const regular = validItems.filter(i => !i.embiggen);
-let renderItems: typeof validItems;
+let renderItems: SpokeCardItem[];
 
 if (featured.length === 0) {
 	renderItems = [...validItems];
 } else {
-	// Split regular items into slots: [before 1st, between each pair, after last]
 	const slots = featured.length + 1;
 	const perSlot = Math.floor(regular.length / slots);
 	const remainder = regular.length % slots;
@@ -82,7 +85,6 @@ if (featured.length === 0) {
 		if (s < featured.length) renderItems.push(featured[s]);
 	}
 
-	// Move top 1x1 items to the end so CSS dense fills them into gaps around 2x2 items
 	for (let i = 0; i < renderItems.length; i++) {
 		const { gaps, has2x2Row0 } = simulateGrid(renderItems, 4);
 		if (gaps === 0 || has2x2Row0) break;
