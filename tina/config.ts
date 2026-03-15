@@ -236,6 +236,12 @@ export default defineConfig({
               { type: "image", name: "src", label: "Image" },
               { type: "string", name: "alt", label: "Caption (Alt Text)" },
               {
+                type: "string",
+                name: "instagram",
+                label: "Instagram Handle",
+                required: false,
+              },
+              {
                 type: "boolean",
                 name: "embiggen",
                 label: "Embiggen (2x2)",
