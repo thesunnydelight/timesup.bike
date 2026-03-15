@@ -24,7 +24,7 @@ const getImage = (src: string) => {
 	return key ? images[key].default : null;
 };
 
-const validItems = items.filter(i => i.src);
+const validItems = items.filter(i => i.src).sort((a, b) => a.alt.localeCompare(b.alt));
 
 // Simulate CSS grid dense placement to find gaps
 function simulateGrid(ordered: ToolItem[], cols: number) {
@@ -118,6 +118,7 @@ if (featured.length === 0) {
 					) : (
 						<img src={item.src} alt={item.alt} loading={loading} />
 					)}
+					<span class="tool-name">{item.alt}</span>
 					<div class="gallery-overlay">
 						<span class="overlay-caption">{item.alt}</span>
 						{item.description && (
@@ -249,6 +250,27 @@ if (featured.length === 0) {
 		font-weight: 600;
 		color: #fff;
 		line-height: 1.3;
+	}
+
+	.tool-name, .portraits-grid :global(.tool-name) {
+		position: absolute;
+		bottom: 12px;
+		left: 12px;
+		color: #fff;
+		font-size: clamp(12px, 1.2vw, 18px);
+		font-weight: 500;
+		text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+		background: rgba(0, 0, 0, 0.6);
+		padding: 4px 8px;
+		border-radius: 4px;
+		z-index: 1;
+		opacity: 1;
+		transition: opacity 0.3s ease;
+		pointer-events: none;
+	}
+
+	.gallery-item:hover .tool-name, .portraits-grid :global(.gallery-item:hover .tool-name) {
+		opacity: 0;
 	}
 
 	.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {

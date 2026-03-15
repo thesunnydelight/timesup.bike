@@ -5,13 +5,13 @@
     {
       "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
       "alt": "air compressor",
-      "description": "dries hands, seats tubeless tires and installs bar grips.  do not press against skin",
+      "description": "seats tubeless tires, installs bar grips, dries hands but do not press against skin",
       "location": "by the sink"
     },
     {
       "src": "/src/assets/gallery/PXL_20260313_030911140.jpg",
-      "alt": "vise + wheel holder",
-      "description": "for working on your wheel like repacking hub or adjusting cones.  for light duty only due to thin mounting surface",
+      "alt": "wheel holder",
+      "description": "holds your wheel by the axle, useful for taking apart the hub or adjusting cones",
       "location": "backroom"
     },
     {
@@ -24,18 +24,18 @@
       "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
       "alt": "bottom brackets",
       "location": "opposite of the sink",
-      "embiggen": true
+      "embiggen": false
     },
     {
       "src": "/src/assets/gallery/PXL_20260119_011155971.jpg",
       "alt": "used components",
       "description": "pricing chart by the sliding door.  generally ~$5",
-      "location": "backroom"
+      "location": "milk bins in backroom"
     },
     {
       "src": "/src/assets/gallery/PXL_20260309_015509828 (1).jpg",
       "alt": "paper towel",
-      "description": "but it's quick release and an original design",
+      "description": "but it's quick release and an original coop design",
       "location": "by the sink"
     }
   ]
