@@ -4,7 +4,7 @@
   "pics": [
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_2.JPG",
-      "alt": "1 (Thurs Night Social Ride)",
+      "alt": "1",
       "instagram": "socialcyclingnyc"
     },
     {
@@ -333,21 +333,6 @@
       "instagram": "socialcyclingnyc"
     },
     {
-      "src": "/src/assets/gallery/spoke_cards/spoke_card_74.JPG",
-      "alt": "74",
-      "instagram": "socialcyclingnyc"
-    },
-    {
-      "src": "/src/assets/gallery/spoke_cards/spoke_card_75.JPG",
-      "alt": "75",
-      "instagram": "socialcyclingnyc"
-    },
-    {
-      "src": "/src/assets/gallery/spoke_cards/spoke_card_76.JPG",
-      "alt": "76",
-      "instagram": "socialcyclingnyc"
-    },
-    {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_77.JPG",
       "alt": "77",
       "instagram": "socialcyclingnyc"
@@ -394,9 +379,24 @@
       "instagram": "times_up_nyc"
     },
     {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_74.JPG",
+      "alt": "74",
+      "instagram": "times_up_nyc"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_75.JPG",
+      "alt": "75",
+      "instagram": "times_up_nyc"
+    },
+    {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_91.JPG",
       "alt": "91",
       "instagram": "times_up_nyc"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_76.JPG",
+      "alt": "76",
+      "instagram": "metro.sn"
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_79.JPG",
