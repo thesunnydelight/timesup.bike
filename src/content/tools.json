@@ -41,7 +41,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225451838.jpg",
       "alt": "assorted small parts",
-      "description": "various small parts",
+      "description": "various small parts organized by size and not by function",
       "location": "organizer in the backroom, black sliding cabinet in backroom and red cabinet opposite the sink"
     },
     {
@@ -112,7 +112,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230229662.jpg",
       "alt": "cone wrenches",
-      "description": "think wrench to remove and adjust lock nuts on wheels",
+      "description": "thin wrench to remove and adjust lock nuts on wheels",
       "location": "pegboard"
     },
     {
@@ -190,7 +190,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
       "alt": "bolt cutters",
-      "description": "cuts bolts and screws",
+      "description": "cuts bolts and screws, not for chains",
       "location": "front area pan-am cabinet"
     },
     {
@@ -250,6 +250,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
       "alt": "assorted hand tools",
+      "description": "wrenches, pliers, hammers, etc...",
       "location": "pegboard and pan-am cabinet"
     },
     {
