@@ -31,8 +31,50 @@ Bring your bike and describe the issue to a volunteer mechanic. You do the repai
 ## Contact
 Email: contact@timesup.bike
 
-## Tools Locator
-The co-op maintains a collection of bike repair tools and supplies available for use during open hours. A visual guide to what's available and where to find it in the shop is at https://timesup.bike/tools
+## Tools & Supplies Available
+The co-op provides tools and supplies for DIY bike repair. Visual guide: https://timesup.bike/tools
+
+### By the sink
+- Air compressor — seats tubeless tires, removes bar grips, dries hands
+- Vise — general purpose holding and leverage
+- Garden sprayer — cleans bike
+- Paper towel (quick release)
+
+### Pegboard
+- External bottom bracket tool
+- Cone wrenches — for wheel hub locknuts
+- Third hand tool — for shift/brake cable adjustments
+- Master link pliers
+- Chain checker, chain tool, chainring nut wrench
+
+### Backroom
+- Wheel holder — holds wheel by axle for hub work
+- Bottom brackets
+- Used components (~$5, bins in backroom)
+- Assorted nuts & bolts
+- Inner tubes (new and used)
+- Lubricants, degreasers, disposable gloves
+- Wheel truing stands (one mounted, two mobile)
+- Chain scrubber, grease gun
+- Loose ball bearings & cable ferrules
+- Drop handlebars
+
+### Front area (pan-am cabinet)
+- Derailleur hanger alignment guide
+- Crown race setter & cup remover
+- Headset press
+- Taps (use with cutting fluid)
+- Bolt cutters, punches
+- Cheater bars (small and large)
+- Assorted hand tools (wrenches, pliers, hammers)
+
+### Other locations
+- Hacksaw, saw guide — under the fridge
+- Star nut setter, BB/cassette/crank tools — cabinet under truing stands
+- Tires — loft and top shelf of backroom
+- Bike frames — basement
+- Torque wrench, tension meter — ask a volunteer
+- Donation box — backroom and front room table
 
 ## Spoke Cards
 A gallery of spoke cards, stickers, and zines collected around NYC cycling events: https://timesup.bike/spoke_cards
