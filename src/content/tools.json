@@ -1,5 +1,5 @@
 {
-  "title": "Tools",
+  "title": "Tools Locator",
   "description": "what we have and where they are",
   "pics": [
     {
@@ -37,6 +37,261 @@
       "alt": "paper towel",
       "description": "but it's quick release and an original coop design",
       "location": "by the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225451838.jpg",
+      "alt": "assorted small parts",
+      "description": "various small parts",
+      "location": "organizer in the backroom, black sliding cabinet in backroom and red cabinet opposite the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225517512.jpg",
+      "alt": "assorted nuts & bolts",
+      "description": "various sizes and not all metric, useful for racks and attaching accessories",
+      "location": "backroom shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225531615.jpg",
+      "alt": "saw guide",
+      "description": "cutting steerer tubes",
+      "location": "under the fridge in the back"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225538413.jpg",
+      "alt": "hacksaw",
+      "description": "for cutting steerer tube and handlebar",
+      "location": "under the fridge"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
+      "alt": "torque wrench",
+      "description": "torquing small bolts up to m6 size.  the larger one is for bigger bolts from m8 and up to bottom bracket.",
+      "location": "ask a volunteer"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
+      "alt": "tension meter",
+      "description": "measures spoke tension",
+      "location": "ask a volunteer"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225926531.jpg",
+      "alt": "bar end plug",
+      "description": "caps handlebar to prevent impalement during a crash"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225953455.jpg",
+      "alt": "wheel axles",
+      "description": "axle, cones, locknuts",
+      "location": "sliding cabinet opposite the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230013287.jpg",
+      "alt": "drills",
+      "description": "makes holes",
+      "location": "sliding cabinet opposite the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230027463.jpg",
+      "alt": "quick release skewers",
+      "location": "sliding cabinet opposite the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230157410.jpg",
+      "alt": "garden sprayer",
+      "description": "cleans bike",
+      "location": "by the window near the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230220251.jpg",
+      "alt": "external bottom bracket tool",
+      "description": "installs and removes external cup bottom brackets",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230229662.jpg",
+      "alt": "cone wrenches",
+      "description": "think wrench to remove and adjust lock nuts on wheels",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230356596.jpg",
+      "alt": "third hand tool",
+      "description": "makes fine adjustments when installing shift or brake cables",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230359485.jpg",
+      "alt": "master link pliers",
+      "description": "installs and removes master link on chain",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230419876.jpg",
+      "alt": "chain checker",
+      "description": "measures chain wear",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230439885.jpg",
+      "alt": "chainring nut wrench",
+      "description": "install and remove chainring nuts",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230449820.jpg",
+      "alt": "chain tool",
+      "description": "pushes out rivet to shorten chain",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230511796.jpg",
+      "alt": "loose ball bearings & cable housing ferrules",
+      "description": "ball bearings for various sizes for wheels.  ferrules to cap cable housing and cables",
+      "location": "clear plastic bin in backroom shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230517167.jpg",
+      "alt": "disposable gloves",
+      "description": "gloves in various sizes",
+      "location": "milk crates in backroom"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230520474.jpg",
+      "alt": "lubricants",
+      "description": "wet and dry lubricants for chain.  grease for bearings",
+      "location": "backroom shelf (middle row)"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230523630.jpg",
+      "alt": "degreasers",
+      "description": "cleaning solvents",
+      "location": "backroom middle shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230530320.jpg",
+      "alt": "inner tubes",
+      "description": "new (MSRP) and used (discounted) inner tubes",
+      "location": "backroom shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230546782.jpg",
+      "alt": "derailleur hangar alignment guide",
+      "description": "re-straightens rear derailleur hangar",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230556743.jpg",
+      "alt": "punches",
+      "description": "makes pilot holes",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
+      "alt": "bolt cutters",
+      "description": "cuts bolts and screws",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230640023.jpg",
+      "alt": "taps",
+      "description": "makes and cleans threads in holes",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230652267.jpg",
+      "alt": "cheater bar (small)",
+      "description": "adds leverage for allen wrench, useful for 8mm and larger bolts",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_005502558.jpg",
+      "alt": "cheater bar",
+      "description": "adds leverage to chain whips and wrenches.  affectionately called the \"physics\" bar",
+      "location": "behind the truing stands"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_005507297.jpg",
+      "alt": "wheel alignment gauge",
+      "description": "measures dishing in a wheel",
+      "location": "next to the truing stands"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_005512729.jpg",
+      "alt": "donation box",
+      "description": "cash is king and keeps the shop open",
+      "location": "one in the back room and another in the front room table"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_005750983.jpg",
+      "alt": "handlebars (drop bar)",
+      "description": "various drop handlebars",
+      "location": "backroom, above the floor pumps"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_005849987.jpg",
+      "alt": "crown race setter & headset/bottom bracket cup remover",
+      "description": "install crown race on a steerer tube.  punches out the external cup headsets and press fit bottom bracket",
+      "location": "front area pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_010009053.jpg",
+      "alt": "headset press",
+      "description": "installs external cup headsets",
+      "location": "bottom drawer in pan-am cabinet"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_010955988.jpg",
+      "alt": "saw blade guide",
+      "description": "guides saw blade when cutting tubes (e.g. steerer tube, seatpost)",
+      "location": "under the fridge"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
+      "alt": "assorted hand tools",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_011201538.jpg",
+      "alt": "wheel truing stand",
+      "description": "for truing or building wheels",
+      "location": "backroom"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_013315280.jpg",
+      "alt": "bike frames",
+      "description": "to be built up or parted out",
+      "location": "basement"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_014402283.jpg",
+      "alt": "star nut setter",
+      "description": "installs star nut in steerer tube",
+      "location": "cabinet under the truing stands"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_014501412.jpg",
+      "alt": "bottom bracket, cassette and crank tools",
+      "description": "installs and removes bottom brackets, cranks and cassettes.  ",
+      "location": "cabinet under truing stands"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_015207067.jpg",
+      "alt": "tires",
+      "description": "various sizes and conditions",
+      "location": "loft and top shelf of backroom"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_015242598.jpg",
+      "alt": "chain scrubber",
+      "description": "cleans chain, use with degreaser",
+      "location": "by the lubricant bins in backroom"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_015455822.jpg",
+      "alt": "grease gun",
+      "description": "use for metal on metal contact to prevent corrosion and minimize friction",
+      "location": "pan-am cabinet or grease bin in backroom"
     }
   ]
 }

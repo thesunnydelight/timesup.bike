@@ -249,7 +249,7 @@ const getImage = (src: string) => {
 
 	// Double-click last gallery image to navigate to /pics
 	const allGalleryItems = document.querySelectorAll('.gallery-side .gallery-item');
-	const lastItem = allGalleryItems[allGalleryItems.length - 1];
+	const lastItem = allGalleryItems[allGalleryItems.length - 1] as HTMLElement | undefined;
 	if (lastItem) {
 		lastItem.style.cursor = 'pointer';
 		lastItem.addEventListener('dblclick', () => {
