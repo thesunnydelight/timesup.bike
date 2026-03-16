@@ -99,7 +99,7 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 		const newIconsHTML = `
 			<span>${users} <span title="shop patrons">🤷</span></span>
 			<span>${volunteers} <span title="bike mechanics">🧑‍🔧</span></span>
-			<span>${total} <span title="everyone">👤</span></span>
+			<span>${total} <span title="everybody">👤</span></span>
 		`;
 		if (iconsChanged) {
 			iconsEl.classList.add('updating');
