@@ -5,7 +5,7 @@
     {
       "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
       "alt": "air compressor",
-      "description": "seats tubeless tires, installs bar grips, dries hands but do not press against skin",
+      "description": "seats tubeless tires, removes bar grips, dries hands but do not press against skin",
       "location": "by the sink"
     },
     {
@@ -47,7 +47,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225517512.jpg",
       "alt": "assorted nuts & bolts",
-      "description": "various sizes and not all metric, useful for racks and attaching accessories",
+      "description": "various sizes and not all metric, useful for attaching accessories like racks and fenders",
       "location": "backroom shelf"
     },
     {
@@ -76,8 +76,9 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225926531.jpg",
-      "alt": "bar end plug",
-      "description": "caps handlebar to prevent impalement during a crash"
+      "alt": "bar end plugs",
+      "description": "caps handlebar to prevent impalement during a crash",
+      "location": "sliding cabinet opposite the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225953455.jpg",
@@ -195,7 +196,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230640023.jpg",
       "alt": "taps",
-      "description": "makes and cleans threads in holes",
+      "description": "makes and cleans threads in holes.  there is one die to cut threads for threaded steerer tube.  use with cutting fluid (e.g. 3-in-1 oil)",
       "location": "front area pan-am cabinet"
     },
     {
@@ -249,7 +250,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
       "alt": "assorted hand tools",
-      "location": "pegboard"
+      "location": "pegboard and pan-am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011201538.jpg",
@@ -271,7 +272,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_014501412.jpg",
-      "alt": "bottom bracket, cassette and crank tools",
+      "alt": "bottom bracket, cassette & crank tools",
       "description": "installs and removes bottom brackets, cranks and cassettes.  ",
       "location": "cabinet under truing stands"
     },
