@@ -119,6 +119,10 @@ if (featured.length === 0) {
 						<img src={item.src} alt={item.alt} loading={loading} />
 					)}
 					<span class="tool-name">{item.alt}</span>
+					<div class="sr-only">
+						{item.description && <span>{item.description}</span>}
+						{item.location && <span> Location: {item.location}</span>}
+					</div>
 					<div class="gallery-overlay">
 						<span class="overlay-caption">{item.alt}</span>
 						{item.description && (
@@ -280,6 +284,18 @@ if (featured.length === 0) {
 	.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
 		transform: scale(1.05);
 		filter: none;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
 
 	/* Responsive */
