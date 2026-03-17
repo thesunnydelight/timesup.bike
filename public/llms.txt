@@ -59,7 +59,7 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide: https:/
 - Loose ball bearings & cable ferrules
 - Drop handlebars
 
-### Front area (pan-am cabinet)
+### Front area (Pan-Am cabinet)
 - Derailleur hanger alignment guide
 - Crown race setter & cup remover
 - Headset press

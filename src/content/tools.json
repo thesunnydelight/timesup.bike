@@ -47,7 +47,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225517512.jpg",
-      "alt": "assorted nuts & bolts",
+      "alt": "nuts & bolts",
       "description": "various sizes but not all metric. useful for attaching accessories like racks and fenders",
       "location": "backroom shelf"
     },
@@ -84,25 +84,37 @@
       "src": "",
       "alt": "brake bleed kit",
       "description": "bleed shimano/mineral oil hydraulic brakes",
-      "location": "pan-am cabinet, top shelf"
+      "location": "Pan-Am cabinet, top shelf"
     },
     {
       "src": "",
       "alt": "threaded steerer die",
       "description": "cuts and cleans thread on steerer tube",
-      "location": "pan-am cabinet, in taps/die drawer"
+      "location": "Pan-Am cabinet, in taps/die drawer"
     },
     {
       "src": "",
       "alt": "calipers & rulers",
       "description": "measures things",
-      "location": "pan-am cabinet, in rulers drawer"
+      "location": "Pan-Am cabinet, in rulers drawer"
     },
     {
       "src": "",
       "alt": "grinder",
       "description": "grinds and smooths cut material",
       "location": "backroom upper shelf"
+    },
+    {
+      "src": "",
+      "alt": "dremel",
+      "description": "makes small holes",
+      "location": "backroom upper shelf"
+    },
+    {
+      "src": "",
+      "alt": "hammers & mallets",
+      "description": "percussive persuasion",
+      "location": "Pan-Am cabinet and pegboard"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
@@ -191,12 +203,12 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_230517167.jpg",
       "alt": "disposable gloves",
       "description": "gloves in various sizes",
-      "location": "milk crates in backroom and the pan-am cabinet"
+      "location": "milk crates in backroom and the Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230520474.jpg",
       "alt": "lubricants",
-      "description": "wet and dry lubricants for chain.  grease for bearings.  light oil for pivoting parts",
+      "description": "wet and dry lube for chain.  grease for bearings.  light oil for pivoting parts",
       "location": "backroom shelf (middle row)"
     },
     {
@@ -215,31 +227,31 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_230546782.jpg",
       "alt": "derailleur hangar alignment guide",
       "description": "straightens rear derailleur hangar",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230556743.jpg",
       "alt": "punches",
       "description": "makes pilot holes",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
       "alt": "bolt cutters",
       "description": "cuts bolts, screws and fender stays",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230640023.jpg",
       "alt": "taps",
       "description": "makes and cleans threads in holes.  use with cutting fluid (e.g. 3-in-1 oil)",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230652267.jpg",
       "alt": "cheater bar (small)",
       "description": "adds leverage for M8 and larger allen keys",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005502558.jpg",
@@ -269,13 +281,13 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_005849987.jpg",
       "alt": "crown race setter & cup remover",
       "description": "install crown race on a steerer tube.  cup remover to punch out the external cup headsets and press fit bottom bracket",
-      "location": "front area pan-am cabinet"
+      "location": "front room Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_010009053.jpg",
       "alt": "headset press",
       "description": "installs external cup headsets",
-      "location": "bottom drawer in pan-am cabinet"
+      "location": "bottom drawer in Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_010955988.jpg",
@@ -287,7 +299,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
       "alt": "assorted hand tools",
       "description": "wrenches, pliers, hammers, scissors, etc...",
-      "location": "pegboard and pan-am cabinet"
+      "location": "pegboard and Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011201538.jpg",
@@ -329,7 +341,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_015455822.jpg",
       "alt": "grease gun",
       "description": "prevents corrosion and minimizes friction for metal-on-metal contact",
-      "location": "floats between pan-am cabinet or grease bin in backroom"
+      "location": "floats between Pan-Am cabinet or grease bin in backroom"
     },
     {
       "alt": "ratchet & sockets",
