@@ -1,6 +1,6 @@
 {
   "title": "Tools Locator",
-  "description": "what we have and where they can be found",
+  "description": "what we have and where they can be found at the start and end of each shift",
   "pics": [
     {
       "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
@@ -60,8 +60,49 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
       "alt": "torque wrench",
-      "description": "precise application of force for small bolts up to M6.  the larger one is for bigger bolts from M8 up to bottom bracket",
+      "description": "precise application of force for small bolts up to M6",
       "location": "ask a volunteer"
+    },
+    {
+      "src": "",
+      "alt": "torque wrench (large)",
+      "description": "precise application of force for cranks and bottom brackets",
+      "location": "backroom, above the socket drawer"
+    }, 
+    {
+      "src": "",
+      "alt": "handlebars (flat)",
+      "location": "bin in backroom"
+    },
+    {
+      "src": "",
+      "alt": "racks",
+      "description": "adds carrying capacity to bike",
+      "location": "small room past the sink"
+    },
+    {
+      "src": "",
+      "alt": "brake bleed kit",
+      "description": "bleed shimano/mineral oil hydraulic brakes",
+      "location": "pan-am cabinet, top shelf"
+    },
+    {
+      "src": "",
+      "alt": "threaded steerer die",
+      "description": "cuts and cleans thread on steerer tube",
+      "location": "pan-am cabinet, in taps/die drawer"
+    },
+    {
+      "src": "",
+      "alt": "calipers & rulers",
+      "description": "measures things",
+      "location": "pan-am cabinet, in rulers drawer"
+    },
+    {
+      "src": "",
+      "alt": "grinder",
+      "description": "grinds and smooths cut material",
+      "location": "backroom upper shelf"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
