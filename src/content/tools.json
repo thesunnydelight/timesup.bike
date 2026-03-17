@@ -60,13 +60,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
       "alt": "torque wrench",
-      "description": "precise application of force for small bolts up to M6",
+      "description": "precise application of force for small bolts up to M6.  zero out tension after use",
       "location": "ask a volunteer"
     },
     {
       "src": "",
       "alt": "torque wrench (large)",
-      "description": "precise application of force for cranks and bottom brackets",
+      "description": "precise application of force for cranks and bottom brackets. zero out tension after use",
       "location": "backroom, above the socket drawer"
     },
     {
@@ -115,6 +115,12 @@
       "alt": "hammers & mallets",
       "description": "percussive persuasion",
       "location": "Pan-Am cabinet and pegboard"
+    },
+    {
+      "src": "",
+      "alt": "angle grinder",
+      "description": "cuts chains and locks",
+      "location": "backroom upper shelf"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
