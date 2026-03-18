@@ -420,20 +420,6 @@ if (featured.length === 0) {
 		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 		transform: translate(-50%, -50%);
 		pointer-events: none;
-	}
-
-	:global(@keyframes blink) {
-		0%, 100% { opacity: 1; }
-		50% { opacity: 0.3; }
-	}
-
-	@media (hover: hover) {
-		:global(.gallery-item:hover .overlay-map-dot) {
-			animation: blink 0.6s ease-in-out infinite;
-		}
-	}
-
-	:global(.gallery-item.tapped .overlay-map-dot) {
 		animation: blink 0.6s ease-in-out infinite;
 	}
 
@@ -466,6 +452,13 @@ if (featured.length === 0) {
 			transform: scale(1.05);
 			filter: none !important;
 		}
+	}
+</style>
+
+<style is:global>
+	@keyframes blink {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.3; }
 	}
 </style>
 
