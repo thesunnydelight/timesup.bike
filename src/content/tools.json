@@ -18,20 +18,20 @@
       "src": "/src/assets/gallery/PXL_20260313_030938953.jpg",
       "alt": "vise",
       "description": "general purpose holding and leverage",
-      "location": "by the sink"
+      "location": "under the fridge"
     },
     {
       "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
       "alt": "bottom brackets",
       "description": "spinny part between your pedals",
-      "location": "opposite of the sink",
+      "location": "cabinet by the sink",
       "embiggen": false
     },
     {
       "src": "/src/assets/gallery/PXL_20260119_011155971.jpg",
       "alt": "used components",
       "description": "parts to build a bike. pricing on wall chart to the right, generally ~$5",
-      "location": "bins in backroom"
+      "location": "backroom shelves"
     },
     {
       "src": "/src/assets/gallery/PXL_20260309_015509828 (1).jpg",
@@ -43,7 +43,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_225451838.jpg",
       "alt": "assorted small parts",
       "description": "various small parts organized by size and not by function",
-      "location": "organizer in the backroom, black sliding cabinet in backroom and red cabinet opposite the sink"
+      "location": "organizer + sliding drawer in backroom, also cabinet by the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_032931136.jpg",
@@ -67,18 +67,18 @@
       "src": "/src/assets/gallery/PXL_20260318_033042213.jpg",
       "alt": "torque wrench (large)",
       "description": "precise application of force for cranks and bottom brackets. zero out tension after use",
-      "location": "backroom, above the socket drawers"
+      "location": "backroom, above the sockets drawers"
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_035333482.jpg",
       "alt": "handlebars (flat)",
-      "location": "bin in backroom"
+      "location": "backroom shelves"
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_033702253.jpg",
       "alt": "racks (front & rear)",
       "description": "adds carrying capacity to bike",
-      "location": "small room past the sink"
+      "location": "back area past the sink"
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_034145405.jpg",
@@ -132,25 +132,25 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_225926531.jpg",
       "alt": "bar end plugs",
       "description": "caps handlebar to prevent impalement in a crash",
-      "location": "sliding cabinet opposite the sink"
+      "location": "cabinet by the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225953455.jpg",
       "alt": "wheel axle parts",
       "description": "axle, cones, locknuts and nuts",
-      "location": "sliding cabinet opposite the sink"
+      "location": "cabinet by the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230013287.jpg",
       "alt": "drills",
       "description": "makes holes",
-      "location": "sliding cabinet opposite the sink"
+      "location": "cabinet by the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230027463.jpg",
       "alt": "quick release skewers",
       "description": "holds wheel to frame or fork",
-      "location": "sliding cabinet opposite the sink"
+      "location": "cabinet by the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230157410.jpg",
@@ -210,7 +210,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_230517167.jpg",
       "alt": "disposable gloves",
       "description": "gloves in various sizes",
-      "location": "bin in backroom and front room cabinet"
+      "location": "backroom shelf and front room cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230520474.jpg",
@@ -264,19 +264,19 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_005502558.jpg",
       "alt": "cheater bar",
       "description": "adds leverage to chain whips and wrenches.  affectionately called the \"physics\" bar",
-      "location": "behind the truing stands"
+      "location": "behind the truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005507297.jpg",
       "alt": "wheel alignment gauge",
       "description": "measures dishing in a wheel",
-      "location": "next to the truing stands"
+      "location": "next to the truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005512729.jpg",
       "alt": "donation box",
       "description": "cash is king and keeps the shop open",
-      "location": "one in the back room and another in the front room table"
+      "location": "back room table and front room table"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005750983.jpg",
@@ -294,7 +294,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_010009053.jpg",
       "alt": "headset press",
       "description": "installs external cup headsets",
-      "location": "bottom drawer in front room cabinet"
+      "location": "front room cabinet, bottom drawer"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_010955988.jpg",
@@ -324,13 +324,13 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_014402283.jpg",
       "alt": "star nut setter",
       "description": "installs star nut in steerer tube",
-      "location": "cabinet under the truing stands"
+      "location": "drawer under the truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_014501412.jpg",
       "alt": "bottom brackets, cassette & crank tools",
       "description": "installs and removes bottom brackets, cranks, freewheels and cassettes.",
-      "location": "cabinet under truing stands"
+      "location": "drawer under truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015207067.jpg",
@@ -342,13 +342,13 @@
       "src": "/src/assets/gallery/tools/PXL_20260316_015242598.jpg",
       "alt": "chain scrubber",
       "description": "cleans chain",
-      "location": "by the lubricant bins in backroom"
+      "location": "backroom by the lubricant bin"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015455822.jpg",
       "alt": "grease gun",
       "description": "prevents corrosion and minimizes friction for metal-on-metal contact",
-      "location": "front room cabinet or grease bin in backroom"
+      "location": "front room cabinet or backroom by the grease bin"
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_032910813.jpg",
@@ -390,7 +390,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260318_033434766.jpg",
       "alt": "vacuum cleaner",
       "description": "cleans the shop",
-      "location": "opposite the sink"
+      "location": "by the window near the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_033440209.jpg",
@@ -408,7 +408,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260318_033726979.jpg",
       "alt": "forks",
       "description": "various sizes",
-      "location": "room behind the sink"
+      "location": "back area past the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
@@ -432,13 +432,13 @@
       "src": "/src/assets/gallery/tools/PXL_20260318_034721671.jpg",
       "alt": "ball bearings (caged)",
       "description": "for headsets and some bottom brackets",
-      "location": "drawer under the truing stand"
+      "location": "drawer under truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034748827.jpg",
       "alt": "lockrings & spacers",
       "description": "",
-      "location": "drawer under the truing stand"
+      "location": "drawer under truing stand"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034805530.jpg",
@@ -449,7 +449,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034822383.jpg",
       "alt": "headset (top locknut)",
-      "description": "",
+      "description": "for threaded headset",
       "location": "drawer under truing stand"
     },
     {

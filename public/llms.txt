@@ -32,73 +32,84 @@ Bring your bike and describe the issue to a volunteer mechanic. You do the repai
 Email: contact@timesup.bike
 
 ## Tools & Supplies Available
-The co-op provides tools and supplies for DIY bike repair. Visual guide: https://timesup.bike/tools
+The co-op provides tools and supplies for DIY bike repair. Visual guide with floor plan: https://timesup.bike/tools
 
 ### By the sink
-- Air compressor — seats tubeless tires, removes bar grips, dries hands
-- Vise — general purpose holding and leverage
-- Garden sprayer — cleans bike
-- Paper towel (quick release)
+- Air compressor — seats tubeless tires, removes bar grips, dries hands (do not press against skin)
+- Garden sprayer — cleans bike (by the window near the sink)
+- Paper towel (quick release, original co-op design)
 - Colander — clean parts in the sink without losing them down the drain
+- Vacuum cleaner — by the window near the sink
+
+### Cabinet by the sink
+- Bottom brackets
+- Bar end plugs — caps handlebar to prevent impalement in a crash
+- Wheel axle parts — axle, cones, locknuts and nuts
+- Quick release skewers — holds wheel to frame or fork
+- Drills
+- Assorted small parts (also in backroom organizer + sliding drawer)
 
 ### Pegboard
 - External bottom bracket tool
-- Cone wrenches — for wheel hub locknuts
+- Cone wrenches — thin wrench for wheel hub locknuts
 - Third hand tool — for shift/brake cable adjustments
-- Master link pliers
-- Chain checker, chain tool, chainring nut wrench
-- Bolt cutters
-- Lockring tool — install/removes cog lockrings and some bottom brackets
+- Master link pliers — installs/removes master link on chain
+- Chain checker — measures chain wear
+- Chain tool — pushes out pin to shorten chain
+- Chainring nut wrench
+- Bolt cutters — cuts bolts, screws, and fender stays
+- Lockring tool — installs/removes cog lockrings and some bottom brackets
 - Cable cutter — cuts housing and cables
 - Vise grips — clamp things, turn rounded nuts, crimp ferrules
 - Pedal wrench
+- Assorted hand tools (wrenches, pliers, hammers, scissors, allen wrenches)
+- Hammers & mallets (also in front room cabinet)
 
 ### Backroom
 - Wheel holder — holds wheel by axle for hub work
-- Bottom brackets
-- Used components (~$5, bins in backroom)
-- Cranks — backroom bins, lower section
+- Wheel truing stands — for truing or building wheels (bearing size ruler on side)
+- Used components (~$5, bins on shelves)
+- Cranks — bins, lower section
 - Cogs — for fixed gear drivetrains
-- Assorted small parts (organized by size)
-- Nuts & bolts — various sizes in metric and inches
-- Inner tubes (new and used)
+- Assorted small parts — organizer + sliding drawer, organized by size
+- Nuts & bolts — various sizes in metric and inches, useful for racks and fenders
+- Inner tubes — new (MSRP) and used (discounted)
 - Spare inner tube — use for frame protection or accessory mounting
-- Lubricants, degreasers
-- Disposable gloves (bin in backroom and front room cabinet)
-- Wheel truing stands (one mounted, two mobile)
-- Chain scrubber
-- Loose ball bearings
-- Ferrules — caps cables & housing
-- Drop handlebars
-- Flat handlebars
-- Torque wrench (large) — for cranks and bottom brackets, above the socket drawers
+- Lubricants — wet and dry lube for chain, grease for bearings, light oil for pivoting parts
+- Degreasers — cleaning solvents for grease and grime
+- Chain scrubber — by the lubricant bin
+- Disposable gloves (also in front room cabinet)
+- Ball bearings (loose) — clear plastic bin
+- Ferrules — caps cables & housing, clear bin
+- Handlebars (drop) — above the floor pumps
+- Handlebars (flat)
+- Torque wrench (large) — for cranks and bottom brackets, above the socket drawers (zero out tension after use)
 - Ratchet & sockets — 1/4", 3/8" and 1/2" drivers, red drawer
-- Grinder, dremel, angle grinder — upper shelf
+- Grinder — grinds and smooths cut material (upper shelf)
+- Dremel — makes small holes (upper shelf)
+- Angle grinder — cuts chains and locks (upper shelf)
 - Clamps — above the nuts and bolts drawer
 - Tape — frame protector, duct, masking, electrical tape
 
-### Front area (front room cabinet)
+### Front room cabinet
 - Derailleur hanger alignment guide
-- Crown race setter & cup remover
-- Crown race remover — crown race setter drawer
+- Crown race setter & cup remover — also removes press fit bottom brackets
+- Crown race remover — in crown race setter drawer
 - Headset press — bottom drawer
-- Taps — cuts and cleans internal threads (use with cutting fluid)
-- Threaded steerer die — in taps/die drawer
-- Punches
-- Cheater bars (small and large)
+- Taps — cuts and cleans internal threads (use with cutting fluid, e.g. 3-in-1 oil)
+- Threaded steerer die — cuts and cleans thread on steerer tube (taps/die drawer)
+- Punches — makes pilot holes
+- Cheater bar (small) — adds leverage for M8 and larger allen keys
 - Calipers & rulers — in rulers drawer
 - Brake bleed kit (Shimano, mineral oil) — top shelf
-- Hammers & mallets
-- Disposable gloves
 - Grease gun (floats between front room cabinet and backroom)
-- Assorted hand tools (wrenches, pliers, hammers, scissors, allen wrenches)
 
 ### Drawer under truing stands
-- Caged ball bearings — for headsets and some bottom brackets
-- Lockrings and spacers
-- External cups — for headsets
-- Threaded headset top locknut
-- Crown race — for lower part of headset
+- Ball bearings (caged) — for headsets and some bottom brackets
+- Lockrings & spacers
+- Headset external cups
+- Headset top locknut (threaded)
+- Headset crown race — for lower part of headset
 - Files — sands down material
 - Brushes — cleaning parts
 - Tire levers & patch kit
@@ -106,25 +117,32 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide: https:/
 - Bottom brackets, cassette & crank tools
 
 ### By the truing stands
-- Spokes
+- Spokes — holds wheel rim to hub
 - Spoke keys — tighten/loosen wheel spokes
 - Wheel alignment gauge — measures dishing in a wheel
-- Cheater bar (large) — behind the truing stands
+- Cheater bar (large) — adds leverage to chain whips and wrenches ("physics bar")
 
-### Other locations
-- Hacksaw, saw guide — under the fridge
-- Pipe cutter — cuts tubes (seatpost, handlebars, fork), not for carbon — under the fridge
+### Under the fridge
+- Vise — general purpose holding and leverage
+- Hacksaw — for cutting steerer tube and handlebar
+- Saw guide — guides blade when cutting tubes
+- Pipe cutter — cuts tubes (seatpost, handlebars, fork), not for carbon
+
+### Back area (past the sink)
+- Front & rear racks — adds carrying capacity
+- Forks — various sizes
+
+### Between front and backroom
+- Floor pump and stands
+- First aid — wall space and top of doorway by the fridge
+
+### Other
 - Tires — loft and top shelf of backroom
-- Bike frames — basement
-- Torque wrench (small), tension meter — ask a volunteer
-- Circular saw — ask a volunteer
-- Donation box — backroom and front room table
-- Front & rear racks — small room past the sink
-- Forks — room behind the sink
-- Bar end plugs, wheel axle parts, quick release skewers, drills — sliding cabinet opposite the sink
-- Vacuum cleaner — opposite the sink
-- Floor pump and stands — space between front and backroom
-- First aid — wall space between front and backroom, top of doorway by the fridge
+- Bike frames — basement (to be built up or parted out)
+- Torque wrench (small) — precise force for small bolts up to M6 (ask a volunteer, zero out tension after use)
+- Tension meter — measures wheel spoke tension (ask a volunteer)
+- Circular saw — cuts wood (ask a volunteer)
+- Donation box — back room table and front room table
 - Drinks — fridge
 
 ## Spoke Cards
