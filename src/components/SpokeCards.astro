@@ -258,15 +258,13 @@ if (featured.length === 0) {
 		text-decoration: underline;
 	}
 
-	@media (hover: hover) {
-		.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {
-			opacity: 1;
-		}
+	.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {
+		opacity: 1;
+	}
 
-		.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
-			transform: scale(1.05);
-			filter: none;
-		}
+	.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
+		transform: scale(1.05);
+		filter: none;
 	}
 
 	/* Responsive */
@@ -275,40 +273,5 @@ if (featured.length === 0) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		:global(.gallery-item.tapped) {
-			grid-column: span 2 !important;
-			grid-row: span 2 !important;
-		}
-
-		:global(.gallery-item.tapped .gallery-overlay) {
-			opacity: 1 !important;
-		}
-
-		:global(.gallery-item.tapped img) {
-			transform: scale(1.05);
-			filter: none !important;
-		}
 	}
 </style>
-
-<script>
-	const isMobile = () => window.matchMedia('(max-width: 1050px)').matches;
-
-	function untap() {
-		document.querySelectorAll('.gallery-item.tapped').forEach(el => {
-			el.classList.remove('tapped');
-		});
-	}
-
-	document.querySelectorAll('.portraits-grid .gallery-item').forEach(item => {
-		item.addEventListener('click', (e) => {
-			if (!isMobile()) return;
-			e.stopPropagation();
-			const wasTapped = item.classList.contains('tapped');
-			untap();
-			if (!wasTapped) {
-				item.classList.add('tapped');
-			}
-		});
-	});
-</script>
