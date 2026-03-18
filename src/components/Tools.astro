@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import tools from '../content/tools.json';
+import floorplanImg from '../assets/gallery/tools/tu_floorplan.png';
 
 interface ToolItem {
 	src: string;
@@ -104,6 +105,7 @@ if (featured.length === 0) {
 		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
 		<h1>{title}</h1>
 		<p>{description}</p>
+		<Image src={floorplanImg} alt="Floor plan of Time's Up bike co-op showing tool locations" class="floorplan" />
 	</div>
 
 	<div class="portraits-grid">
@@ -182,6 +184,14 @@ if (featured.length === 0) {
 		font-size: clamp(14px, 1.5vw, 18px);
 		color: var(--text-light);
 		margin: 0;
+	}
+
+	.floorplan {
+		width: 100%;
+		max-width: 1200px;
+		height: auto;
+		margin: 24px 0;
+		border-radius: 12px;
 	}
 
 	.portraits-grid {
