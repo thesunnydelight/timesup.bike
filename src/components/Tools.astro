@@ -354,10 +354,7 @@ if (featured.length === 0) {
 			if (!wasTapped) {
 				item.classList.add('tapped');
 				requestAnimationFrame(() => {
-					const rect = item.getBoundingClientRect();
-					if (rect.bottom > window.innerHeight) {
-						item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
+					item.scrollIntoView({ behavior: 'smooth', block: 'center' });
 				});
 			}
 		});
