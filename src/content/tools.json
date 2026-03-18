@@ -22,7 +22,7 @@
     },
     {
       "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
-      "alt": "bottom brackets",
+      "alt": "bottom bracket",
       "description": "spinny part between your pedals",
       "location": "cabinet by the sink",
       "embiggen": false
@@ -76,7 +76,7 @@
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_033702253.jpg",
-      "alt": "racks (front & rear)",
+      "alt": "rack (front & rear)",
       "description": "adds carrying capacity to bike",
       "location": "back area past the sink"
     },
@@ -94,7 +94,7 @@
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_033903125.jpg",
-      "alt": "calipers & rulers",
+      "alt": "caliper & ruler",
       "description": "measures things",
       "location": "front room cabinet, in rulers drawer"
     },
@@ -112,7 +112,7 @@
     },
     {
       "src": "/src/assets/gallery/PXL_20260318_033753184.jpg",
-      "alt": "hammers & mallets",
+      "alt": "hammer & mallet",
       "description": "percussive persuasion",
       "location": "front room cabinet and pegboard"
     },
@@ -130,7 +130,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225926531.jpg",
-      "alt": "bar end plugs",
+      "alt": "bar end plug",
       "description": "caps handlebar to prevent impalement in a crash",
       "location": "cabinet by the sink"
     },
@@ -148,7 +148,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230027463.jpg",
-      "alt": "quick release skewers",
+      "alt": "quick release skewer",
       "description": "holds wheel to frame or fork",
       "location": "cabinet by the sink"
     },
@@ -166,7 +166,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230229662.jpg",
-      "alt": "cone wrenches",
+      "alt": "cone wrench",
       "description": "thin wrench to remove and adjust wheel hub locknuts",
       "location": "pegboard"
     },
@@ -178,7 +178,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230359485.jpg",
-      "alt": "master link pliers",
+      "alt": "master link plier",
       "description": "installs and removes master link on chain",
       "location": "pegboard"
     },
@@ -214,19 +214,19 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230520474.jpg",
-      "alt": "lubricants",
+      "alt": "lubricant",
       "description": "wet and dry lube for chain.  grease for bearings.  light oil for pivoting parts",
       "location": "backroom shelf (middle row)"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230523630.jpg",
-      "alt": "degreasers",
+      "alt": "degreaser",
       "description": "cleaning solvents for grease and grime",
       "location": "backroom middle shelf"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230530320.jpg",
-      "alt": "inner tubes",
+      "alt": "inner tube",
       "description": "new (MSRP) and used (discounted) inner tubes",
       "location": "backroom shelf"
     },
@@ -244,7 +244,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
-      "alt": "bolt cutters",
+      "alt": "bolt cutter",
       "description": "cuts bolts, screws and fender stays",
       "location": "front room cabinet and pegboard"
     },
@@ -262,7 +262,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005502558.jpg",
-      "alt": "cheater bar",
+      "alt": "cheater bar (large)",
       "description": "adds leverage to chain whips and wrenches.  affectionately called the \"physics\" bar",
       "location": "behind the truing stand"
     },
@@ -322,7 +322,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_014402283.jpg",
-      "alt": "star nut setter",
+      "alt": "star-nut setter",
       "description": "installs star nut in steerer tube",
       "location": "drawer under the truing stand"
     },
@@ -472,7 +472,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035044733.jpg",
-      "alt": "tire levers & patch kit",
+      "alt": "tire lever & patch kit",
       "description": "removes tire from rim and patches inner tubes",
       "location": "drawer under truing stand"
     },
@@ -485,12 +485,12 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035253897.jpg",
       "alt": "first aid",
-      "description": "bandages supplies for cuts",
+      "description": "bandages and treatment for cuts",
       "location": "wall space between front and backroom, top of doorway by the fridge"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035305737.jpg",
-      "alt": "floor pump and stands",
+      "alt": "floor pump & stand",
       "description": "holds up bike and pump up tires",
       "location": "space between front and backroom"
     },
@@ -508,13 +508,13 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_041234341.jpg",
-      "alt": "vise grips",
+      "alt": "vise grip",
       "description": "clamp things, turn rounded nuts, crimp ferrules",
       "location": "pegboard"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_041306557.jpg",
-      "alt": "spoke keys",
+      "alt": "spoke key",
       "description": "tighten/loosen wheel spokes",
       "location": "by truing stand"
     },
