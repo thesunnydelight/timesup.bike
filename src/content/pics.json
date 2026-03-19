@@ -38,11 +38,6 @@
       "alt": "eccentric hub"
     },
     {
-      "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
-      "alt": "organized bottom brackets",
-      "embiggen": false
-    },
-    {
       "src": "/src/assets/gallery/WhatsApp Image 2026-03-11 at 6.11.16 PM.jpeg",
       "alt": "ghost riding a bike donation",
       "embiggen": true
@@ -68,11 +63,6 @@
     {
       "src": "/src/assets/gallery/WhatsApp Image 2026-03-08 at 12.05.09 PM.jpeg",
       "alt": "sticker out in the wild"
-    },
-    {
-      "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
-      "alt": "compressor",
-      "embiggen": false
     }
   ]
 }
