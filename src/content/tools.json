@@ -186,7 +186,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260319_002104514.jpg",
       "alt": "bubble level",
-      "description": "indicates if plane is level",
+      "description": "check if surface is level",
       "location": "",
       "mapPositions": [
         {
