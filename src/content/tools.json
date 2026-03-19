@@ -5,7 +5,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260319_002510737.jpg",
       "alt": "spoke nipples",
-      "description": "attaches spoke to wheel rim",
+      "description": "attach spoke to wheel rim",
       "location": "",
       "mapPositions": [
         {
@@ -1009,7 +1009,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
       "alt": "spokes",
-      "description": "holds wheel rim to hub",
+      "description": "attach wheel rim to hub",
       "location": "truing stand",
       "mapPositions": [
         {
