@@ -52,7 +52,7 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide with flo
 ### Pegboard
 - External bottom bracket tool
 - Cone wrenches — thin wrench for wheel hub locknuts
-- Third hand tool — for shift/brake cable adjustments
+- Cable puller — for shift/brake cable adjustments
 - Master link pliers — installs/removes master link on chain
 - Chain checker — measures chain wear
 - Chain tool — pushes out pin to shorten chain
