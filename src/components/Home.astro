@@ -25,7 +25,7 @@ const hoursHtml = await marked.parse(hours.text);
 const locationHtml = await marked.parse(location.text);
 
 // Import all gallery images dynamically
-const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true });
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/**/*.{jpg,jpeg,png,gif}', { eager: true });
 
 // Helper to get image by filename
 const getImage = (src: string) => {
