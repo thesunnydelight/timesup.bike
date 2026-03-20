@@ -35,9 +35,9 @@ function formatDate(dateString: string): string {
 	try {
 		const date = new Date(dateString);
 		const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-		const month = date.toLocaleDateString('en-US', { month: 'short' });
+		const month = date.toLocaleDateString('en-US', { month: 'long' });
 		const day = date.getDate();
-		return `${dayName} - ${month} ${day}`;
+		return `${dayName}, ${month} ${day}`;
 	} catch (error) {
 		console.error('Error formatting date:', error);
 		return dateString;
