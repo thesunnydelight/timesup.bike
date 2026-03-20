@@ -7,7 +7,7 @@
       "items": [
         {
           "question": "How does the co-op work?",
-          "answer": "We're a DIY bike repair workshop. You bring your bike, we provide tools, parts and guidance from volunteer mechanics. You do the work and we'll show you how.\n\nSign in at the reception table and let the volunteer know what you are looking to do."
+          "answer": "We are a DIY bike repair workshop with the goal to educate cyclists on bike repair/maintenance which in turn brings down the cost of ownership and gets more butts on bikes.  You bring your bike, we provide tools, parts and mechanical guidance. You do the work and we'll show you how.\n\nSign in at the reception table and let the volunteer know what you are looking to do."
         },
         {
           "question": "What should I bring?",
@@ -15,11 +15,11 @@
         },
         {
           "question": "How much does it cost?",
-          "answer": "Used parts are generally ~$5 each, see the full [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo) but no credit cards.  Baked goods and snacks are highly appreciated if you want to thank the volunteers."
+          "answer": "$2 suggested donation plus parts.  Used parts are generally ~$5 each, see the full [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo) but no credit cards.  Baked goods and snacks are highly appreciated if you want to thank the volunteers."
         },
         {
           "question": "Do I need to know how to fix bikes?",
-          "answer": "No.  The bulk of our patrons ride a bike but have never fixed a flat on their own.  Volunteer mechanics are here to walk you through repairs step-by-step. It's DIY but we're here to make sure your project don't go off the rails."
+          "answer": "No.  The bulk of our patrons ride a bike but have never fixed a flat on their own.  Volunteer mechanics are here to walk you through repairs step-by-step. It's DIY but we're here to make sure your project does not go off the rails."
         },
         {
           "question": "Do I need an appointment?",
@@ -27,7 +27,7 @@
         },
         {
           "question": "What services do you provide?",
-          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Large projects like building a bike from the frame up is possible but email us to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  Also, we not not really deal in repair for performance tech (e.g. carbon fiber repair, electronic shifting), electric bikes or welding/brazing. "
+          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Large projects like building a bike from the frame up is possible but email us to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  Also, we do not really deal in repair for performance tech (e.g. carbon fiber repair, electronic shifting), electric bikes or welding/brazing."
         },
         {
           "question": "How much time does this take?",
@@ -35,7 +35,11 @@
         },
         {
           "question": "Do you have a Brooklyn location or a 24-hour bike parts vending machine?",
-          "answer": "Not anymore.  Those used to exist and you may see references appearing in our parent organization [Time's Up!](https://times-up.org/) which details the co-op's history and role in the broader context of promoting a environmentally sustainable city.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused more for someone with a busted bike looking for repairs."
+          "answer": "Not anymore.  Those used to exist and you may see references appearing in our parent organization [Time's Up!](https://times-up.org/) which details the co-op's history and role in the broader context of promoting an environmentally sustainable city.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused more for someone with a busted bike looking for repairs."
+        },
+        {
+          "question": "Where are you located?",
+          "answer": "The primary location is [626 East 14th St. New York, NY 10009](https://maps.app.goo.gl/eMzHrncKrd1izM759).  As of April 2026, we do not have any other bike coop location though references exist online of our former locations in Brooklyn and by the South Street Seaport.\n\nWe occasionally host Saturday classes at La Plaza Community Garden nearby from Spring to Fall, see our [Instagram](https://www.instagram.com/times_up_nyc) for the class schedule."
         }
       ]
     },
@@ -56,7 +60,7 @@
         },
         {
           "question": "Do you sell bikes?",
-          "answer": "Yes and we list ready-to-ride bikes on Craigslist.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
+          "answer": "Yes and we list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
         },
         {
           "question": "What tools does the co-op need?",
