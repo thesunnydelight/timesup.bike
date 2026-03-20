@@ -30,8 +30,8 @@
           "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Large projects like building a bike from the frame up is possible but email us at contact@timesup.bike to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- servicing performance tech (e.g. carbon fiber repair, electronic shifting)\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- painting frames\n- facing bottom bracket, headtube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
         },
         {
-          "question": "How much time do repairs take?",
-          "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will find a couple more.  For multiple issues, we will triage them so you can ride home, come back at a later date with replacement parts and more time.  We recommend to come at the start of the open hours as opposed to near the end.  There is no drop-off service and you need to be physically present to do the work."
+          "question": "How much time does this take?",
+          "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more.  For multiple issues, we will triage them so you can ride home, come back at a later date with replacement parts and more time.  We recommend to come at the start of the open hours as opposed to near the end.  There is no drop-off service and you need to be physically present to do the work."
         },
         {
           "question": "Do you have a 24-hour bike parts vending machine?",
@@ -80,7 +80,7 @@
         },
         {
           "question": "What tools does the co-op need?",
-          "answer": "We can always use more shop tools. Check the [tools page](/tools) to see what we currently have or lack."
+          "answer": "We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the [tools page](/tools) to see what we currently have or lack."
         },
         {
           "question": "Will you help install my parts from Amazon/AliExpress/etc..?",
