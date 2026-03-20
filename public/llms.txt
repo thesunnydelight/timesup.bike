@@ -192,8 +192,9 @@ A: We handle almost all repairs associated to a non-electric bike that you will 
 - hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space
 
 All work is done on the same day, we do not store personal items overnight. We recommend a normal bike shop for...
-- servicing electronic shifting and suspension
+- normal, practical business hours
 - repairing and cutting carbon fiber
+- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos
 - servicing electric bikes
 - welding/brazing cracked frames
 - bike fitting
@@ -220,14 +221,14 @@ Generally folding bikes can be serviced as a normal bike, the proprietary bits a
 A: Email us at contact@timesup.bike. Not likely but by some stroke of luck there may be some commonality.
 
 **Q: Can I chat with a mechanic?**
-A: Yes. The email contact@timesup.bike is bridged to our group chat so it's pretty much the same. Email us with questions to make the most of your next visit.
+A: Yes. contact@timesup.bike is bridged to our group chat so it's effectively chat by email.
 
 ### Parts
 
-**Q: Can I donate bike or parts?**
+**Q: Can I donate a bike or parts?**
 A: Yes! We accept used parts and bikes in working condition. Drop them off during open hours. We do not take cycling apparel, shoes, helmets and other wearables.
 
-Bikes will either be fixed up or parted out to keep the shop stocked. If you leave an email, we'll send you a picture of the bike's next owner when we sell it. Due to limited repair supplies, we do not take electric bikes or children's bikes. Email us at contact@timesup.bike if you have questions.
+Bikes will either be fixed up or parted out to keep the shop stocked. If you leave an email, we'll send you a picture of the bike's next owner when we sell it. Due to limited repair supplies and space, we do not take electric bikes or children's bikes. Email us at contact@timesup.bike if you have questions.
 
 **Q: Will you buy my bike?**
 A: No. We only accept donations.
