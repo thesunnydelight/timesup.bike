@@ -52,7 +52,7 @@
         },
         {
           "question": "Will you help install my parts from Amazon/AliExpress/etc..?",
-          "answer": "Yes.  We normally give you the model number to order parts yourself.  Our on-site used inventory will get your bike rolling but if you care for quality, do purchase (new) parts elsewhere.  We can help you install it or provide recommendations.   "
+          "answer": "Yes.  We normally give you the model number to order parts yourself.  We carry used parts on-site to get your bike rolling but if you care for quality, do purchase (new) parts elsewhere.  We can help you install it or provide recommendations.   "
         },
         {
           "question": "Do you fix scooters, skateboards, strollers or other forms of micromobility?",
@@ -72,12 +72,8 @@
       "heading": "Parts",
       "items": [
         {
-          "question": "Can I donate bike parts?",
-          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.\n\nWe do not take cycling apparel, shoes, helmets and other wearables."
-        },
-        {
-          "question": "Do you take whole bikes?",
-          "answer": "Yes. They will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies, we do not take electric bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
+          "question": "Can I donate bike or parts?",
+          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.  We do not take cycling apparel, shoes, helmets and other wearables.\n\nBikes will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies, we do not take electric bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
         },
         {
           "question": "Will you buy my bike?",
