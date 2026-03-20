@@ -230,7 +230,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			if (redPill) {
 				createMultiClickHandler(redPill as HTMLElement, 3, () => {
 					showToast(toastVolText, TOAST_LONG_DURATION);
-					document.querySelector('.projects')?.classList.add('visible');
+					document.querySelector('.dev-projects')?.classList.add('visible');
 				});
 			}
 

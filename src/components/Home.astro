@@ -91,6 +91,9 @@ const getImage = (src: string) => {
 			<div class="projects">
 				<strong>Projects: </strong> <a href="/spoke_cards">spoke cards</a>
 			</div>
+			<div class="dev-projects">
+				<strong>Unlisted: </strong> <a href="/pics">lore</a>
+			</div>
 		</div>
 
 		<footer class="hero-footer">
@@ -246,16 +249,6 @@ const getImage = (src: string) => {
 			requestAnimationFrame(updateStagger);
 		});
 	});
-
-	// Double-click last gallery image to navigate to /pics
-	const allGalleryItems = document.querySelectorAll('.gallery-side .gallery-item');
-	const lastItem = allGalleryItems[allGalleryItems.length - 1] as HTMLElement | undefined;
-	if (lastItem) {
-		lastItem.style.cursor = 'pointer';
-		lastItem.addEventListener('dblclick', () => {
-			window.location.href = '/pics';
-		});
-	}
 
 	window.addEventListener('scroll', updateStagger);
 	window.addEventListener('resize', () => {
@@ -593,11 +586,6 @@ const getImage = (src: string) => {
 		font-size: clamp(14px, 1.3vw, 18px);
 		color: var(--text-gray);
 		line-height: 1.5;
-		display: none;
-	}
-
-	.projects:global(.visible) {
-		display: block;
 	}
 
 	.projects a {
@@ -607,6 +595,28 @@ const getImage = (src: string) => {
 	}
 
 	.projects a:hover {
+		color: var(--link-dark);
+		text-decoration: underline;
+	}
+
+	.dev-projects {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+		display: none;
+	}
+
+	.dev-projects:global(.visible) {
+		display: block;
+	}
+
+	.dev-projects a {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.dev-projects a:hover {
 		color: var(--link-dark);
 		text-decoration: underline;
 	}
