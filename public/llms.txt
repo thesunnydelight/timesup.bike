@@ -145,12 +145,37 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide with flo
 - Donation box — back room table and front room table
 - Drinks — fridge
 
+## FAQ
+Frequently asked questions about visiting, parts & tools, and volunteering: https://timesup.bike/faq
+
+### Visitor Basics
+- DIY bike repair workshop — you do the work, volunteer mechanics guide you
+- $2 suggested donation covers consumables (lubricant, grease, cleaning supplies)
+- Used parts ~$5 each, new parts at retail price
+- Cash preferred, Venmo accepted, no credit cards
+- No appointment or membership needed — just show up during open hours and sign in
+- Most tune-ups take ~30 minutes, come early for larger repairs
+- No drop-off service, no overnight storage
+- We do not service e-bikes, carbon fiber, electronic shifting, or welding/brazing
+- Bathroom in the back (not wheelchair accessible)
+
+### Parts & Tools
+- Used parts and bike donations accepted during open hours (no apparel, shoes, helmets, e-bikes, or children's bikes)
+- Ready-to-ride bikes sold on Craigslist ($160-$200)
+- We can help install parts you purchased elsewhere
+
+### Volunteering
+- No formal application — show up, be helpful, let reception know you're interested
+- No prior bike mechanic experience required
+- Help needed beyond wrenching: organization, sales, fundraising, graphic design, analytics, events, outreach
+
 ## Spoke Cards
 A gallery of spoke cards, stickers, and zines collected around NYC cycling events: https://timesup.bike/spoke_cards
 
 ## Links
 - Website: https://timesup.bike
 - Tools Locator: https://timesup.bike/tools
+- FAQ: https://timesup.bike/faq
 - Spoke Cards: https://timesup.bike/spoke_cards
 - Instagram: https://www.instagram.com/times_up_nyc/
 - Parent org: https://times-up.org/
