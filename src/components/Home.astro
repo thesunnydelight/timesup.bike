@@ -49,9 +49,6 @@ const getImage = (src: string) => {
 			<div class="how-it-works">
 				<strong>{howItWorks.heading}</strong>
 				<div set:html={howItWorksHtml} />
-			</div>
-			<div class="helpful-tips">
-				<strong>{helpfulTips.heading}</strong>
 				<div set:html={helpfulTipsHtml} />
 			</div>
 			<div class="location">
@@ -463,6 +460,16 @@ const getImage = (src: string) => {
 	.how-it-works :global(a:hover) {
 		color: var(--link-dark);
 		text-decoration: underline;
+	}
+
+	.how-it-works :global(ul) {
+		margin: clamp(6px, 0.8vh, 12px) 0 0;
+		padding-left: clamp(16px, 1.5vw, 28px);
+		line-height: 1.6;
+	}
+
+	.how-it-works :global(li) {
+		margin-bottom: clamp(3px, 0.4vh, 6px);
 	}
 
 	.hero-info a {
