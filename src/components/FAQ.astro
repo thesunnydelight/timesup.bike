@@ -1,0 +1,140 @@
+---
+import { marked } from 'marked';
+import faq from '../content/faq.json';
+
+const { title, description, sections } = faq;
+---
+
+<section class="faq">
+	<div class="faq-header">
+		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
+		<h1>{title}</h1>
+		<p>{description}</p>
+	</div>
+
+	{sections.map((section) => (
+		<div class="faq-section">
+			<h2>{section.heading}</h2>
+			{section.items.map((item) => (
+				<details>
+					<summary>{item.question}</summary>
+					<div class="answer" set:html={marked.parse(item.answer)} />
+				</details>
+			))}
+		</div>
+	))}
+</section>
+
+<style>
+	.faq {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 40px clamp(16px, 3vw, 48px);
+	}
+
+	.faq-header {
+		margin-bottom: 32px;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: var(--text-gray);
+		text-decoration: none;
+		font-size: 16px;
+		margin-bottom: 16px;
+		transition: color 0.2s ease;
+	}
+
+	.back-link:hover {
+		color: var(--primary);
+	}
+
+	.faq-header h1 {
+		font-size: clamp(28px, 4vw, 48px);
+		font-weight: 700;
+		margin: 0 0 8px;
+		color: var(--text-dark);
+		font-family: 'Inter', sans-serif;
+	}
+
+	.faq-header p {
+		font-size: clamp(14px, 1.5vw, 18px);
+		color: var(--text-light);
+		margin: 0;
+	}
+
+	.faq-section {
+		margin-bottom: 32px;
+	}
+
+	.faq-section h2 {
+		font-size: clamp(20px, 2.5vw, 28px);
+		font-weight: 600;
+		color: var(--text-dark);
+		font-family: 'Inter', sans-serif;
+		margin: 0 0 16px;
+	}
+
+	details {
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	summary {
+		cursor: pointer;
+		padding: 16px 0;
+		font-size: clamp(15px, 1.5vw, 18px);
+		font-weight: 500;
+		color: var(--text-dark);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 16px;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	summary::after {
+		content: '+';
+		font-size: 24px;
+		font-weight: 300;
+		color: var(--text-light);
+		flex-shrink: 0;
+		transition: transform 0.2s ease;
+	}
+
+	details[open] summary::after {
+		content: '\2212';
+	}
+
+	summary:hover {
+		color: var(--primary);
+	}
+
+	.answer {
+		padding: 0 0 16px;
+		font-size: clamp(14px, 1.3vw, 16px);
+		line-height: 1.7;
+		color: var(--text-gray);
+	}
+
+	.answer :global(p) {
+		margin: 0 0 8px;
+	}
+
+	.answer :global(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.answer :global(a) {
+		color: var(--link);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.answer :global(a:hover) {
+		color: var(--primary);
+	}
+</style>

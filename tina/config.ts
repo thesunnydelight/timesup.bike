@@ -253,6 +253,59 @@ export default defineConfig({
         ],
       },
       {
+        name: "faq",
+        label: "FAQ",
+        path: "src/content",
+        match: {
+          include: "faq",
+        },
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          { type: "string", name: "title", label: "Title" },
+          { type: "string", name: "description", label: "Description" },
+          {
+            type: "object",
+            name: "sections",
+            label: "Sections",
+            list: true,
+            ui: {
+              itemProps: (item: Record<string, string>) => ({
+                label: item?.heading || "Section",
+              }),
+            },
+            fields: [
+              { type: "string", name: "heading", label: "Heading" },
+              {
+                type: "object",
+                name: "items",
+                label: "Items",
+                list: true,
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: item?.question || "Question",
+                  }),
+                },
+                fields: [
+                  { type: "string", name: "question", label: "Question" },
+                  {
+                    type: "string",
+                    name: "answer",
+                    label: "Answer",
+                    ui: { component: "textarea" },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
         name: "tools",
         label: "Tools",
         path: "src/content",

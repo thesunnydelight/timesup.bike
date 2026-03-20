@@ -1,0 +1,85 @@
+{
+  "title": "FAQ",
+  "description": "frequently asked questions",
+  "sections": [
+    {
+      "heading": "Visitor Basics",
+      "items": [
+        {
+          "question": "How does the co-op work?",
+          "answer": "We're a DIY bike repair space. You bring your bike, we provide tools, parts and guidance from volunteer mechanics. You do the work and we'll show you how.\n\nSign in at the reception table and let the volunteer know what you are looking to do."
+        },
+        {
+          "question": "What should I bring?",
+          "answer": "Bring your bike and any parts you already have. Wear clothes you don't mind getting greasy. We have gloves and hand cleaner available."
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "Used parts are generally around $5 each.  New parts like chains and inner tubes are sold at retail price.  The price is kept low due to heavy reliance on volunteer mechanics, secondhand parts and private donations.  Cash is preferred but we accept electronic payments (i.e. Venmo) but no credit cards.  Baked goods are highly appreciated if you want to tip the volunteers."
+        },
+        {
+          "question": "Do I need to know how to fix bikes?",
+          "answer": "Not at all. Volunteer mechanics are here to walk you through repairs step by step. It's DIY but we're here to make sure your project don't go off the rails."
+        },
+        {
+          "question": "Do I need an appointment?",
+          "answer": "No appointment needed. Just show up during open hours and sign in at the reception table. Check the [home page](/) for our current schedule."
+        },
+        {
+          "question": "What services do you provide?",
+          "answer": "We can handle most repairs associated to a commuter/track/bike-packing/recreational bike like a standard bike shop.  Large projects like building a bike from the frame up is possible but email us to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n\nAll work is done on the same day, we do not store personal items overnight.  Also, we not not really deal in repair for performance tech (e.g. carbon fiber repair, electronic shifting), electric bikes or welding/brazing. "
+        },
+        {
+          "question": "How much time does this take?",
+          "answer": "Most tune-ups take ~30 minutes but often you come in with one problem and we will identify a couple more.  For multiple issues, we will triage them so you can ride home, come back at a later date with replacement parts and more time.  We recommend to come at the start of the open hours as opposed to near the end."
+        },
+        {
+          "question": "Do you have a Brooklyn location or a 24-hour bike parts vending machine?",
+          "answer": "Not anymore.  Those used to exist and you may see references appearing in our parent organization [Time's Up!](https://times-up.org/) which details the co-op's history and role in the broader context of promoting a environmentally sustainable city.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused more for someone with a busted bike looking for repairs."
+        }
+      ]
+    },
+    {
+      "heading": "Parts & Tools",
+      "items": [
+        {
+          "question": "Can I donate bike parts?",
+          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours."
+        },
+        {
+          "question": "Do you take whole bikes?",
+          "answer": "We accept bike donations. They'll either be fixed up for someone who needs one or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies, we do not take e-bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
+        },
+        {
+          "question": "Will you buy my bike?",
+          "answer": "No.  We only accept donations."
+        },
+        {
+          "question": "Do you sell bikes?",
+          "answer": "Yes and we list ready-to-ride bikes on Craigslist.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
+        },
+        {
+          "question": "What tools does the co-op need?",
+          "answer": "We can always use more shop tools. Check the [tools page](/tools) to see what we currently have."
+        }
+      ]
+    },
+    {
+      "heading": "Volunteering",
+      "items": [
+        {
+          "question": "How do I become a volunteer?",
+          "answer": "Show up regularly, get to know the space and the people, and let the mechanic at the reception table know you're interested in volunteering.  There's no formal application or schedule commitment, just come and be helpful."
+        },
+        {
+          "question": "Do I need prior bike mechanic experience?",
+          "answer": "No. You'll learn as you go. While our volunteers include former bike mechanics, many are enthusiasts with a diverse range of experience outside the bike industry.  We can use help with organization, sales, fundraising, partner development, construction, graphic design, data analytics, electronics and more.  If you have time, we'll find a way to make use of your talents.   "
+        },
+        {
+          "question": "What do volunteers do?",
+          "answer": "Help visitors with repairs, keep the shop organized, sort donated parts, and maintain tools. Some volunteers also help with events, outreach, marketing and maintaining our digital presence (e.g. social media, website).  In terms of time commitment, come when you can.  We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench."
+        }
+      ]
+    }
+  ]
+}
