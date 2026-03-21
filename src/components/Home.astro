@@ -48,7 +48,7 @@ const getImage = (src: string) => {
 <section id="home" class="home">
 	<div class="hero-side">
 		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
-		<h1>{hero.title}</h1>
+		<h1><img src="/hero_title.png" alt={hero.title} class="title-img" /></h1>
 		<div id="announcement-banner">
 			<div id="announcement-message"></div>
 			<div id="announcement-date"></div>
@@ -379,6 +379,13 @@ const getImage = (src: string) => {
 		font-family: 'Inter', sans-serif;
 		position: relative;
 		z-index: 1;
+	}
+
+	.title-img {
+		width: 100%;
+		max-width: 700px;
+		height: auto;
+		display: block;
 	}
 
 	.tagline {
