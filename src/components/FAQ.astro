@@ -45,7 +45,7 @@ const { title, description, sections } = faq;
 	const btn = document.getElementById('toggle-all');
 	if (btn) {
 		btn.addEventListener('click', () => {
-			const details = document.querySelectorAll('.faq-columns details');
+			const details = document.querySelectorAll<HTMLDetailsElement>('.faq-columns details');
 			const allOpen = Array.from(details).every(d => d.open);
 			details.forEach(d => d.open = !allOpen);
 			btn.textContent = allOpen ? 'Expand all' : 'Collapse all';
