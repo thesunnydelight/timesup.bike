@@ -14,18 +14,22 @@
           "answer": "The primary location is [626 East 14th St. New York, NY 10009](https://maps.app.goo.gl/eMzHrncKrd1izM759).  As of April 2026, we do not have any other bike coop location though references exist online of our former locations in Brooklyn and by the South Street Seaport.\n\nWe occasionally host Saturday classes at La Plaza Community Garden nearby from Spring to Fall, see our [Instagram](https://www.instagram.com/times_up_nyc) for the class schedule."
         },
         {
-          "question": "Bathroom?",
-          "answer": "Yes. All the way in the back, [floorplan](/tools).  It is not wheelchair accessible."
-        },
-        {
           "question": "An art gallery shows up at the address, what gives?",
           "answer": "We share this space with [14 BC Gallery](https://www.14bcgallery.org/) which hosts art exhibitions from Thursday to Saturday."
+        },
+        {
+          "question": "Bathroom?",
+          "answer": "Yes. All the way in the back, [floorplan](/tools).  It is not wheelchair accessible."
         }
       ]
     },
     {
       "heading": "Service",
       "items": [
+        {
+          "question": "What services do you provide?",
+          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Other services include...\n- building a bike from the frame up but email us at contact@timesup.bike first\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- normal, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- painting frames\n- facing bottom bracket, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
+        },
         {
           "question": "What should I bring?",
           "answer": "Bring your bike and any parts you already have. Wear clothes you don't mind getting greasy. We have gloves and hand cleaner available."
@@ -41,10 +45,6 @@
         {
           "question": "Do I need an appointment?",
           "answer": "No appointment needed nor membership required. Just show up during open hours and sign in at the reception table. Check the [home page](/) for our current schedule."
-        },
-        {
-          "question": "What services do you provide?",
-          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Other services include...\n- building a bike from the frame up but email us at contact@timesup.bike first\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- normal, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- painting frames\n- facing bottom bracket, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
         },
         {
           "question": "How much time does this take?",
