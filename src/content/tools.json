@@ -1,6 +1,6 @@
 {
   "title": "Tools Locator",
-  "description": "what we have and where they can be found at the start/end of each shift.  items denoted with 🚸 are calibrated tools or have higher chance of injury, ask a volunteer before use.",
+  "description": "what we have and where they can be found at the start/end of each shift.  items denoted with ⚠️ are calibrated tools or have higher chance of injury, ask a volunteer before use.",
   "pics": [
     {
       "src": "/src/assets/gallery/tools/PXL_20251215_004323079.jpg",
@@ -317,7 +317,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_033150491.jpg",
-      "alt": "circular saw 🚸",
+      "alt": "circular saw ⚠️",
       "description": "cuts wood",
       "location": "ask a volunteer",
       "mapPositions": [
@@ -968,7 +968,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
-      "alt": "spoke tension meter 🚸",
+      "alt": "spoke tension meter ⚠️",
       "description": "measures wheel spoke tension",
       "location": "ask a volunteer",
       "mapPositions": [
@@ -1092,7 +1092,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
-      "alt": "torque wrench (small) 🚸",
+      "alt": "torque wrench (small) ⚠️",
       "description": "precise application of force for small bolts up to M6.  zero out tension after use",
       "location": "ask a volunteer",
       "mapPositions": [
