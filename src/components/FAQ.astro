@@ -18,7 +18,7 @@ const { title, description, sections } = faq;
 <section class="faq">
 	<div class="faq-header">
 		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
-		<h1>{title}</h1>
+		<h1><img src="/faq_title.png" alt={title} class="title-img" /></h1>
 		<p>{description}</p>
 	</div>
 
@@ -60,11 +60,14 @@ const { title, description, sections } = faq;
 	}
 
 	.faq-header h1 {
-		font-size: clamp(28px, 4vw, 48px);
-		font-weight: 700;
 		margin: 0 0 8px;
-		color: var(--text-dark);
-		font-family: 'Inter', sans-serif;
+	}
+
+	.faq-header h1 img {
+		display: block;
+		width: 100%;
+		max-width: 150px;
+		height: auto;
 	}
 
 	.faq-header p {
