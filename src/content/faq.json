@@ -19,32 +19,24 @@
         },
         {
           "question": "Bathroom?",
-          "answer": "Yes. All the way in the back, [floorplan](/tools).  It is not wheelchair accessible."
+          "answer": "Yes. All the way in the back.  It is not wheelchair accessible. ![floorplan](tu_floorplan_bathroom.png)"
         }
       ]
     },
     {
-      "heading": "Parts",
+      "heading": "Volunteering",
       "items": [
         {
-          "question": "Can I donate a bike or parts?",
-          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.  We do not take cycling apparel, shoes, helmets and other wearables.\n\nBikes will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies and space, we do not take electric bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
+          "question": "How do I become a volunteer?",
+          "answer": "Show up regularly, get to know the space and the people, and let the mechanic at the reception table know you're interested in volunteering.  There's no formal application or schedule commitment, just come and be helpful.  We have a meeting on the last Sunday of the month to welcome new volunteers, just leave your email and we'll reach out."
         },
         {
-          "question": "Will you buy my bike?",
-          "answer": "No.  We only accept donations."
+          "question": "Do I need prior bike mechanic experience?",
+          "answer": "No. You'll learn as you go. While our volunteers include former bike mechanics, many are enthusiasts with a wide range of experience outside the bike industry.  We can use help with organization, sales, fundraising, partner development, construction, graphic design, data analytics, electronics and more.  If you have time, we'll find a way to make use of your talents.   "
         },
         {
-          "question": "Do you sell bikes?",
-          "answer": "Yes.  We list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
-        },
-        {
-          "question": "What tools does the co-op need?",
-          "answer": "We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the [tools page](/tools) to see what we currently have or lack."
-        },
-        {
-          "question": "Where is the 24-hour bike parts vending machine?",
-          "answer": "It's gone but you may see old references appearing in our parent organization website, [Time's Up!](https://times-up.org/).  That page details the coop's 35+ year history and role in the broader context of promoting an environmentally sustainable city alongside initiatives like Critical Mass, community gardens and bee-keeping.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused for someone with a busted bike looking to fix it."
+          "question": "How much time to commit?",
+          "answer": "Three hours once a week is enough to be effective and get a lay of the land.  We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench."
         }
       ]
     },
@@ -69,7 +61,7 @@
         },
         {
           "question": "Do I need an appointment?",
-          "answer": "No appointment needed nor membership required. Just show up during open hours and sign in at the reception table. Check the [home page](/) for our current schedule."
+          "answer": "No appointment needed nor membership required. Just show up during open hours and sign in at the reception table."
         },
         {
           "question": "How much time does this take?",
@@ -98,19 +90,27 @@
       ]
     },
     {
-      "heading": "Volunteering",
+      "heading": "Parts",
       "items": [
         {
-          "question": "How do I become a volunteer?",
-          "answer": "Show up regularly, get to know the space and the people, and let the mechanic at the reception table know you're interested in volunteering.  There's no formal application or schedule commitment, just come and be helpful.  We have a meeting on the last Sunday of the month to welcome new volunteers, just leave your email and we'll reach out."
+          "question": "Can I donate a bike or parts?",
+          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.  We do not take cycling apparel, shoes, helmets and other wearables.\n\nBikes will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies and space, we do not take electric bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
         },
         {
-          "question": "Do I need prior bike mechanic experience?",
-          "answer": "No. You'll learn as you go. While our volunteers include former bike mechanics, many are enthusiasts with a wide range of experience outside the bike industry.  We can use help with organization, sales, fundraising, partner development, construction, graphic design, data analytics, electronics and more.  If you have time, we'll find a way to make use of your talents.   "
+          "question": "Will you buy my bike?",
+          "answer": "No.  We only accept donations."
         },
         {
-          "question": "How much time to commit?",
-          "answer": "Three hours once a week is enough to be effective and get a lay of the land.  We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench."
+          "question": "Do you sell bikes?",
+          "answer": "Yes.  We list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
+        },
+        {
+          "question": "What tools does the co-op need?",
+          "answer": "We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the [tools page](/tools) to see what we currently have or lack."
+        },
+        {
+          "question": "Where is the 24-hour bike parts vending machine?",
+          "answer": "It's gone but you may see old references appearing in our parent organization website, [Time's Up!](https://times-up.org/).  That page details the coop's 35+ year history and role in the broader context of promoting an environmentally sustainable city alongside initiatives like Critical Mass, community gardens and bee-keeping.  \n\nAs of April 2026, the most current operational details for the bike coop appears on this site which is focused for someone with a busted bike looking to fix it."
         }
       ]
     }

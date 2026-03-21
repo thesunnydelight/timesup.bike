@@ -6,8 +6,8 @@ const renderer = new Renderer();
 renderer.link = ({ href, title, text }) => {
 	const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
 	const titleAttr = title ? ` title="${title}"` : '';
-	const relAttr = isExternal ? ' rel="noopener noreferrer" target="_blank"' : '';
-	return `<a href="${href}"${titleAttr}${relAttr}>${text}</a>`;
+	const relAttr = isExternal ? ' rel="noopener noreferrer"' : '';
+	return `<a href="${href}"${titleAttr}${relAttr} target="_blank">${text}</a>`;
 };
 
 const faqMarked = new Marked({ renderer });
@@ -124,6 +124,7 @@ const { title, description, sections } = faq;
 
 	details {
 		border-bottom: 1px solid #e5e5e5;
+		break-inside: avoid;
 	}
 
 	summary {
@@ -183,5 +184,12 @@ const { title, description, sections } = faq;
 
 	.answer :global(a:hover) {
 		color: var(--primary);
+	}
+
+	.answer :global(img) {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+		margin: 8px 0;
 	}
 </style>
