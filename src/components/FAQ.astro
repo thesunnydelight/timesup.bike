@@ -16,6 +16,7 @@ const { title, description, sections } = faq;
 ---
 
 <section class="faq">
+	<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 	<div class="faq-header">
 		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
 		<h1><img src="/faq_title.png" alt={title} class="title-img" /></h1>
@@ -42,6 +43,19 @@ const { title, description, sections } = faq;
 		max-width: 1900px;
 		margin: 0 auto;
 		padding: 40px clamp(16px, 3vw, 48px);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.watermark {
+		position: absolute;
+		top: clamp(30px, 4vh, 80px);
+		left: -5%;
+		width: 40%;
+		opacity: 0.11;
+		pointer-events: none;
+		z-index: 0;
+		transform: rotate(-15deg);
 	}
 
 	.faq-header {
@@ -68,7 +82,7 @@ const { title, description, sections } = faq;
 	.faq-header h1 img {
 		display: block;
 		width: 100%;
-		max-width: 150px;
+		max-width: 130px;
 		height: auto;
 	}
 
