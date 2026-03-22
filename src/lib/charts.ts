@@ -83,7 +83,7 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 
 	// Render header with formatted date
 	const liveIndicator = chartId === 'curr' && (testOperatingHours || isToday(date))
-		? '<span class="live-dot" title="live data"></span>'
+		? '<span class="live-dot" title="count is live"></span>'
 		: '';
 
 	if (headerEl) {
