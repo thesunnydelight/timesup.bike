@@ -707,14 +707,24 @@ const getImage = (src: string) => {
 		opacity: 0.5;
 	}
 
+	:global(.live-indicator) {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		margin-left: 8px;
+		font-size: 11px;
+		font-weight: 700;
+		color: #4285F4;
+		letter-spacing: 0.05em;
+		vertical-align: middle;
+	}
+
 	:global(.live-dot) {
 		display: inline-block;
 		width: 10px;
 		height: 10px;
 		background: #4285F4;
 		border-radius: 50%;
-		margin-left: 6px;
-		vertical-align: middle;
 		animation: live-pulse 0.7s ease-in-out infinite;
 	}
 
