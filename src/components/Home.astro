@@ -371,7 +371,7 @@ const getImage = (src: string) => {
 	}
 
 	.hero-side h1 {
-		margin: 0 0 clamp(12px, 1.5vh, 24px);
+		margin: 0 calc(-1 * clamp(24px, 3vw, 48px)) clamp(12px, 1.5vh, 24px) 0;
 		position: relative;
 		z-index: 1;
 	}
@@ -575,8 +575,10 @@ const getImage = (src: string) => {
 	.hero-footer {
 		position: fixed;
 		bottom: clamp(12px, 4vh, 48px);
-		left: clamp(12px, 3vw, 48px);
-		right: 65vw;
+		left: 0;
+		width: 35vw;
+		padding-left: clamp(24px, 3vw, 48px);
+		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -598,6 +600,7 @@ const getImage = (src: string) => {
 	.footer-right {
 		justify-content: flex-end;
 		color: var(--text-gray);
+		flex: 1;
 	}
 
 	.social-links {
@@ -832,7 +835,7 @@ const getImage = (src: string) => {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		margin-left: auto;
+		width: 100%;
 		text-align: right;
 	}
 
@@ -1009,7 +1012,11 @@ const getImage = (src: string) => {
 			position: relative;
 			width: 100%;
 			height: auto;
-			padding: 60px 32px 24px;
+			padding: 60px 32px 24px 32px;
+		}
+
+		.hero-side h1 {
+			margin-right: 0;
 		}
 
 		.gallery-side {
@@ -1021,8 +1028,9 @@ const getImage = (src: string) => {
 			position: relative;
 			bottom: auto;
 			left: auto;
-			right: auto;
 			width: auto;
+			padding-left: 0;
+			box-sizing: border-box;
 			margin-top: 32px;
 			padding-top: 0;
 		}
