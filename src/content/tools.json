@@ -1248,6 +1248,28 @@
           "y": 69.7
         }
       ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260323_005656131.jpg",
+      "alt": "Zip Ties",
+      "description": "attaching cables, baskets, accessories in an ad-hoc manner",
+      "mapPositions": [
+        {
+          "x": 68,
+          "y": 85.6
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260323_005638361.jpg",
+      "alt": "Brake Pads",
+      "description": "rim and disc brake pads",
+      "mapPositions": [
+        {
+          "x": 74.5,
+          "y": 85.4
+        }
+      ]
     }
   ]
 }
