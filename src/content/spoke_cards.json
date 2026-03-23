@@ -5,8 +5,8 @@
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_2.JPG",
       "alt": "1",
-      "instagram": "socialcyclingnyc",
-      "event": "Thursday Night Social Cycling"
+      "event": "Thursday Night Social Cycling",
+      "instagram": "socialcyclingnyc"
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_3.JPG",
@@ -174,11 +174,6 @@
       "instagram": "socialcyclingnyc"
     },
     {
-      "src": "/src/assets/gallery/spoke_cards/spoke_card_41.JPG",
-      "alt": "41",
-      "instagram": "socialcyclingnyc"
-    },
-    {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_42.JPG",
       "alt": "42",
       "instagram": "socialcyclingnyc"
@@ -291,8 +286,8 @@
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_64.JPG",
       "alt": "64",
-      "instagram": "socialcyclingnyc",
-      "event": "Cookout at Randall's Island"
+      "event": "Cookout at Randall's Island",
+      "instagram": "socialcyclingnyc"
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_65.JPG",
@@ -371,6 +366,11 @@
       "embiggen": false
     },
     {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_41.JPG",
+      "alt": "41",
+      "instagram": "shluiii"
+    },
+    {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_89.JPG",
       "alt": "89",
       "instagram": "times_up_nyc"
@@ -403,8 +403,8 @@
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_79.JPG",
       "alt": "79",
-      "instagram": "",
-      "event": "Poughkeepsie to Manhattan Century Ride"
+      "event": "Poughkeepsie to Manhattan Century Ride",
+      "instagram": ""
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_81.JPG",
