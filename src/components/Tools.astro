@@ -148,7 +148,7 @@ if (featured.length === 0) {
 						<span class="overlay-caption">{item.alt}</span>
 						{item.description && (
 							<div class="overlay-field">
-								<span class="overlay-label">Description</span>
+								<hr class="overlay-separator" />
 								<span class="overlay-value">{item.description}</span>
 							</div>
 						)}
@@ -322,8 +322,8 @@ if (featured.length === 0) {
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		gap: 16px;
-		padding: 24px;
+		gap: 8px;
+		padding: 16px;
 		opacity: 0;
 		transition: opacity 0.3s ease;
 		overflow: auto;
@@ -350,6 +350,13 @@ if (featured.length === 0) {
 		letter-spacing: 0.1em;
 		color: rgba(255, 255, 255, 0.7);
 		margin-bottom: 4px;
+	}
+
+	.overlay-separator, .portraits-grid :global(.overlay-separator) {
+		border: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.428);
+		margin: 0 0 6px;
+		width: 50px;
 	}
 
 	.overlay-value, .portraits-grid :global(.overlay-value) {
