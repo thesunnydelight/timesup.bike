@@ -238,14 +238,14 @@ export default defineConfig({
               { type: "string", name: "alt", label: "Caption (Alt Text)" },
               {
                 type: "string",
-                name: "instagram",
-                label: "Instagram Handle",
+                name: "event",
+                label: "Event",
                 required: false,
               },
               {
                 type: "string",
-                name: "event",
-                label: "Event",
+                name: "instagram",
+                label: "Instagram Handle",
                 required: false,
               },
               {
