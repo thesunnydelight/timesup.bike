@@ -101,7 +101,7 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 <section class="portraits">
 	<div class="portraits-header">
 		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
-		<h1>{title}</h1>
+		<h1><img src="/lore_title.png" alt={title} class="title-img" /></h1>
 		<p>{description}</p>
 	</div>
 
@@ -231,7 +231,7 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 
 <style>
 	.portraits {
-		max-width: 1600px;
+		max-width: 1800px;
 		margin: 0 auto;
 		padding: 40px clamp(16px, 3vw, 48px);
 	}
@@ -254,11 +254,14 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 	}
 
 	.portraits-header h1 {
-		font-size: clamp(28px, 4vw, 48px);
-		font-weight: 700;
-		margin: 0 0 8px;
-		color: var(--text-dark);
-		font-family: 'Inter', sans-serif;
+		margin: 0 0 24px;
+	}
+
+	.portraits-header h1 img {
+		display: block;
+		width: 100%;
+		max-width: 700px;
+		height: auto;
 	}
 
 	.portraits-header p {
