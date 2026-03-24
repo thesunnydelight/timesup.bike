@@ -483,7 +483,7 @@
     {
       "src": "/src/assets/gallery/tools/tools_3_3.jpg",
       "alt": "diagonal cutter",
-      "description": "cuts zip ties.  not for cutting cables",
+      "description": "cuts zip ties and other plastics.  not for cutting metal cables",
       "mapPositions": [
         {
           "x": 65.6,
