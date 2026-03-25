@@ -79,7 +79,7 @@ interface ChartData {
 }
 
 // Render a single chart
-export function renderChart(chartId: string, data: ChartData, testOperatingHours: boolean = false): void {
+export function renderChart(chartId: string, data: ChartData, testState: 'open' | 'live' | false = false): void {
 	const { date, shiftData, users, volunteers } = data;
 
 	// Calculate total
@@ -96,12 +96,17 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	const iconsChanged = iconsEl && !iconsEl.textContent.includes(`${users}`);
 
 	// Render header with formatted date
-	const isLive = chartId === 'curr' && (testOperatingHours || (isToday(date) && isNearOperatingHours()));
-	const liveIndicator = isLive
-		? '<span class="live-indicator" title="count is live">  <span class="live-dot"></span> Live</span>'
-		: chartId === 'curr'
-			? '<span class="offline-indicator" title="we\'re closed at the moment">offline</span>'
-			: '';
+	const isCurr = chartId === 'curr';
+	const isCurrToday = isCurr && (!!testState || isToday(date));
+	const isOpen = isCurrToday && (testState === 'open' || isOperatingHours());
+	const isLive = isCurrToday && !isOpen && (testState === 'live' || isNearOperatingHours());
+	const liveIndicator = isOpen
+		? '<span class="live-indicator" title="shop is open">  <span class="live-dot"></span> open</span>'
+		: isLive
+			? '<span class="live-indicator" title="count is live">  <span class="live-dot"></span> prep</span>'
+			: isCurr
+				? '<span class="offline-indicator" title="shop is closed">closed</span>'
+				: '';
 
 	if (headerEl) {
 		const newHTML = newHeaderText + liveIndicator;
@@ -137,7 +142,7 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	// Render bars
 	if (barsEl) {
 		const maxValue = Math.max(...shiftData);
-		const isActive = chartId === 'curr' && (testOperatingHours || (isOperatingHours() && isToday(date)));
+		const isActive = isCurr && (testState === 'open' || (isOperatingHours() && isToday(date)));
 
 		// Get existing bars or create new ones
 		let barElements = barsEl.querySelectorAll('.chart-bar');
@@ -343,7 +348,7 @@ function updateAnnouncementBanner(dataMap: Record<string, any>): void {
 }
 
 // Fetch and render charts and footer slogan
-export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOperatingHours: boolean = false, buildTimeData: any = null, bustServerCache: boolean = false): Promise<void> {
+export async function fetchAndRenderCharts(forceRefresh: boolean = false, testState: 'open' | 'live' | false = false, buildTimeData: any = null, bustServerCache: boolean = false): Promise<void> {
 	try {
 		let data;
 
@@ -355,7 +360,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			// Build-time data may be stale — revalidate in background
 			if (!isBackgroundRefreshing) {
 				isBackgroundRefreshing = true;
-				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+				fetchAndRenderCharts(true, testState).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
@@ -372,7 +377,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 				data = staleData;
 				// Fetch fresh data in background
 				isBackgroundRefreshing = true;
-				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+				fetchAndRenderCharts(true, testState).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
@@ -404,7 +409,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 					const delay = RETRY_DELAYS[retryCount];
 					console.log(`Retrying in ${delay}ms... (attempt ${retryCount + 1}/${MAX_RETRIES})`);
 					retryCount++;
-					setTimeout(() => fetchAndRenderCharts(false, testOperatingHours), delay);
+					setTimeout(() => fetchAndRenderCharts(false, testState), delay);
 					return; // Exit early, retry will call this function again
 				} else {
 					// All retries failed, show error to user
@@ -429,7 +434,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			shiftData: getShiftData(dataMap, 'prev_shift'),
 			users: Number(dataMap.prev_shift_users) || 0,
 			volunteers: Number(dataMap.prev_shift_volunteers) || 0
-		}, testOperatingHours);
+		}, testState);
 
 		// Render current shift chart
 		renderChart('curr', {
@@ -437,7 +442,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			shiftData: getShiftData(dataMap, 'curr_shift'),
 			users: Number(dataMap.curr_shift_users) || 0,
 			volunteers: Number(dataMap.curr_shift_volunteers) || 0
-		}, testOperatingHours);
+		}, testState);
 
 		// Update footer slogan
 		updateFooterSlogan(dataMap);
@@ -456,18 +461,18 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 }
 
 // Set up automatic polling based on operating hours
-export function startPolling(testOperatingHours: boolean = false): void {
+export function startPolling(testState: 'open' | 'live' | false = false): void {
 	// Set up interval to check and refresh cache
 	setInterval(async () => {
 		if (!isCacheValid()) {
-			await fetchAndRenderCharts(false, testOperatingHours);
+			await fetchAndRenderCharts(false, testState);
 		}
 	}, POLLING_INTERVAL);
 
 	// Also check when page becomes visible (tab switching)
 	document.addEventListener('visibilitychange', async () => {
 		if (!document.hidden && !isCacheValid()) {
-			await fetchAndRenderCharts(false, testOperatingHours);
+			await fetchAndRenderCharts(false, testState);
 		}
 	});
 }

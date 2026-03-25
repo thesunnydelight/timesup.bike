@@ -277,8 +277,8 @@ const getImage = (src: string) => {
 	import { fetchAndRenderCharts, startPolling } from '../lib/charts';
 	import { clearCache, CACHE_DEPLOY_KEY } from '../lib/cache';
 
-	// TEST MODE: Set to true to always show blue bars (for testing)
-	const TEST_OPERATING_HOURS = false;
+	// TEST MODE: Set to 'open' or 'live' to force that indicator state (false = normal)
+	const TEST_STATE: 'open' | 'live' | false = false;
 
 	// Get build-time data and deploy ID from window globals (set by previous script)
 	const buildTimeData = window.__BUILD_TIME_DATA__;
@@ -299,15 +299,15 @@ const getImage = (src: string) => {
 
 	// Expose for console testing/debugging
 	window.fetchAndRenderCharts = (forceRefresh = false) =>
-		fetchAndRenderCharts(forceRefresh, TEST_OPERATING_HOURS, null);
+		fetchAndRenderCharts(forceRefresh, TEST_STATE, null);
 
 	// Fetch and render on page load
 	document.addEventListener('DOMContentLoaded', () =>
-		fetchAndRenderCharts(false, TEST_OPERATING_HOURS, buildTimeData)
+		fetchAndRenderCharts(false, TEST_STATE, buildTimeData)
 	);
 
 	// Start polling after initial load
-	document.addEventListener('DOMContentLoaded', () => startPolling(TEST_OPERATING_HOURS));
+	document.addEventListener('DOMContentLoaded', () => startPolling(TEST_STATE));
 </script>
 
 <style>
