@@ -103,7 +103,7 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 	const liveIndicator = isOpen
 		? '<span class="live-indicator" title="shop is open">  <span class="live-dot"></span> open</span>'
 		: isLive
-			? '<span class="live-indicator" title="prepping to open">  <span class="live-dot"></span> prep</span>'
+			? '<span class="live-indicator" title="getting ready to open">  <span class="live-dot"></span> prep</span>'
 			: isCurr
 				? '<span class="offline-indicator" title="waiting to open">offline</span>'
 				: '';
