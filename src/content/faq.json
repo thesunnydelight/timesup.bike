@@ -15,7 +15,7 @@
         },
         {
           "question": "Do I need an appointment?",
-          "answer": "No appointment needed nor membership required. Just show up during open hours and sign in at the reception table."
+          "answer": "No appointment or membership needed. Just show up during open hours and sign in at the reception table."
         },
         {
           "question": "Why is there an art gallery at the address?",
@@ -53,7 +53,7 @@
       "items": [
         {
           "question": "What services do you provide?",
-          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop, including...\n- building a bike from the frame up, email us at contact@timesup.bike first so we can confirm you have all the necessary parts\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- regular, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- powder coating or painting frames\n- facing bottom bracket, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
+          "answer": "We handle almost all repairs associated with a non-electric bike that you will find in a normal bike shop, including...\n- building a bike from the frame up, email us at contact@timesup.bike first so we can confirm you have all the necessary parts\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- regular, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- powder coating or painting frames\n- facing bottom bracket, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
         },
         {
           "question": "What should I bring?",
@@ -110,7 +110,7 @@
         },
         {
           "question": "Where is the 24-hour bike parts vending machine?",
-          "answer": "It's gone but you may see old references at our parent organization, [Time's Up](https://times-up.org/).  That site details the coop's 35+ year history and role in the broader context of promoting environmental sustainability alongside initiatives like Critical Mass, community gardens and bee-keeping.  Please note, some of the information the bike co-op campaign page is out-of-date and stale, we are working to update it.  \n\nAs of April 2026, the most current operational details for the bike coop appears on this site which is meant for someone with a busted bike looking to fix it."
+          "answer": "It's gone but you may see old references at our parent organization, [Time's Up](https://times-up.org/).  That site details the coop's 35+ year history and role in the broader context of promoting environmental sustainability alongside initiatives like Critical Mass, community gardens and bee-keeping.  Please note, some of the information on the bike co-op campaign page is out-of-date and stale, we are working to update it.  \n\nAs of April 2026, the most current operational details for the bike coop appear on this site which is meant for someone with a busted bike looking to fix it."
         },
         {
           "question": "Will you help install my parts purchased elsewhere? e.g. Amazon, AliExpress",

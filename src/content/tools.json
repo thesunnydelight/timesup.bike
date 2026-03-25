@@ -244,7 +244,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230356596.jpg",
       "alt": "cable puller",
-      "description": "make fine adjustments when installing shift and brake cables.  usually incorrectly called a third hand tool, the correct term is fourth hand tool",
+      "description": "make fine adjustments when installing shift and brake cables.  also called a fourth hand tool",
       "location": "pegboard",
       "mapPositions": [
         {
@@ -268,7 +268,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260319_001958040.jpg",
       "alt": "chain",
-      "description": "from 6 to 11 speeds. unused at normal retail price",
+      "description": "from 6 to 11 speeds. new at normal retail price",
       "location": "",
       "mapPositions": [
         {
@@ -744,7 +744,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034805530.jpg",
       "alt": "headset (external cup)",
-      "description": "for headsets",
+      "description": "for threaded and some threadless headsets",
       "location": "drawer under truing stand",
       "mapPositions": [
         {
@@ -804,7 +804,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034748827.jpg",
       "alt": "lockrings & spacers",
-      "description": "",
+      "description": "lockrings for cogs. spacers for headsets",
       "location": "drawer under truing stand",
       "mapPositions": [
         {
@@ -828,7 +828,7 @@
     {
       "src": "/src/assets/gallery/tools/tools_3_10.jpg",
       "alt": "magnet",
-      "description": "removes loose ball bearings from hub. check if metal is stainless steel/aluminum/titanium (non-magnet) or carbon steel (magnetic)",
+      "description": "removes loose ball bearings from hub. check if metal is stainless steel, aluminum, titanium (non-magnet) or carbon steel (magnetic)",
       "mapPositions": [
         {
           "x": 41.1,
@@ -1021,7 +1021,7 @@
     {
       "src": "/src/assets/gallery/tools/aa_tools_4.jpg",
       "alt": "seatpost",
-      "description": "attach saddle to bike frame",
+      "description": "attaches saddle to bike frame",
       "mapPositions": [
         {
           "x": 65.9,
@@ -1044,7 +1044,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
       "alt": "spoke",
-      "description": "attach wheel rim to hub",
+      "description": "attaches wheel rim to hub",
       "location": "truing stand",
       "mapPositions": [
         {
@@ -1056,7 +1056,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260319_002510737.jpg",
       "alt": "spoke nipple",
-      "description": "attach spoke to wheel rim",
+      "description": "attaches spoke to wheel rim",
       "location": "",
       "mapPositions": [
         {
@@ -1376,7 +1376,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260324_042420393.jpg",
       "alt": "assembly compounds",
-      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps hold in bar grip",
+      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps slip on bar grip",
       "mapPositions": [
         {
           "x": 62.5,
