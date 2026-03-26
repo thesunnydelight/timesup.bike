@@ -55,7 +55,7 @@ function isNearOperatingHours(): boolean {
 	const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
 	const day = nyTime.getDay();
 	const hour = nyTime.getHours();
-	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START - pad_hours && hour <= OPERATING_HOUR_END;
+	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START - pad_hours && hour < OPERATING_HOUR_END;
 }
 
 // Check if a date string is today
@@ -100,13 +100,16 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 	const isCurrToday = isCurr && (!!testState || isToday(date));
 	const isOpen = isCurrToday && (testState === 'open' || isOperatingHours());
 	const isLive = isCurrToday && !isOpen && (testState === 'live' || isNearOperatingHours());
+	const isCurrTodayAfterHours = isCurrToday && !isOpen && !isLive && !isNearOperatingHours();
 	const liveIndicator = isOpen
 		? '<span class="live-indicator" title="shop is open">  <span class="live-dot"></span> open</span>'
 		: isLive
 			? '<span class="live-indicator" title="getting ready to open">  <span class="live-dot"></span> prep</span>'
-			: isCurr
-				? '<span class="offline-indicator" title="waiting to open">offline</span>'
-				: '';
+			: isCurrTodayAfterHours
+				? '<span class="offline-indicator" title="closed for today">closed</span>'
+				: isCurr
+					? '<span class="offline-indicator" title="waiting to open">offline</span>'
+					: '';
 
 	if (headerEl) {
 		const newHTML = newHeaderText + liveIndicator;
