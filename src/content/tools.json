@@ -1374,13 +1374,46 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260324_042420393.jpg",
+      "src": "/src/assets/gallery/tools/aaa_tt4.jpg",
       "alt": "assembly compounds",
-      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps slip on bar grip",
+      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps slip on bar grip. anti-seize for threads",
       "mapPositions": [
         {
           "x": 62.5,
           "y": 85.3
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/aaa_tt3.jpg",
+      "alt": "stem (quill)",
+      "description": "for threaded steerer tube",
+      "mapPositions": [
+        {
+          "x": 64.6,
+          "y": 86.2
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/aaa_tt2.jpg",
+      "alt": "derailleurs",
+      "description": "moves chain on gears",
+      "mapPositions": [
+        {
+          "x": 64.2,
+          "y": 85.5
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/aaa_tt5.jpg",
+      "alt": "rotor truing fork",
+      "description": "straightens warped disc rotors",
+      "mapPositions": [
+        {
+          "x": 65.6,
+          "y": 27.5
         }
       ]
     }
