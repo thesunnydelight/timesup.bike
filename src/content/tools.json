@@ -1416,6 +1416,17 @@
           "y": 27.5
         }
       ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/bb1.jpg",
+      "alt": "phone charger",
+      "description": "USB-C and Lightning",
+      "mapPositions": [
+        {
+          "x": 14.1,
+          "y": 23.7
+        }
+      ]
     }
   ]
 }

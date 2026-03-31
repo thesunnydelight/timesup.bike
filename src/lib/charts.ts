@@ -262,8 +262,8 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		// If pills don't exist, create them with actual values
 		if (isFirstLoad) {
 			footerSlogan.innerHTML = `
-				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>&nbsp;
-				<span class="stat-pill stat-pill-blue" title="${tooltipText}"><strong>${numVisits}</strong>&nbsp;visits</span>
+				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;cyclists</span>&nbsp;
+				<span class="stat-pill stat-pill-blue" title="${tooltipText}"><strong>${numVisits}</strong>&nbsp;repairs</span>
 			`;
 			repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 			visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
