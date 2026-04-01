@@ -50,7 +50,7 @@ function formatDate(dateString: string): string {
 
 // Check if current time is within 2 hours of operating hours (opening or closing)
 function isNearOperatingHours(): boolean {
-	const pad_hours = 2;
+	const pad_hours = 10; // aka start prep at 7am
 	const now = new Date();
 	const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
 	const day = nyTime.getDay();
