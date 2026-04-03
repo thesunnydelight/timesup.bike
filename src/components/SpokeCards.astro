@@ -341,7 +341,7 @@ if (featured.length === 0) {
 		}
 
 		.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
-			transform: scale(1.05);
+			transform: scale(2.2);
 			filter: none;
 		}
 	}
@@ -432,4 +432,23 @@ if (featured.length === 0) {
 			untap();
 		}
 	});
+
+	// Desktop: pan zoomed image with mouse movement
+	if (!isMobile()) {
+		document.querySelectorAll('.portraits .gallery-item').forEach(item => {
+			const img = item.querySelector('img') as HTMLElement;
+			if (!img) return;
+
+			item.addEventListener('mousemove', (e) => {
+				const rect = (item as HTMLElement).getBoundingClientRect();
+				const x = ((e as MouseEvent).clientX - rect.left) / rect.width * 100;
+				const y = ((e as MouseEvent).clientY - rect.top) / rect.height * 100;
+				img.style.transformOrigin = `${x}% ${y}%`;
+			});
+
+			item.addEventListener('mouseleave', () => {
+				img.style.transformOrigin = 'center center';
+			});
+		});
+	}
 </script>
