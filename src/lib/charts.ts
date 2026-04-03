@@ -246,6 +246,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		lastUpdated = `${dayOfWeek} ${shortDate} at ${time}`;
 	}
 
+	const redPillMessage = dataMap.red_pill_message || '';
 	const tooltipText = `Last updated on ${lastUpdated}.\nData from ${daysOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
 	
@@ -262,7 +263,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		// If pills don't exist, create them with actual values
 		if (isFirstLoad) {
 			footerSlogan.innerHTML = `
-				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;cyclists</span>&nbsp;
+				<span class="stat-pill stat-pill-red" title="${redPillMessage}"><strong>${totalBikes}+</strong>&nbsp;cyclists</span>&nbsp;
 				<span class="stat-pill stat-pill-blue" title="${tooltipText}"><strong>${numVisits}</strong>&nbsp;repairs</span>
 			`;
 			repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
@@ -311,8 +312,9 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 				(visitsPillParent as any).__tripleClickCleanup = blueCleanup;
 			}
 
-			// Update the triple-click handler on red pill with new tooltip text
+			// Update red pill tooltip and triple-click handler
 			if (repairsPillParent) {
+				repairsPillParent.setAttribute('title', redPillMessage);
 				// Remove old handler if exists
 				const oldHandler = (repairsPillParent as any).__tripleClickCleanup;
 				if (oldHandler) {
