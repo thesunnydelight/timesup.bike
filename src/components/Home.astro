@@ -23,6 +23,11 @@ let buildTimeData = null;
 try {
 	const response = await fetch('https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec');
 	buildTimeData = await response.json();
+	// Strip announcement from build-time data so it's always fetched fresh
+	if (buildTimeData) {
+		delete buildTimeData.announcement;
+		delete buildTimeData.announcement_date;
+	}
 } catch (error) {
 	console.error('Error fetching data at build time:', error);
 }
