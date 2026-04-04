@@ -280,7 +280,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230419876.jpg",
       "alt": "chain checker",
-      "description": "measures chain wear",
+      "description": "measures chain wear.  replace chain at 1% stretch for 1 speed, 0.75% for 6-10 speed and 0.5% for >=11 speed",
       "location": "pegboard",
       "mapPositions": [
         {
