@@ -13,7 +13,7 @@
   function = "chart-data"
   path = "/api/chart-data"
 
-# Pretty URLs off — match Astro's trailingSlash: 'never'
+# Pretty URLs off - match Astro's trailingSlash: 'never'
 [build.processing]
   skip_processing = false
 [build.processing.html]

@@ -1,6 +1,6 @@
 {
   "title": "The New York Bike Jumble",
-  "description": "NYC's only bicycle flea market — what it is, when it happens and why you should go",
+  "description": "NYC's only bicycle flea market -- what it is, when it happens and why you should go",
   "titleImage": "",
   "body": [
     {
@@ -12,7 +12,7 @@
       "_template": "text"
     },
     {
-      "content": "## What you will find\n\n- **Used bikes** — road bikes, mountain bikes, commuters, fixies, sometimes oddball stuff\n- **Parts** — derailleurs, brakes, wheels, handlebars, saddles, cranks, headsets\n- **Accessories** — lights, locks, bags, racks, fenders\n- **Clothing** — jerseys, caps, cycling shoes\n- **Collectibles** — vintage components, old catalogs, cycling art\n- **Overstock and deals** — shops clearing out inventory at steep discounts\n\nPrices are negotiable. Cash is king. Get there early for the best selection — the good stuff goes fast.",
+      "content": "## What you will find\n\n- **Used bikes** -- road bikes, mountain bikes, commuters, fixies, sometimes oddball stuff\n- **Parts** -- derailleurs, brakes, wheels, handlebars, saddles, cranks, headsets\n- **Accessories** -- lights, locks, bags, racks, fenders\n- **Clothing** -- jerseys, caps, cycling shoes\n- **Collectibles** -- vintage components, old catalogs, cycling art\n- **Overstock and deals** -- shops clearing out inventory at steep discounts\n\nPrices are negotiable. Cash is king. Get there early for the best selection -- the good stuff goes fast.",
       "_template": "text"
     },
     {
@@ -36,7 +36,7 @@
       "_template": "image"
     },
     {
-      "content": "## Why it matters\nThe Bike Jumble keeps parts and bikes in circulation instead of in landfills. It connects people who need affordable transportation with people who have spare bikes and parts. It is one of the few places in the city where the cycling community shows up in one place — racers, commuters, messengers, co-op mechanics, collectors and people who just want a cheap bike to get around on.\n\nIf you pick up a project bike or parts you need help installing, bring them to the co-op. We are open Sundays and Wednesdays at 5pm.\n\nEmail contact@timesup.bike or visit us at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) in the East Village.",
+      "content": "## Why it matters\nThe Bike Jumble keeps parts and bikes in circulation instead of in landfills. It connects people who need affordable transportation with people who have spare bikes and parts. It is one of the few places in the city where the cycling community shows up in one place -- racers, commuters, messengers, co-op mechanics, collectors and people who just want a cheap bike to get around on.\n\nIf you pick up a project bike or parts you need help installing, bring them to the co-op. We are open Sundays and Wednesdays at 5pm.\n\nEmail contact@timesup.bike or visit us at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) in the East Village.",
       "_template": "text"
     }
   ]
