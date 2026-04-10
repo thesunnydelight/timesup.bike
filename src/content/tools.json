@@ -292,12 +292,12 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015242598.jpg",
       "alt": "chain scrubber",
-      "description": "cleans chain",
+      "description": "cleans chain, fill with degreaser",
       "location": "backroom by the lubricant bin",
       "mapPositions": [
         {
-          "x": 66.1,
-          "y": 85.6
+          "x": 89.3,
+          "y": 54.2
         }
       ]
     },
