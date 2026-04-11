@@ -115,7 +115,7 @@ if (featured.length === 0) {
 			const itemNumber = idx + 1;
 			const cardId = `${itemNumber}`;
 			const altText = item.event || `Spoke card ${itemNumber}`;
-			const filename = item.src.split('/').pop()?.replace(/\.[^.]+$/, '') || '';
+			const filename = item.src.split('/').pop() || '';
 			return (
 				<div id={cardId} class={`gallery-item${isFeatured ? ' featured' : ''}`}>
 					{imgSrc ? (
@@ -210,10 +210,10 @@ if (featured.length === 0) {
 		position: absolute;
 		top: 4px;
 		right: 4px;
-		font-size: 10px;
+		font-size: 16px;
 		font-weight: 600;
-		color: #fff;
-		background: rgba(0, 0, 0, 0.6);
+		color: #ffffff;
+		background: rgba(255, 0, 0, 0.6);
 		padding: 2px 6px;
 		border-radius: 3px;
 		z-index: 2;
