@@ -1438,6 +1438,28 @@
           "y": 42.6
         }
       ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260414_005411316.jpg",
+      "alt": "Hose clamp",
+      "description": "attaching things to tubes and racks",
+      "mapPositions": [
+        {
+          "x": 74.6,
+          "y": 42
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260414_005414855.jpg",
+      "alt": "Spring",
+      "description": "for rear derailleur",
+      "mapPositions": [
+        {
+          "x": 74.7,
+          "y": 42.1
+        }
+      ]
     }
   ]
 }
