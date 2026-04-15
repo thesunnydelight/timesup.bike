@@ -49,6 +49,10 @@
         {
           "question": "Bathroom?",
           "answer": "Yes. All the way in the back.  It is not wheelchair accessible due to a narrow set of stairs. ![floorplan](/tu_floorplan_bathroom.png)"
+        },
+        {
+          "question": "Code of conduct?",
+          "answer": "Be excellent to each other."
         }
       ]
     },
@@ -127,8 +131,8 @@
           "answer": "Three hours once a week is enough to be effective and get a lay of the land.  We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench."
         },
         {
-          "question": "Code of conduct?",
-          "answer": "Be excellent to each other."
+          "question": "Are there any paid positions?",
+          "answer": "No.  Only non-paid volunteer positions available at this time."
         }
       ]
     }
