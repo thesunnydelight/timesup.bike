@@ -135,9 +135,11 @@ export default defineConfig({
                 label: "Images",
                 list: true,
                 ui: {
-                  itemProps: (item: Record<string, string>) => ({
-                    label: item?.alt || "Image",
-                  }),
+                  itemProps: (item: Record<string, string>) => {
+                    const file = item?.src?.split("/").pop() || "";
+                    const alt = item?.alt || "Image";
+                    return { label: file ? `${file} - ${alt}` : alt };
+                  },
                 },
                 fields: [
                   { type: "image", name: "src", label: "Image" },
