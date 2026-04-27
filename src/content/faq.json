@@ -74,6 +74,10 @@
         {
           "question": "Can I chat with a mechanic?",
           "answer": "Yes.  contact@timesup.bike goes to our mechanics group chat so you'll get a quick response."
+        },
+        {
+          "question": "Can I fix multiple bikes at once?",
+          "answer": "Yes, quite a few of our patrons fix up a bike for themselves and their family in one visit.  However the workshop is meant for personal, non-commercial use and our mechanics have discretion to limit shop use for commercial purposes.  If you have any questions, please contact us in advance at contact@timesup.bike"
         }
       ]
     },
