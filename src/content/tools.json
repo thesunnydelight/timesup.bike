@@ -1,6 +1,6 @@
 {
   "title": "Tools Locator",
-  "description": "What we have and where they can be found at the start/end of each shift.  Ask a volunteer for help where marked by \u26a0\ufe0f",
+  "description": "What we have and where they can be found at the start/end of each shift.  Ask a volunteer for help where marked by ⚠️",
   "pics": [
     {
       "src": "/src/assets/gallery/tools/tools-001.jpg",
@@ -362,7 +362,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/tools-030.jpg",
-      "alt": "circular saw \u26a0\ufe0f",
+      "alt": "circular saw ⚠️",
       "description": "cuts wood",
       "location": "ask a volunteer",
       "mapPositions": [
@@ -1067,7 +1067,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/tools-087.jpg",
-      "alt": "spoke tension meter \u26a0\ufe0f",
+      "alt": "spoke tension meter ⚠️",
       "description": "measures wheel spoke tension",
       "location": "ask a volunteer",
       "mapPositions": [
@@ -1179,7 +1179,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/tools-096.jpg",
-      "alt": "torque wrench (small) \u26a0\ufe0f",
+      "alt": "torque wrench (small) ⚠️",
       "description": "precise application of force for small bolts up to M6.  zero out tension after use",
       "location": "ask a volunteer",
       "mapPositions": [
@@ -1398,7 +1398,7 @@
     {
       "src": "/src/assets/gallery/tools/tools-113.jpg",
       "alt": "derailleur",
-      "description": "moves chain on gears",
+      "description": "moves chain on gears.  separated by front and rear",
       "mapPositions": [
         {
           "x": 64.2,
@@ -1430,8 +1430,8 @@
     },
     {
       "src": "/src/assets/gallery/tools/tools-116.jpg",
-      "alt": "Ultrasonic Cleaner \u26a0\ufe0f",
-      "description": "cleans intricate parts like chains and cassettes through cavitation.  fill with hot water, set temp to 50\u00b0C. fits items up to 10.5\" x 11.5\" x 4.5\". bring your own zip lock bag",
+      "alt": "Ultrasonic Cleaner ⚠️",
+      "description": "cleans intricate parts like chains and cassettes through cavitation.  fill with hot water, set temp to 50°C. fits items up to 10.5\" x 11.5\" x 4.5\". bring your own zip lock bag",
       "mapPositions": [
         {
           "x": 91.1,
