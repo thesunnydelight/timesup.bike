@@ -27,7 +27,7 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/tools-003.jpg",
+      "src": "/src/assets/gallery/tools/5_2/PXL_20260428_021253376.jpg",
       "alt": "assorted hand tools",
       "description": "wrenches, pliers, hammers, scissors, awls, screw drivers, allen keys",
       "location": "pegboard and front room cabinet",
@@ -526,12 +526,12 @@
     {
       "src": "/src/assets/gallery/tools/tools-043.jpg",
       "alt": "dremel",
-      "description": "makes small holes",
+      "description": "makes small holes.  sanding and grinding tool tips are in the yellow box",
       "location": "backroom upper shelf",
       "mapPositions": [
         {
-          "x": 75.9,
-          "y": 87.7
+          "x": 81.1,
+          "y": 43.7
         }
       ]
     },
@@ -933,8 +933,8 @@
     },
     {
       "src": "/src/assets/gallery/tools/tools-076.jpg",
-      "alt": "rack (front & rear)",
-      "description": "adds carrying capacity to bike",
+      "alt": "rack",
+      "description": "adds carrying capacity to bike. comes in either front or rear",
       "location": "back area past the sink",
       "mapPositions": [
         {
@@ -1458,6 +1458,17 @@
         {
           "x": 74.7,
           "y": 42.1
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/5_2/PXL_20260428_023403718.jpg",
+      "alt": "coffee maker",
+      "description": "some repairs require less force and more chamomile.  10 cups",
+      "mapPositions": [
+        {
+          "x": 73.2,
+          "y": 29.8
         }
       ]
     }
