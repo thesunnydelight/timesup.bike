@@ -1482,6 +1482,16 @@
           "y": 42.5
         }
       ]
+    },
+    {
+      "alt": "breaker bar",
+      "description": "lots of leverage for 1/2\" drive sockets.  in the bottom socket drawer",
+      "mapPositions": [
+        {
+          "x": 76.3,
+          "y": 84.9
+        }
+      ]
     }
   ]
 }
